@@ -1,0 +1,10 @@
+langgraph
+langchain
+langchain-community
+python-dotenv
+pandas
+numpy
+psycopg2-binary
+chromadb
+cohere
+streamlit
