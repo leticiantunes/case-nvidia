@@ -1,6 +1,7 @@
 langgraph
 langchain
 langchain-community
+langchain-openai
 python-dotenv
 pandas
 numpy
@@ -8,3 +9,5 @@ psycopg2-binary
 chromadb
 cohere
 streamlit
+tenacity
+requests
