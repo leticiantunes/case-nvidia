@@ -1,0 +1,20 @@
+---
+tecnologia: NVIDIA RAPIDS
+categoria: dados
+url_fonte: https://rapids.ai/about.html
+titulo: Learn More | RAPIDS | GPU Accelerated Data Science
+---
+
+RAPIDS e uma colecao de bibliotecas de software open source e APIs que permite executar pipelines completos de ciencia de dados e analytics inteiramente em GPUs. O conjunto foi concebido e continua sendo desenvolvido pela NVIDIA, apoiado na experiencia da empresa em arquitetura de hardware e em ciencia de dados. Usando a plataforma CUDA como base, RAPIDS expoe o processamento paralelo e a alta largura de banda de memoria das GPUs por meio de interfaces Python familiares aos cientistas de dados. O licenciamento adotado e Apache 2.0, o que torna o projeto livre para uso comercial e de pesquisa.
+
+O proposito fundamental do RAPIDS e eliminar as penalidades de desempenho tipicamente associadas a movimentacao de dados e a serializacao. Em vez de exigir que o cientista de dados mova informacoes entre contextos computacionais diferentes ou converta entre formatos incompativeis, RAPIDS mantem os dados na memoria da GPU ao longo de todo o fluxo analitico. O projeto enfatiza especialmente a etapa de preparacao de dados, que historicamente consome parte substancial dos projetos de ciencia de dados, fornecendo uma API de dataframe familiar que se integra a diversos algoritmos de machine learning para aceleracao de pipeline ponta a ponta sem pagar os custos tipicos de serializacao.
+
+RAPIDS tambem trata de escalabilidade, acomodando configuracoes de implantacao multi-node e multi-GPU, o que permite processar conjuntos de dados substancialmente maiores e acelerar procedimentos de treinamento de modelos em sistemas em cluster.
+
+O ecossistema de bibliotecas inclui componentes especializados. cuDF e a biblioteca de manipulacao de dataframes acelerada por GPU, com interface modelada em pandas, mantendo familiaridade de API enquanto entrega ganhos de desempenho de GPU em operacoes comuns de manipulacao de dados. cuML fornece capacidades de machine learning por meio de implementacoes de algoritmos aceleradas por GPU, oferecendo versoes nativas de GPU de algoritmos que os praticantes encontram em scikit-learn, mantendo compatibilidade de interface e aproveitando o paralelismo da GPU para treinamento e inferencia. cuGraph entrega analise de grafos com padrao de interface semelhante ao NetworkX, tratando analise de redes, travessia de grafos e problemas de conectividade com aceleracao por GPU, o que viabiliza analisar estruturas de grafo muito maiores do que abordagens em CPU suportariam na pratica.
+
+RAPIDS surgiu de trabalho colaborativo envolvendo a iniciativa Apache Arrow e o projeto GoAi. Esses projetos estabeleceram a abordagem tecnica adotada pelo RAPIDS: organizar os dados usando uma estrutura colunar em memoria que entrega intercambio de dados eficiente e rapido com flexibilidade para suportar modelos de dados complexos. O formato colunar e particularmente valioso para cargas analiticas porque permite compressao eficiente, acesso seletivo a colunas sem processar dados nao relacionados e uso otimizado da largura de banda de memoria.
+
+RAPIDS tem suporte nativo ao protocolo array_interface, uma padronizacao que facilita a movimentacao de dados entre sistemas computacionais diferentes. Por meio dessa interface, informacoes armazenadas na representacao em memoria do Apache Arrow podem ser enviadas de forma direta para frameworks de deep learning que aceitam array_interface ou trabalham com DLPack, como Chainer, MXNet e PyTorch. Isso e valioso porque praticantes de deep learning podem usar RAPIDS para engenharia de atributos e preparacao de dados e depois passar os dados preparados diretamente para os frameworks de treinamento sem operacoes caras de conversao.
+
+O foco em Python permite que RAPIDS funcione bem com a maioria das bibliotecas de visualizacao de ciencia de dados. Mantendo os dados na memoria da GPU durante a renderizacao, a equipe antecipa capacidades de visualizacao de dados de alto desempenho e alto FPS, mesmo com conjuntos de dados muito grandes.

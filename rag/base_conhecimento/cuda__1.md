@@ -1,0 +1,20 @@
+---
+tecnologia: CUDA
+categoria: computacao
+url_fonte: https://developer.nvidia.com/cuda-toolkit
+titulo: CUDA Toolkit - Free Tools and Training | NVIDIA Developer
+---
+
+O NVIDIA CUDA Toolkit fornece um ambiente de desenvolvimento para criar aplicacoes de alto desempenho aceleradas por GPU. Com ele, desenvolvedores podem escrever, otimizar e implantar suas solucoes em multiplas plataformas de computacao: sistemas embarcados acelerados por GPU adequados para edge computing, workstations de desktop, data centers empresariais, plataformas em nuvem e supercomputadores.
+
+O toolkit inclui um conjunto substancial de recursos essenciais de desenvolvimento: bibliotecas aceleradas por GPU, ferramentas de depuracao e otimizacao, um compilador C/C++ e uma biblioteca de runtime. As bibliotecas fornecem implementacoes otimizadas para tarefas computacionais comuns; as ferramentas de depuracao e otimizacao ajudam a identificar gargalos de desempenho e resolver problemas tecnicos; o compilador C/C++ voltado para programacao de GPU permite escrever kernels que executam em processadores graficos; e a biblioteca de runtime fornece a infraestrutura necessaria para executar codigo acelerado por GPU.
+
+As versoes recentes do CUDA Toolkit introduziram melhorias significativas no desenvolvimento de kernels de GPU. O CUDA 13.2 aprimora o desenvolvimento de kernels estendendo o suporte a CUDA Tile para as arquiteturas Ampere e Ada, introduzindo novas construcoes como closures e recursao no cuTile Python, e unificando o ecossistema ARM em um unico toolkit CUDA para implantacao integrada do data center ate a borda. A expansao para Ampere e Ada significa que desenvolvedores podem usar tecnicas de programacao baseadas em tiles em uma faixa maior de GPUs NVIDIA.
+
+O toolkit apresenta multiplas expressoes do modelo de programacao CUDA Tile. A variante CUDA Tile C++ permite expressar kernels de tile diretamente em C++, construida sobre a especificacao de representacao intermediaria CUDA Tile IR. Complementando essa opcao, cuTile Python oferece capacidades semelhantes de programacao por tiles dentro do ecossistema Python, permitindo que pesquisadores e cientistas de dados que preferem Python acessem essas tecnicas avancadas de programacao de GPU. Ambas as variantes compartilham a mesma especificacao de IR subjacente.
+
+O ecossistema CUDA inclui uma suite extensa de bibliotecas especializadas conhecidas coletivamente como CUDA-X. Essas bibliotecas cobrem operacoes de inteligencia artificial, fluxos de ciencia de dados e computacoes matematicas. Bibliotecas de algebra linear fornecem operacoes de matriz otimizadas para execucao em GPU; bibliotecas de transformada rapida de Fourier aceleram computacoes no dominio da frequencia; bibliotecas de deep learning fornecem blocos de construcao para redes neurais; bibliotecas de matriz esparsa tratam estruturas de dados especializadas de forma eficiente; e bibliotecas de algoritmos paralelos genericos oferecem estruturas de container e algoritmos semelhantes aos da biblioteca padrao C++, mas otimizados para execucao paralela em GPUs.
+
+A suite Nsight fornece ferramentas de desenvolvimento voltadas a otimizacao de aplicacoes de GPU. NVIDIA Nsight Compute foca em profiling detalhado no nivel de kernel, permitindo examinar em granularidade fina o que os kernels estao fazendo. Nsight Systems fornece profiling no nivel de sistema, revelando como o trabalho da GPU interage com a execucao na CPU e com os recursos do sistema. Essas ferramentas permitem identificar gargalos de desempenho, entender padroes de utilizacao de recursos e tomar decisoes de otimizacao informadas.
+
+O CUDA e usado em multiplos dominios de aplicacao: computacao de alto desempenho e computacao cientifica, com simulacoes de fisica, modelagem climatica e dinamica molecular; machine learning e inteligencia artificial, em tarefas de treinamento e inferencia; analise de dados, com aceleracao de pipelines de processamento; processamento de imagem e video, atingindo desempenho em tempo real; e computacoes criptograficas e numericas.

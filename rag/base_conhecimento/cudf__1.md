@@ -1,0 +1,20 @@
+---
+tecnologia: cuDF
+categoria: dados
+url_fonte: https://developer.nvidia.com/topics/ai/data-science/cuda-x-data-science-libraries/cudf
+titulo: NVIDIA cuDF - GPU-Accelerated Structured Data Processing
+---
+
+NVIDIA cuDF e uma biblioteca open source CUDA-X Data Science que acelera bibliotecas populares como pandas, Polars e Apache Spark em GPUs. A tecnologia transforma a forma como organizacoes processam dados estruturados, usando o paralelismo da GPU para entregar melhorias expressivas de desempenho sem exigir modificacoes no codigo existente.
+
+A plataforma funciona como um toolkit de processamento de dados construido sobre primitivas CUDA altamente otimizadas. Ao explorar o paralelismo da GPU e a largura de banda de memoria, cuDF acelera significativamente fluxos de processamento e analise de dados. A arquitetura permite acelerar em GPU motores de consulta por meio de componentes que tratam I/O e operacoes SQL, incluindo joins, agregacoes, ordenacao e shuffles.
+
+A base do cuDF esta no formato colunar em memoria do Apache Arrow, que permite despachar kernels altamente paralelos por milhares de nucleos de GPU simultaneamente. A arquitetura inclui ferramentas dedicadas de gerenciamento de memoria que otimizam as custosas transferencias entre CPU e GPU, minimizando o overhead que tradicionalmente cria gargalos no processamento de dados. Quando integrado a motores de dados, cuDF roteia operacoes para GPUs sempre que possivel; para operacoes sem suporte em GPU, o sistema recorre automaticamente a fallback em CPU, garantindo a continuidade do fluxo de trabalho.
+
+Uma caracteristica definidora e a capacidade de entregar ganhos sem modificacao de codigo. Para usuarios de pandas, a tecnologia oferece cudf.pandas como extensao drop-in ativada por um comando simples. A integracao com o Polars GPU engine exige apenas adicionar um parametro, .collect(engine="gpu"), para habilitar o processamento em GPU. Usuarios de Apache Spark podem ativar a aceleracao por GPU com uma unica linha de configuracao: spark.conf.set('spark.rapids.sql.enabled','true').
+
+A documentacao cita multiplas metricas de speedup entre ferramentas e casos de uso. Velox em GPUs alcanca execucao ate 6x mais rapida para cargas de processamento de dados em larga escala. Cargas de Apache Spark rodam aproximadamente 5x mais rapido com aceleracao cuDF, com potencial de 10x de economia de custo de infraestrutura. O motor analitico Presto melhora ate 6x quando aproveita a integracao Velox-cuDF acelerada por GPU, junto com 5x de reducao de custo. O Polars GPU engine demonstra melhorias de velocidade de ate 10x, com benchmarks especificos mostrando capacidade de processar 100 milhoes de linhas em menos de dois segundos. Para pandas especificamente, a aceleracao chega a ate 50x mais rapido em infraestrutura do Google Colab. SiriusDB, um acelerador de DuckDB construido sobre cuDF, entrega melhorias de ate 8x e obteve a melhor pontuacao no ClickBench.
+
+Entre as capacidades principais estao: maximizacao de desempenho para cargas de escala de gigabytes a petabytes, otimizando operacoes centrais de SQL e DataFrame com primitivas CUDA de baixo nivel; reducao de latencia, habilitando cargas sensiveis a latencia como analytics interativo e consultas de IA agentica; reducao de custo, ja que menor tempo de execucao permite processar volumes equivalentes de dados em bem menos nos, cortando custos de infraestrutura e a pegada de data center; estruturas de dados eficientes baseadas em Apache Arrow, com interfaces zero-copy com outras bibliotecas aceleradas, minimizando movimentacao de dados; e escalabilidade de memoria, com ferramentas de memoria e primitivas out-of-core da NVIDIA para joins e groupbys que excedem a memoria de uma GPU individual.
+
+A instalacao rapida pode usar conda na versao 26.08 com Python 3.14 e CUDA entre 13.0 e 13.3, ou pip com o pacote cudf-cu13==26.8.*. Ha implantacao local via conda, pip, Docker ou WSL2, implantacao em plataformas como Kubernetes, Databricks e Google Colab, e implantacao em nuvem em AWS, Azure e GCP. O processo de instalacao inclui interfaces Python e C++ alem dos aceleradores de zero-code-change.

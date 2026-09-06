@@ -1,0 +1,19 @@
+---
+tecnologia: NVIDIA Clara
+categoria: saude
+url_fonte: https://www.nvidia.com/en-us/clara/
+titulo: NVIDIA AI Platforms for Healthcare and Life Sciences
+---
+AI for Healthcare and Life Sciences: open source tools, pretrained models, and GPU-accelerated pipelines for drug discovery, healthcare robotics, medical imaging, genomics, and digital health.
+
+NVIDIA BioNeMo is the development platform for AI-driven biology and drug discovery. The platform includes open models, libraries, datasets, and NVIDIA NIM microservices for the entire AI lifecycle, enabling researchers and developers to build, customize, and deploy AI applications that drive the next experiment. Use cases include biofoundation model building, molecular design, virtual screening, protein structure prediction, and protein binder design. Benefits cited are 2x faster biofoundation model training, 6x faster model inference, and three model acceleration recipes.
+
+NVIDIA Nemotron is the foundation for digital health AI. Nemotron offers optimized open models with open weights, training data, and recipes for advanced reasoning, coding, visual understanding, agentic tasks, safety, speech, and information retrieval, delivering leading efficiency and accuracy for building specialized AI agents. Use cases include ambient healthcare agents and deep clinical research agents. Benefits include open models for visual understanding, information retrieval, speech, and safety, five use case examples, and 16 cookbooks on how to deploy and use the models.
+
+NVIDIA Isaac is a robotics and simulation platform. This healthcare robotics developer platform is centered on simulation and synthetic data, enabling design, validation, and runtime deployment based on NVIDIA's training-simulation-runtime architecture. Use cases include hospital automation, teleoperation, autonomous ultrasound, and surgical autonomy. Benefits include synthetic data generation pipelines for anatomy, procedural variation, hospital environments, and patient interaction, plus sensor simulation pipelines for endoscopy, ultrasound, CT imaging, and multimodal sensor fusion.
+
+MONAI is the open medical imaging AI framework. This open source, PyTorch-based medical imaging AI framework brings together domain-optimized data loaders, rich transformers, and 50+ high-quality pretrained models to streamline everything from 2D and 3D segmentation and registration to reporting and multimodal workflows. Use cases include medical imaging model training and medical imaging segmentation and annotation. Benefits include over 8 million downloads and over 4,000 projects, multimodal capability integrating imaging, text, and agentic AI for radiology, surgery, and pathology workflows, and 20 medical imaging challenges won.
+
+The NVIDIA Holoscan SDK is a runtime for physical AI and sensor processing. Holoscan is a real-time runtime for building GPU-accelerated systems that ingest high-bandwidth, multimodal, multi-rate sensor data, perform AI reasoning, and drive deterministic real-world actions. Use cases include real-time robotics and autonomous machines, AI raw-data-to-insights for medical devices, and deterministic edge AI deployment. Benefits include scaling to tens or hundreds of gigabits per second without extensive system optimizations, accelerated IO directly into GPU memory, and 10 minutes to inference with domain accelerator examples.
+
+NVIDIA Parabricks enables GPU-accelerated genomics. This scalable genomics software suite for secondary analysis offers GPU-accelerated implementations of BWA-MEM, GATK, and DeepVariant for whole-genome and exome workflows. Use cases include cancer and rare diseases, NICU and critical care, population studies, and research. Benefits include over 100x faster analysis of whole genome sequencing, 50 percent lower compute cost for WGS, and 23 accelerated tools and 6 pipelines.
