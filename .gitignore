@@ -5,3 +5,7 @@ venv/
 .venv/
 *.egg-info/
 .ipynb_checkpoints/
+# backups temporarios de edicao
+*.bak
+*.bak[0-9]
+agents/teste_cru.py

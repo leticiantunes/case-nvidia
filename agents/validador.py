@@ -16,6 +16,7 @@ julgar" e proposital: nao gasta cota de API, e sempre reproduzivel, e nao
 corre o risco de um segundo modelo alucinar ao avaliar o primeiro.
 """
 
+import re
 import unicodedata
 from typing import Dict, Any, List
 
@@ -41,9 +42,23 @@ def validar_evidencia(evidencia: Dict[str, Any], docs_da_startup: List[Dict[str,
     if doc is None:
         return False, f"url nao pertence aos documentos desta startup: {url}"
 
-    if normaliza(trecho) in normaliza(doc["conteudo_texto"]):
-        return True, "ok"
-    return False, "trecho nao encontrado no documento citado"
+    texto_doc = normaliza(doc["conteudo_texto"])
+
+    # Modelos generativos frequentemente citam com reticencias ("...trecho..." ou
+    # "inicio ... fim"). A citacao continua verificavel: basta conferir cada
+    # fragmento separadamente, que e o que um checador humano faria. Fragmentos
+    # muito curtos sao ignorados porque casariam por acaso em qualquer texto.
+    fragmentos = [f.strip() for f in re.split(r"\.{3,}|\u2026", trecho)]
+    fragmentos = [f for f in fragmentos if len(f) >= 25]
+
+    if not fragmentos:
+        return False, "trecho curto demais para ser verificavel"
+
+    faltando = [f for f in fragmentos if normaliza(f) not in texto_doc]
+    if not faltando:
+        sufixo = " (citacao com reticencias, validada por fragmentos)" if len(fragmentos) > 1 else ""
+        return True, "ok" + sufixo
+    return False, f"trecho nao encontrado no documento citado ({len(faltando)} de {len(fragmentos)} fragmentos)"
 
 
 def evidence_validator(estado: Dict[str, Any]) -> Dict[str, Any]:

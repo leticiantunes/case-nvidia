@@ -1,0 +1,1547 @@
+{
+  "gerado_em": "2026-09-07T19:22:58",
+  "modelo": "openai/gpt-oss-20b",
+  "com_rag": false,
+  "duracao_segundos": 885,
+  "perfis": [
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "IA proprietaria"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Traive usa IA proprietaria para analisar mais de 2500 pontos de dados agricolas e climáticos",
+          "trecho": "Traive conecta produtores agricolas ao mercado de capitais atraves de duas frentes: Traive Agro (comercializacao de credito) e Traive Finance (analise de risco e acesso a investimentos). Usa IA proprietaria para gerar score de credito e automatizar a esteira de analise, atendendo mais de 160 mil produtores cadastrados e movimentando cerca de R$60 bilhoes em ativos de credito agricola.",
+          "url_fonte": "https://traive.com.br"
+        },
+        {
+          "afirmacao": "A tecnologia avalia mais de 2500 pontos de dados para criar perfis de risco no agronegocio",
+          "trecho": "A tecnologia avalia mais de 2500 pontos de dados para criar perfis de risco no agronegocio, com metodologia revisada pela ACM (Association for Computing Machinery).",
+          "url_fonte": "https://traive.com.br/en/blog/imprensa/traive-capta-us-20-milhoes-em-rodada-com-banco-do-brasil/"
+        }
+      ],
+      "startup_id": "startup-01",
+      "nome": "Traive",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "Traive utiliza IA proprietária para gerar score de crédito e automatizar a esteira de análise, sendo a saída da IA (score de crédito) o principal entregável vendido aos produtores agrícolas. A presença de um modelo próprio e a dependência da IA para a entrega do produto atendem ao critério de AI‑native.",
+        "sinais_a_favor": [
+          "IA proprietária para gerar score de crédito",
+          "Automatização da esteira de análise baseada em IA",
+          "Score de crédito como entregável principal"
+        ],
+        "sinais_contra": [
+          "Nenhum sinal contrário encontrado; a ausência de dados proprietários específicos não altera a classificação"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "AgRisk",
+        "PIX"
+      ],
+      "sinais_de_uso_de_ia": [
+        "inteligência artificial"
+      ],
+      "dados_proprietarios": [
+        "score e bureaus de crédito"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "AgRisk platform",
+          "trecho": "AgRisk, plataforma de analytics que atende 1.400 provedores de crédito",
+          "url_fonte": "https://braziljournal.com/nagro-a-fintech-do-pequeno-produtor-rural-atrai-o-rabobank-e-o-itau/"
+        },
+        {
+          "afirmacao": "credit 100% digital",
+          "trecho": "Soluções 100% digitais voltadas para o produtor rural",
+          "url_fonte": "https://nagro.com.br/"
+        },
+        {
+          "afirmacao": "inteligência artificial",
+          "trecho": "Os recursos da rodada serão reinvestidos em análise de crédito com inteligência artificial e na expansão da plataforma",
+          "url_fonte": "https://braziljournal.com/nagro-a-fintech-do-pequeno-produtor-rural-atrai-o-rabobank-e-o-itau/"
+        }
+      ],
+      "startup_id": "startup-02",
+      "nome": "Nagro",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "O perfil indica uso de inteligência artificial como recurso adicional na plataforma AgRisk e em soluções 100% digitais, mas não apresenta evidências de modelo próprio, dados proprietários alimentando o modelo ou entrega de IA como produto principal. Assim, a IA funciona como camada de melhoria de fluxo, caracterizando AI‑enabled.",
+        "sinais_a_favor": [
+          "inteligência artificial",
+          "AgRisk platform",
+          "credit 100% digital"
+        ],
+        "sinais_contra": [
+          "não há modelo próprio nem dados proprietários que alimentem a IA; a IA não é o entregável principal"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "MLOps",
+        "Model as a Service",
+        "APIs",
+        "ChurnAI",
+        "Agentes de IA"
+      ],
+      "sinais_de_uso_de_ia": [
+        "inteligência artificial aplicada a soluções de gestão de riscos",
+        "modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia",
+        "algoritmos voltados para previsão de comportamento de consumidores"
+      ],
+      "dados_proprietarios": [
+        "modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia",
+        "algoritmos voltados para previsão de comportamento de consumidores"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "Escalabilidade da plataforma de Machine Learning as a Service devido ao aumento de requisições"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "MLOps",
+          "trecho": "Treine, implemente e monitore seus modelos com nossa plataforma de MLOps.",
+          "url_fonte": "https://www.datarisk.io/"
+        },
+        {
+          "afirmacao": "Model as a Service",
+          "trecho": "Ao longo de 2024 a companhia registrou mais de 10 milhões de consultas nas APIs de sua solução MaaS (Machine Learning as a Service).",
+          "url_fonte": "https://monitormercantil.com.br/oferta-de-machine-learning-como-servico-democratiza-acesso-a-modelos-preditivos-para-concessao-de-credito/"
+        },
+        {
+          "afirmacao": "Escalabilidade da plataforma",
+          "trecho": "A expectativa da empresa é de que a plataforma supere a marca de 50 milhões de requisições até o final de 2025.",
+          "url_fonte": "https://monitormercantil.com.br/oferta-de-machine-learning-como-servico-democratiza-acesso-a-modelos-preditivos-para-concessao-de-credito/"
+        }
+      ],
+      "startup_id": "startup-03",
+      "nome": "Datarisk",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "ChurnAI",
+          "trecho": "ChurnAI.",
+          "url_fonte": "https://www.datarisk.io/",
+          "motivo_rejeicao": "trecho curto demais para ser verificavel"
+        },
+        {
+          "afirmacao": "Agentes de IA",
+          "trecho": "Agentes de IA.",
+          "url_fonte": "https://www.datarisk.io/",
+          "motivo_rejeicao": "trecho curto demais para ser verificavel"
+        }
+      ],
+      "taxa_validacao": 0.6,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O perfil técnico demonstra que a Datarisk desenvolve e comercializa modelos próprios de avaliação de renda, risco de crédito e estabilidade empregatícia, alimentados por dados proprietários acumulados pela própria empresa. A entrega desses modelos ocorre por meio de uma plataforma de Machine Learning as a Service (MaaS), onde a saída da IA – previsões de risco e comportamento do consumidor – é o principal entregável vendido aos clientes. Isso atende ao critério (a) de modelo próprio e (c) da saída da IA como produto central, justificando a classificação AI‑native.",
+        "sinais_a_favor": [
+          "modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia",
+          "dados proprietários de histórico de clientes usados para treinar os modelos",
+          "plataforma MaaS com mais de 10 milhões de consultas e previsão de 50 milhões de requisições",
+          "MLOps para treinamento, implementação e monitoramento dos modelos",
+          "algoritmos voltados para previsão de comportamento de consumidores"
+        ],
+        "sinais_contra": [
+          "Não há evidência de que o produto principal exista sem a IA; a ausência de tal informação não invalida a classificação, mas indica que a documentação não cobre a existência de um produto alternativo."
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [],
+      "startup_id": "startup-04",
+      "nome": "Agrosmart",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 0.0,
+      "classificacao": {
+        "classificacao": "non-AI",
+        "confianca": "baixa",
+        "justificativa": "Não há evidências de uso de IA no perfil técnico fornecido; os campos de tecnologias citadas, sinais de uso de IA, dados proprietários e evidências estão vazios. A classificação como non-AI segue a regra de que ausência de evidências leva a essa categoria, e a confiança é baixa devido à escassez de informações.",
+        "sinais_a_favor": [],
+        "sinais_contra": [
+          "Falta de qualquer menção a modelos de IA, dados proprietários ou entregáveis baseados em IA no perfil técnico"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "inteligência artificial"
+      ],
+      "sinais_de_uso_de_ia": [
+        "inteligência artificial"
+      ],
+      "dados_proprietarios": [
+        "dados de comportamento ao volante"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "inteligência artificial",
+          "trecho": "A Justos é uma empresa de seguro auto que usa inteligência artificial, tecnologia e design para oferecer um serviço prático que recompensa motoristas conscientes.",
+          "url_fonte": "https://www.insurtech.com.br/guia/justos-recompensas-para-motoristas-conscientes-com-ia-e-tecnologia-avancada/"
+        },
+        {
+          "afirmacao": "inteligência artificial",
+          "trecho": "A Justos levantou uma rodada de R$ 92 milhões liderada pela Ribbit Capital, com participação de Kaszek, Endeavor Catalyst e Scale-Up Ventures, depois de uma série A de cerca de R$ 200 milhões que contou com o SoftBank. A insurtech de seguro auto digital, que recompensa motoristas conscientes, tem hoje cerca de 90 funcionários e acaba de obter a licença S3 da Susep, o que permite operar produtos diretamente em vez de depender apenas de parceiros seguradores.",
+          "url_fonte": "https://startups.com.br/negocios/rodada-de-investimento/com-ia-no-core-justos-levanta-r-92m-para-expandir/"
+        },
+        {
+          "afirmacao": "dados de comportamento ao volante",
+          "trecho": "O programa de recompensas da Justos usa tecnologia de telemetria ativada nos sensores presentes no telefone celular dos clientes para avaliar como o motorista está dirigindo.",
+          "url_fonte": "https://www.insurtech.com.br/guia/justos-recompensas-para-motoristas-conscientes-com-ia-e-tecnologia-avancada/"
+        }
+      ],
+      "startup_id": "startup-05",
+      "nome": "Justos",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Justos utiliza inteligência artificial como núcleo do seu produto, alimentado por dados proprietários de comportamento ao volante, e que a IA gera a entrega principal (recompensas e seguro baseado em telemetria). Isso atende ao critério (b) de dados proprietários alimentando o modelo, justificando a classificação AI-native.",
+        "sinais_a_favor": [
+          "inteligência artificial",
+          "dados de comportamento ao volante",
+          "telemetria ativada nos sensores do telefone celular dos clientes"
+        ],
+        "sinais_contra": [
+          "Nenhum sinal contrário encontrado; a ausência de detalhes sobre o modelo específico ou pipeline de IA não impede a classificação AI-native, mas reforçaria a decisão se estivesse presente"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "AI",
+        "machine learning",
+        "big data analytics",
+        "georeferencing"
+      ],
+      "sinais_de_uso_de_ia": [
+        "AI",
+        "machine learning"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Cortex combina AI e data para simplificar a tomada de decisão e acelerar o crescimento.",
+          "trecho": "Cortex is a specialist in Augmented Intelligence for Go-to-Market strategies. We combine AI and data to simplify decision-making and accelerate growth.",
+          "url_fonte": "https://www.cortex-intelligence.com/en/"
+        },
+        {
+          "afirmacao": "A plataforma utiliza modelos de machine learning conectados aos dados da empresa.",
+          "trecho": "We apply machine learning models connected to your company's data.",
+          "url_fonte": "https://www.cortex-intelligence.com/en/"
+        },
+        {
+          "afirmacao": "A plataforma combina big data analytics, georeferencing e modelos avançados de IA.",
+          "trecho": "Through our GTM intelligence SaaS platform, which combines big data analytics, georeferencing, and advanced AI models.",
+          "url_fonte": "https://www.cortex-intelligence.com/en/"
+        }
+      ],
+      "startup_id": "startup-06",
+      "nome": "Cortex Intelligence",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Cortex Intelligence oferece uma plataforma SaaS que combina big data analytics, georeferencing e modelos avançados de IA, mas não demonstra que o produto não existiria sem a IA nem que a IA é o entregável principal. A IA aparece como camada de aprimoramento que conecta modelos de machine learning aos dados da empresa, caracterizando um produto que poderia existir sem a IA, mas que a IA adiciona valor. Assim, a classificação é AI-enabled.",
+        "sinais_a_favor": [
+          "\"We apply machine learning models connected to your company's data.\"",
+          "\"Through our GTM intelligence SaaS platform, which combines big data analytics, georeferencing, and advanced AI models.\""
+        ],
+        "sinais_contra": [
+          "Falta evidência de modelo próprio, dado proprietário alimentando o modelo ou entrega de IA como produto principal."
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "inteligencia artificial",
+        "IA",
+        "Machine Learning"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [
+        "infraestrutura de processamento das transações de saúde"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "A empresa desenvolveu uma plataforma de auditoria de contas medicas baseada em inteligencia artificial",
+          "trecho": "A empresa desenvolveu uma plataforma de auditoria de contas medicas baseada em inteligencia artificial que analisa cobrancas feitas por hospitais, clinicas e laboratorios as operadoras de planos de saude.",
+          "url_fonte": "https://exame.com/negocios/como-essa-startup-encontrou-r-18-bilhao-em-fraudes-e-erros-nos-planos-de-saude/"
+        },
+        {
+          "afirmacao": "A tecnologia da Arvo identificou 1,8 bilhao de reais em pagamentos indevidos",
+          "trecho": "Em 2025, a tecnologia da Arvo identificou 1,8 bilhao de reais em pagamentos indevidos no sistema de saude suplementar.",
+          "url_fonte": "https://exame.com/negocios/como-essa-startup-encontrou-r-18-bilhao-em-fraudes-e-erros-nos-planos-de-saude/"
+        },
+        {
+          "afirmacao": "A rodada permite expandir a atuação e consolidar a infraestrutura de processamento das transações de saúde",
+          "trecho": "A captacao permitira que a startup expanda a atuacao e consolide a infraestrutura de processamento das transacoes de saude, que vao desde validacao de cobrancas ate a autorizacao de procedimentos.",
+          "url_fonte": "https://startupi.com.br/arvo-capta-106-milhoes-em-serie-a/"
+        }
+      ],
+      "startup_id": "startup-07",
+      "nome": "Arvo",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "A Arvo desenvolveu uma plataforma de auditoria de contas médicas baseada em inteligência artificial que analisa cobranças feitas por hospitais, clínicas e laboratórios às operadoras de planos de saúde, e identificou 1,8 bilhão de reais em pagamentos indevidos. O produto principal – a auditoria de contas médicas – só existe graças à IA, atendendo ao critério (a) de modelo próprio (implícito na plataforma) e ao critério (c) de entrega de resultados gerados pela IA ao cliente. Não há evidências de que o produto pudesse existir sem a IA, portanto a classificação é AI‑native.",
+        "sinais_a_favor": [
+          "Plataforma de auditoria de contas médicas baseada em IA",
+          "Identificação de 1,8 bilhão de reais em pagamentos indevidos por meio de IA",
+          "Infraestrutura de processamento de transações de saúde alimentada por IA"
+        ],
+        "sinais_contra": [
+          "Falta de menção explícita a modelo próprio, dados proprietários ou pipeline de treinamento detalhado; a evidência não descreve a arquitetura interna nem a base de dados proprietária usada para treinar o modelo"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "uso de inteligencia artificial",
+        "analises preditivas"
+      ],
+      "dados_proprietarios": [
+        "estruturacao de dados clinicos"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "uso de inteligencia artificial",
+          "trecho": "uso de inteligencia artificial, com foco em analises preditivas e personalizacao da jornada do paciente",
+          "url_fonte": "https://startupi.com.br/isa-saude-capta-r-160-milhoes-hospital-em-casa/"
+        },
+        {
+          "afirmacao": "estruturacao de dados clinicos",
+          "trecho": "estruturação de dados clinicos e uso de inteligencia artificial",
+          "url_fonte": "https://startupi.com.br/isa-saude-capta-r-160-milhoes-hospital-em-casa/"
+        }
+      ],
+      "startup_id": "startup-08",
+      "nome": "Isa Saude",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "O perfil indica uso de inteligência artificial focado em análises preditivas e personalização da jornada do paciente, mas não apresenta evidências de modelo próprio, de dados proprietários alimentando um modelo ou de entrega de IA como produto principal. Assim, a IA funciona como camada adicional que melhora o fluxo do produto existente.",
+        "sinais_a_favor": [
+          "uso de inteligencia artificial",
+          "analises preditivas"
+        ],
+        "sinais_contra": [
+          "falta de evidência de modelo próprio, dados proprietários ou entrega de IA como produto principal"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Inteligencia Artificial"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Inteligencia Artificial é usada na triagem de exames urgentes e na análise dos exames, com histórico de mais de 30 milhões de exames e diagnósticos para aprender e consultar."
+      ],
+      "dados_proprietarios": [
+        "Histórico de mais de 30 milhões de exames e diagnósticos usados para treinar a IA."
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "Integração direta com equipamentos médicos pode representar um gargalo de compatibilidade e latência."
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "Integração direta com equipamentos médicos pode representar um gargalo de compatibilidade e latência.",
+          "trecho": "Nossos medicos especialistas de centros referencia do Brasil recebem os exames, analisam, e liberam os laudos em ate 24 horas. Em casos de emergencia, em poucos minutos. Nossos clientes acessam o sistema com login e senha para visualizar e imprimir os laudos.",
+          "url_fonte": "https://portaltelemedicina.com.br/solucoes-de-telemedicina/laudos"
+        }
+      ],
+      "startup_id": "startup-09",
+      "nome": "Portal Telemedicina",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Inteligencia Artificial é usada na triagem de exames urgentes e na análise dos exames, com histórico de mais de 30 milhões de exames e diagnósticos para aprender e consultar.",
+          "trecho": "A plataforma de telediagnostico permite que especialistas facam analises mais rapidas e precisas com a ajuda da Inteligencia Artificial, que e usada no diagnostico de milhares de pacientes todos os dias. O sistema checa se a avaliacao do medico bate com as previsoes realizadas pela IA e, em caso de discrepancia, os exames sao enviados automaticamente para tres outros doutores como forma de reduzir as chances de erro. \"Nossa plataforma usa um historico de mais de 30 milhoes de exames e diagnosticos para aprender e consultar.\",",
+          "url_fonte": "https://startup.google.com/intl/pt-BR_ALL/alumni/stories/portal-telemedicina/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.5,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Inteligência Artificial é usada na triagem de exames urgentes e na análise dos exames, com histórico de mais de 30 milhões de exames e diagnósticos para aprender e consultar. O uso de dados proprietários (histórico de mais de 30 milhões de exames) alimenta o modelo de IA, atendendo ao critério (b) de dados proprietários que já existem e são usados para treinar o modelo. Assim, a IA é central ao produto, tornando-o AI‑native.",
+        "sinais_a_favor": [
+          "Inteligencia Artificial é usada na triagem de exames urgentes e na análise dos exames",
+          "Histórico de mais de 30 milhões de exames e diagnósticos usados para treinar a IA"
+        ],
+        "sinais_contra": [
+          "Nenhum sinal contrário encontrado; a ausência de detalhes sobre a arquitetura do modelo ou sobre a entrega direta da IA como produto final não impede a classificação AI‑native, mas reforça a necessidade de mais informações para maior segurança"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Inteligência Artificial",
+        "Machine Learning",
+        "Análise preditiva"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Inteligência Artificial",
+        "Machine Learning",
+        "Análise preditiva"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "A Laura cria uma plataforma que auxilia médicos nos cuidados com pacientes em internação.",
+          "trecho": "A empresa criou uma plataforma que auxilia medicos nos cuidados com pacientes em internacao.",
+          "url_fonte": "https://gazzconecta.com.br/gazz-conecta/robo-laura-tecnologia-e-saude/"
+        },
+        {
+          "afirmacao": "A IA possui aplicações na área de saúde, como análise preditiva.",
+          "trecho": "A Inteligencia Artificial possui inumeras aplicacoes na area de saude. Aplicada a saude, a avaliacao preditiva pode, por exemplo: construir o perfil de saude do paciente; mapear regioes com maior incidencia de determinadas patologias; prever taxas de ocupacao dos leitos; aplicar a medicina preventiva para evitar deterioracao clinica.",
+          "url_fonte": "https://laura-br.com/blog/hospital-digital-4-tendencias-para-acompanhar-no-mundo-pos-covid-19/"
+        }
+      ],
+      "startup_id": "startup-10",
+      "nome": "Laura",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "O Robo Laura analisa mais de 90 variáveis clínicas e alerta a equipe médica.",
+          "trecho": "O robo analisa mais de 90 variaveis clinicas e alerta as equipes assistenciais sobre sepse e deterioracao clinica com horas a dias de antecedencia.",
+          "url_fonte": "https://gazzconecta.com.br/gazz-conecta/robo-laura-tecnologia-e-saude/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.67,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "A Laura desenvolve uma plataforma que auxilia médicos nos cuidados com pacientes em internação, e a IA é citada como recurso de análise preditiva. O produto principal – a plataforma de suporte clínico – poderia existir sem a IA, sendo a inteligência artificial um recurso adicional que melhora a tomada de decisão e a eficiência do fluxo de trabalho. Não há evidência de modelo próprio, dados proprietários alimentando o modelo ou da IA ser o entregável principal vendido ao cliente, atendendo assim à definição de AI‑enabled.",
+        "sinais_a_favor": [
+          "A plataforma auxilia médicos nos cuidados com pacientes em internação",
+          "A IA possui aplicações na área de saúde, como análise preditiva"
+        ],
+        "sinais_contra": [
+          "Não há menção de modelo próprio, dados proprietários ou entrega da IA como produto principal"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Inteligencia Artificial Generativa",
+        "Human-in-the-Loop"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Jus IA"
+      ],
+      "dados_proprietarios": [
+        "1,2 bilhao de documentos"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "O Jusbrasil lançou o Jus IA, um assistente jurídico baseado em Inteligencia Artificial Generativa.",
+          "trecho": "assistente juridico baseado em Inteligencia Artificial Generativa criado para elevar a qualidade das respostas e tornar o uso da IA mais confiavel no Direito.",
+          "url_fonte": "https://sobre.jusbrasil.com.br/releases/jusbrasil-lanca-jus-ia-para-aumentar-a-confianca-no-uso-de-inteligencia-artificial-no-direito"
+        },
+        {
+          "afirmacao": "O Jus IA é chamado de assistente jurídico e é mencionado como Jus IA.",
+          "trecho": "Jus IA, assistente juridico baseado em Inteligencia Artificial Generativa",
+          "url_fonte": "https://sobre.jusbrasil.com.br/releases/jusbrasil-lanca-jus-ia-para-aumentar-a-confianca-no-uso-de-inteligencia-artificial-no-direito"
+        },
+        {
+          "afirmacao": "O Jusbrasil possui uma base de informação jurídica com mais de 1,2 bilhão de documentos.",
+          "trecho": "maior base de informacao juridica do Brasil, com mais de 1,2 bilhao de documentos",
+          "url_fonte": "https://sobre.jusbrasil.com.br/releases/jusbrasil-lanca-jus-ia-para-aumentar-a-confianca-no-uso-de-inteligencia-artificial-no-direito"
+        }
+      ],
+      "startup_id": "startup-11",
+      "nome": "Jusbrasil",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "O Jus IA é continuamente aprimorado por especialistas do Direito em um processo conhecido como Human-in-the-Loop (HITL).",
+          "trecho": "continuiamente aprimorado por especialistas do Direito em um processo conhecido como Human-in-the-Loop (HITL).",
+          "url_fonte": "https://sobre.jusbrasil.com.br/releases/jusbrasil-lanca-jus-ia-para-aumentar-a-confianca-no-uso-de-inteligencia-artificial-no-direito",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.75,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O Jusbrasil lançou o Jus IA, um assistente jurídico baseado em Inteligência Artificial Generativa que utiliza a própria base de 1,2 bilhão de documentos da empresa como fonte de dados proprietários para alimentar o modelo. A saída da IA – respostas jurídicas – é o principal entregável vendido ao cliente, atendendo ao critério (c) de AI‑native. A presença de um modelo próprio de IA generativa e de dados proprietários que alimentam o modelo reforça essa classificação.",
+        "sinais_a_favor": [
+          "assistente jurídico baseado em Inteligência Artificial Generativa",
+          "1,2 bilhão de documentos proprietários alimentando o modelo",
+          "saída da IA como entregável principal"
+        ],
+        "sinais_contra": [
+          "não há evidência de que o produto principal (plataforma Jusbrasil) não existiria sem a IA; a IA é um novo produto adicional"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "WhatsApp",
+        "Instagram",
+        "RCS",
+        "Apple Messages",
+        "chatbots",
+        "Studio",
+        "BLU"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Artificial Intelligence",
+        "agents de IA (Studio e BLU)",
+        "chatbots"
+      ],
+      "dados_proprietarios": [
+        "80 MM active contacts managed through the platform",
+        "4k brands have already invested in Blip solutions"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Blip is a leading platform helping brands build more human relationships through Artificial Intelligence.",
+          "trecho": "We turn conversations into meaningful connections. More than 20 years ago, we started with a simple goal: to make communication easier. Today, we are the leading platform helping brands build more human relationships through Artificial Intelligence.",
+          "url_fonte": "https://www.blip.ai/en/about-us/"
+        },
+        {
+          "afirmacao": "Blip’s platform manages 80 million active contacts.",
+          "trecho": "80 MM active contacts managed through the platform, connecting brands and consumers.",
+          "url_fonte": "https://www.blip.ai/en/about-us/"
+        },
+        {
+          "afirmacao": "Blip has 4,000 brands invested in its solutions.",
+          "trecho": "+ 4k brands have already invested in Blip solutions to transform their digital communications.",
+          "url_fonte": "https://www.blip.ai/en/about-us/"
+        }
+      ],
+      "startup_id": "startup-12",
+      "nome": "Blip",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Blip’s platform uses chatbots and AI agents.",
+          "trecho": "Combines chatbots, agents de IA (Studio e BLU) and atendimento humano for brands enterprise.",
+          "url_fonte": "https://www.blip.ai/en/about-us/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.75,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Blip utiliza Inteligência Artificial como núcleo do seu produto, com agentes de IA (Studio e BLU) e chatbots que são entregáveis principais. Além disso, a empresa possui 80 milhões de contatos ativos, um ativo de dados proprietário que pode alimentar modelos de IA, atendendo ao critério (b). Assim, a evidência de uso central de IA e de dados proprietários sustenta a classificação AI-native.",
+        "sinais_a_favor": [
+          "agents de IA (Studio e BLU)",
+          "chatbots",
+          "80 MM active contacts managed through the platform"
+        ],
+        "sinais_contra": [
+          "Falta descrição explícita de modelo próprio ou pipeline de IA"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Vue",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "bothub",
+        "weni",
+        "rapidpro",
+        "bothub-nlp",
+        "nexus-ai"
+      ],
+      "sinais_de_uso_de_ia": [
+        "state-of-the-art AI models",
+        "Python NLP service"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "VTEX announced the acquisition of Weni.",
+          "trecho": "A VTEX, uma das maiores empresas de e-commerce do pais, anunciou a aquisicao da Weni.",
+          "url_fonte": "https://www.baguete.com.br/noticias/vtex-compra-weni"
+        }
+      ],
+      "startup_id": "startup-13",
+      "nome": "Weni",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Weni Platform is an open-source product that contemplates a set of tools, including state-of-the-art AI models, that enable and potentialize individuals and organizations to solve communication problems.",
+          "trecho": "Weni Platform is an open-source product that contemplates a set of tools, including state-of-the-art AI models, that enable and potentialize individuals and organizations to solve communication problems.",
+          "url_fonte": "https://github.com/weni-ai",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        },
+        {
+          "afirmacao": "The platform includes a Python NLP service as part of its architecture.",
+          "trecho": "bothub-nlp - Python NLP service; weni-engine - Python backend managing organization business rules;",
+          "url_fonte": "https://github.com/weni-ai",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.33,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "O perfil técnico indica uso de modelos de IA avançados e um serviço de NLP em Python, mas não apresenta evidências de modelo próprio, dados proprietários alimentando o modelo ou que a saída da IA seja o principal entregável vendido ao cliente. Assim, a IA parece ser um recurso adicional que melhora o fluxo do produto, caracterizando a Weni como AI‑enabled.",
+        "sinais_a_favor": [
+          "state-of-the-art AI models",
+          "Python NLP service",
+          "bothub-nlp"
+        ],
+        "sinais_contra": [
+          "não há modelo próprio nem dados proprietários que sustentem a IA como núcleo do produto; a ausência de evidência de que a saída da IA seja o principal entregável vendido ao cliente"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "AI agents",
+        "SOC 2 Type 1",
+        "Otto",
+        "Tako Recruiter",
+        "Nara"
+      ],
+      "sinais_de_uso_de_ia": [
+        "AI agents",
+        "Tako Recruiter",
+        "Nara"
+      ],
+      "dados_proprietarios": [
+        "Billions processed in payroll"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "AI agents that handle operations so your team can focus on work that matters",
+          "trecho": "AI agents that handle operations so your team can focus on work that matters",
+          "url_fonte": "https://tako.ai/en/"
+        },
+        {
+          "afirmacao": "SOC 2 Type 1 - Information security",
+          "trecho": "SOC 2 Type 1 - Information security",
+          "url_fonte": "https://tako.ai/en/"
+        },
+        {
+          "afirmacao": "Otto is the layer of the CLT, collective agreements, eSocial and case law",
+          "trecho": "Otto is the layer of the CLT, collective agreements, eSocial and case law",
+          "url_fonte": "https://tako.ai/en/"
+        },
+        {
+          "afirmacao": "Tako Recruiter run on the same infrastructure to cut rework",
+          "trecho": "Tako Recruiter run on the same infrastructure to cut rework",
+          "url_fonte": "https://tako.ai/en/"
+        },
+        {
+          "afirmacao": "Agents that interview every candidate",
+          "trecho": "Agents that interview every candidate",
+          "url_fonte": "https://tako.ai/en/"
+        },
+        {
+          "afirmacao": "Billions processed in payroll",
+          "trecho": "Billions processed in payroll",
+          "url_fonte": "https://tako.ai/en/"
+        }
+      ],
+      "startup_id": "startup-14",
+      "nome": "Tako",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Nara is a voice-based AI recruiter",
+          "trecho": "Nara is a voice-based AI recruiter",
+          "url_fonte": "https://www.bloomberglinea.com.br/startups/startup-de-rh-tako-inicia-expansao-global-com-ia-para-recrutamento-e-mira-os-eua/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.86,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a inteligência artificial é o núcleo do produto: agentes de IA que gerenciam operações e entrevistam candidatos, além de um recrutador e um sistema Nara que operam sobre a mesma infraestrutura. A empresa processa bilhões em folha de pagamento, evidenciando um ativo de dados proprietário que alimenta os modelos. Esses elementos satisfazem o critério (a) modelo próprio e (b) dado proprietário, justificando a classificação AI‑native.",
+        "sinais_a_favor": [
+          "AI agents that handle operations so your team can focus on work that matters",
+          "Tako Recruiter run on the same infrastructure to cut rework",
+          "Agents that interview every candidate",
+          "Billions processed in payroll"
+        ],
+        "sinais_contra": [
+          "Falta descrição explícita do modelo de IA ou pipeline de treinamento, o que reduziria a certeza sobre a centralidade da IA"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "Agentes de IA"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Agentes de IA da Gupy ajudam na organização inicial dos currículos",
+          "trecho": "Os agentes de IA da Gupy ajudam na organizacao inicial dos curriculos, analisando experiencias, formacao e habilidades, sem considerar dados sensiveis.",
+          "url_fonte": "https://www.gupy.io/inteligencia-artificial"
+        },
+        {
+          "afirmacao": "Os agentes de IA organizam uma lista para o time recrutador, priorizando quem parece mais alinhado",
+          "trecho": "Os agentes de IA organizam uma lista para o time recrutador, priorizando quem parece mais alinhado.",
+          "url_fonte": "https://www.gupy.io/inteligencia-artificial"
+        }
+      ],
+      "startup_id": "startup-15",
+      "nome": "Gupy",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "O perfil indica que a Gupy utiliza agentes de IA para organizar e priorizar currículos, mas não há evidência de que a IA seja o mecanismo central do produto, nem de modelo próprio, dados proprietários alimentando o modelo ou que a saída da IA seja o principal entregável vendido ao cliente. Assim, a IA aparece como recurso adicional que melhora o fluxo de recrutamento, caracterizando a Gupy como AI‑enabled.",
+        "sinais_a_favor": [
+          "Agentes de IA ajudam na organização inicial dos currículos",
+          "Agentes de IA priorizam candidatos alinhados"
+        ],
+        "sinais_contra": [
+          "Falta de evidência de modelo próprio, dados proprietários ou entrega de IA como produto principal"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Hand Talk Plugin",
+        "Hand Talk App",
+        "Hugo",
+        "Maya",
+        "Libras",
+        "Lingua de Sinais Americana"
+      ],
+      "sinais_de_uso_de_ia": [],
+      "dados_proprietarios": [
+        "CNPJ/MF 16.918.665/0001-19"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Hand Talk Plugin",
+          "trecho": "Com o Hand Talk Plugin o site da sua empresa se tornara mais acessivel.",
+          "url_fonte": "https://www.handtalk.me/br/"
+        },
+        {
+          "afirmacao": "CNPJ",
+          "trecho": "Hand Talk Tecnologia LTDA, inscrita no CNPJ/MF sob o no 16.918.665/0001-19.",
+          "url_fonte": "https://www.handtalk.me/br/"
+        }
+      ],
+      "startup_id": "startup-16",
+      "nome": "Hand Talk",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Hand Talk App",
+          "trecho": "Eleito o 'Melhor Aplicativo Social do Mundo' pela ONU, traduza e aprenda uma nova lingua de forma divertida e eficaz com o Hand Talk App.",
+          "url_fonte": "https://www.handtalk.me/br/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        },
+        {
+          "afirmacao": "Hugo",
+          "trecho": "avatares 3D (Hugo e Maya) que traduzem textos e audios para Libras",
+          "url_fonte": "https://www.handtalk.me/br/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        },
+        {
+          "afirmacao": "Maya",
+          "trecho": "avatares 3D (Hugo e Maya) que traduzem textos e audios para Libras",
+          "url_fonte": "https://www.handtalk.me/br/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        },
+        {
+          "afirmacao": "Libras",
+          "trecho": "avatares 3D (Hugo e Maya) que traduzem textos e audios para Libras",
+          "url_fonte": "https://www.handtalk.me/br/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        },
+        {
+          "afirmacao": "Lingua de Sinais Americana",
+          "trecho": "para Libras e para a Lingua de Sinais Americana",
+          "url_fonte": "https://www.handtalk.me/br/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.29,
+      "classificacao": {
+        "classificacao": "non-AI",
+        "confianca": "baixa",
+        "justificativa": "O perfil técnico não apresenta nenhum sinal de uso de IA, nem indica modelo próprio, dados proprietários alimentando modelo ou entrega de IA como produto. A única informação relevante é a presença de tecnologias citadas (Hand Talk Plugin, Hand Talk App, Hugo, Maya, Libras, Lingua de Sinais Americana) e a referência ao CNPJ. Como não há evidências de IA, a classificação é non-AI. A confiança é baixa devido à escassez de documentos que confirmem a ausência ou presença de IA.",
+        "sinais_a_favor": [],
+        "sinais_contra": [
+          "Falta de qualquer menção a modelo de IA, dados proprietários usados para treinar ou entregar IA, ou qualquer funcionalidade que dependa de IA."
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Rede CAN",
+        "Inteligencia Artificial",
+        "machine learning"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Inteligencia Artificial",
+        "machine learning"
+      ],
+      "dados_proprietarios": [
+        "mais de 5 mil tipos de dados diarios",
+        "1 bilhao de dados analisados desde 2017"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "processamento de volume elevado de dados"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "Rede CAN oferece leitura completa dos dados diretamente da central eletrônica dos veículos",
+          "trecho": "A telemetria avançada via Rede CAN oferece uma leitura completa dos dados diretamente da central eletrônica dos veículos, proporcionando mais visibilidade e confiabilidade sobre todas as informacoes da sua frota.",
+          "url_fonte": "https://www.cobli.co/"
+        },
+        {
+          "afirmacao": "Inteligencia Artificial identifica automaticamente sinais de cansaco, distracao ao volante e direcao perigosa",
+          "trecho": "Cobli Cam Fadiga: aumente o cuidado e previna acidentes. Mais seguranca para a sua operacao com a solucao de videotelemetria que, por meio de Inteligencia Artificial, identifica automaticamente sinais de cansaco, distracao ao volante e direcao perigosa, permitindo ao gestor realizar verificacoes em poucos minutos.",
+          "url_fonte": "https://www.cobli.co/"
+        },
+        {
+          "afirmacao": "machine learning usado na precificacao dinamica de seguro",
+          "trecho": "Inauguramos tambem, junto com a Liberty Seguros, o conceito de precificacao dinamica de seguro, que avaliava os motoristas segurados por meio de algoritmos de machine learning, entre outras tecnicas computacionais, com o objetivo de precificar o seguro de acordo com o perfil de direcao do condutor.",
+          "url_fonte": "https://www.cobli.co/blog/cobli-nossa-historia/"
+        },
+        {
+          "afirmacao": "mais de 5 mil tipos de dados diarios coletados",
+          "trecho": "Nossos aparelhos, conectados aos veiculos de nossos clientes, coletam e transmitem mais de 5 mil tipos de dados diarios.",
+          "url_fonte": "https://www.cobli.co/blog/cobli-nossa-historia/"
+        }
+      ],
+      "startup_id": "startup-17",
+      "nome": "Cobli",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "1 bilhao de dados analisados desde 2017",
+          "trecho": "+ 01 bilhao de dados analisados desde 2017.",
+          "url_fonte": "https://www.cobli.co/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.8,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "Cobli oferece uma solução de telemetria que funciona sem a IA, mas a IA é usada como camada adicional para identificar sinais de fadiga, distração e direção perigosa, além de ser empregada em precificação dinâmica de seguros. A IA não é o mecanismo central do produto principal, mas sim um recurso que melhora a funcionalidade existente.",
+        "sinais_a_favor": [
+          "Inteligencia Artificial identifica automaticamente sinais de cansaco, distracao ao volante e direcao perigosa",
+          "machine learning usado na precificacao dinamica de seguro",
+          "mais de 5 mil tipos de dados diarios coletados"
+        ],
+        "sinais_contra": [
+          "Nenhum sinal indica que a IA é o núcleo do produto principal; a telemetria funciona sem a IA"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Big Data",
+        "Tracking",
+        "Automation",
+        "SaaS",
+        "agentes de IA"
+      ],
+      "sinais_de_uso_de_ia": [
+        "agentes de IA"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "LogComex trabalha com tecnologia fina que visa a melhorar os resultados de operacao logistica das empresas.",
+          "trecho": "LogComex trabalha com tecnologia fina que visa a melhorar os resultados de operacao logistica das empresas.",
+          "url_fonte": "https://www.gazetadopovo.com.br/economia/comercio-exterior-inteligente-startup-coloca-robos-em-toda-a-cadeia-logistica-buhmeab82mxsbfmlbbdnb2xnc/"
+        },
+        {
+          "afirmacao": "A empresa desenvolveu uma solucao que coleta e analisa milhares de informacoes em tempo real, com vistas a garantir previsibilidade da cadeia logistica.",
+          "trecho": "A empresa desenvolveu uma solucao que coleta e analisa milhares de informacoes em tempo real, com vistas a garantir previsibilidade da cadeia logistica.",
+          "url_fonte": "https://www.gazetadopovo.com.br/economia/comercio-exterior-inteligente-startup-coloca-robos-em-toda-a-cadeia-logistica-buhmeab82mxsbfmlbbdnb2xnc/"
+        },
+        {
+          "afirmacao": "A LogComex trabalha com tecnologia fina que visa a melhorar os resultados de operacao logistica das empresas.",
+          "trecho": "A LogComex trabalha com tecnologia fina que visa a melhorar os resultados de operacao logistica das empresas.",
+          "url_fonte": "https://www.gazetadopovo.com.br/economia/comercio-exterior-inteligente-startup-coloca-robos-em-toda-a-cadeia-logistica-buhmeab82mxsbfmlbbdnb2xnc/"
+        }
+      ],
+      "startup_id": "startup-18",
+      "nome": "Logcomex",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "baixa",
+        "justificativa": "O perfil indica a presença de agentes de IA, mas não apresenta evidências de modelo próprio, dados proprietários alimentando um modelo ou que a saída da IA seja o principal entregável vendido ao cliente. Assim, a IA parece ser um recurso adicional que melhora a coleta e análise de dados em tempo real, caracterizando um produto que poderia existir sem a IA. A classificação é feita com confiança baixa devido à escassez de sinais de uso de IA no perfil.",
+        "sinais_a_favor": [
+          "agentes de IA"
+        ],
+        "sinais_contra": [
+          "não há modelo próprio, dados proprietários ou entregável baseado em IA"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "ChatGPT"
+      ],
+      "sinais_de_ia": [
+        "versão corporativa dessa tecnologia, capaz de acessar diretamente os dados de vendas, estoque e desempenho da empresa, tudo em tempo real"
+      ],
+      "dados_proprietarios": [
+        "dados corporativos"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "dados existiam, mas nao chegavam a linha de frente no ritmo do varejo"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "versão corporativa dessa tecnologia, capaz de acessar diretamente os dados de vendas, estoque e desempenho da empresa, tudo em tempo real",
+          "trecho": "versão corporativa dessa tecnologia, capaz de acessar diretamente os dados de vendas, estoque e desempenho da empresa, tudo em tempo real",
+          "url_fonte": "https://exame.com/negocios/looqbox-agente-dados-ia-inteligencia-artificial/"
+        },
+        {
+          "afirmacao": "dados existiam, mas nao chegavam a linha de frente no ritmo do varejo",
+          "trecho": "os dados existiam, mas nao chegavam a linha de frente no ritmo do varejo",
+          "url_fonte": "https://exame.com/negocios/looqbox-agente-dados-ia-inteligencia-artificial/"
+        }
+      ],
+      "startup_id": "startup-19",
+      "nome": "Looqbox",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "dados corporativos",
+          "trecho": "dados corporativos em linguagem natural, entregando insights para a linha de frente do varejo sem exigir conhecimento tecnico",
+          "url_fonte": "https://looqbox.com/sobre/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.67,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "baixa",
+        "justificativa": "O perfil indica que a Looqbox utiliza uma versão corporativa do ChatGPT para acessar dados de vendas, estoque e desempenho em tempo real, mas não há evidência de que o produto central dependa exclusivamente da IA, nem de que a IA seja o entregável principal vendido ao cliente. Assim, a IA funciona como um recurso adicional que melhora a experiência do usuário, caracterizando um produto AI‑enabled. A confiança é baixa porque há apenas um sinal de uso de IA e uma única tecnologia citada, o que limita a robustez da evidência.",
+        "sinais_a_favor": [
+          "versão corporativa dessa tecnologia, capaz de acessar diretamente os dados de vendas, estoque e desempenho da empresa, tudo em tempo real"
+        ],
+        "sinais_contra": [
+          "não há menção de modelo próprio, de dados proprietários alimentando o modelo ou de que a saída da IA seja o principal entregável vendido ao cliente"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Semantix Intelligent Platform",
+        "AI Enterprise Suite",
+        "Safetix"
+      ],
+      "sinais_de_ia": [
+        "AI Enterprise Suite",
+        "Safetix"
+      ],
+      "dados_proprietarios": [
+        "Semantix Intelligent Platform"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Semantix Intelligent Platform é a plataforma que orquestra Empresas Inteligentes.",
+          "trecho": "Semantix Intelligent Platform e o nosso motor de orquestracao, construida sobre tres competencias estruturais e um ecossistema de parceiros integrado.",
+          "url_fonte": "https://www.semantix.ai/"
+        },
+        {
+          "afirmacao": "A empresa lançou a solução Safetix para governança de IA.",
+          "trecho": "a Semantix - deep tech brasileira referencia em Big Data, Analytics e Inteligencia Artificial - anuncia o lancamento do Safetix, sua nova solucao proprietaria de governanca de IA.",
+          "url_fonte": "https://inforchannel.com.br/2025/09/29/semantix-lanca-a-primeira-suite-de-ia-do-brasil-dedicada-a-governanca-unindo-visao-de-dados-inteligencia-artificial-e-conformidade-regulatoria/"
+        }
+      ],
+      "startup_id": "startup-20",
+      "nome": "Semantix",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "O perfil indica que a Semantix oferece soluções de IA (AI Enterprise Suite e Safetix) que funcionam como camadas de aprimoramento e governança sobre produtos que poderiam existir sem elas. Não há evidência de modelo próprio, de dados proprietários alimentando um modelo ou de que a saída da IA seja o principal entregável vendido ao cliente, atendendo assim à definição de AI‑enabled.",
+        "sinais_a_favor": [
+          "AI Enterprise Suite",
+          "Safetix",
+          "Semantix Intelligent Platform"
+        ],
+        "sinais_contra": [
+          "Falta de evidência de modelo próprio, de dados proprietários alimentando um modelo ou de que a saída da IA seja o principal entregável"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Aquarela Data Platform",
+        "Data & AI Services",
+        "Data & AI Solution",
+        "Data & AI Products",
+        "DCM",
+        "Smart Planning"
+      ],
+      "sinais_de_ia": [
+        "algoritmos de IA",
+        "modelo de predicao",
+        "inteligencia artificial"
+      ],
+      "dados_proprietarios": [
+        "mais de dois terabytes de informacao"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "algoritmos de IA",
+          "trecho": "utilizando nossa metodologia exclusiva de Cultura de Dados (DCM) e algoritmos de IA, entregamos solucoes inovadoras",
+          "url_fonte": "https://aquare.la/"
+        },
+        {
+          "afirmacao": "modelo de predicao",
+          "trecho": "permite estabelecer uma base solida para futuras inovacoes no segmento. O Smart Planning e a mais atualizada ferramenta de dados desenvolvida e integrada para tornar os processos da Embraer mais eficazes... auxiliando o time de planejamento na gestao de compras e niveis de estoque a terem mais previsibilidade em caso de falta ou excesso de materiais gracas ao uso de inteligencia artificial e um modelo de predicao.",
+          "url_fonte": "https://www.acate.com.br/noticias/aquarela-analytics-e-embraer-desenvolvem-solucao-com-ia/"
+        }
+      ],
+      "startup_id": "startup-21",
+      "nome": "Aquarela Advanced Analytics",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "O perfil técnico indica que a Aquarela Advanced Analytics oferece produtos e serviços de Data & AI, mas não demonstra que o produto principal só existiria com a IA. Há evidências de uso de algoritmos de IA e modelos de previsão, bem como dados proprietários de mais de dois terabytes que alimentam esses modelos, mas a entrega principal parece ser uma solução de planejamento inteligente que poderia, em teoria, ser oferecida sem a camada de IA, apenas com dados e processos tradicionais. Assim, a IA funciona como um recurso adicional que melhora a eficiência e previsibilidade, caracterizando um produto AI‑enabled.",
+        "sinais_a_favor": [
+          "algoritmos de IA",
+          "modelo de predicao",
+          "dados proprietarios de mais de dois terabytes"
+        ],
+        "sinais_contra": [
+          "não há evidência de que o produto principal não existiria sem a IA; a descrição indica que a IA é uma camada de melhoria, não o núcleo do produto"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Inteligência Artificial"
+      ],
+      "sinais_de_ia": [
+        "atendimento com inteligência artificial"
+      ],
+      "dados_proprietarios": [
+        "70 mil clientes",
+        "1.200 pessoas",
+        "500 colaboradores",
+        "30 mil clientes"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "A Contabilizei oferece atendimento com inteligência artificial",
+          "trecho": "atendimento com inteligência artificial",
+          "url_fonte": "https://carreira.inhire.com.br/carreiras/contabilizei/"
+        },
+        {
+          "afirmacao": "A Contabilizei atende mais de 70 mil clientes em todo o Brasil",
+          "trecho": "atende mais de 70 mil clientes em todo o Brasil",
+          "url_fonte": "https://carreira.inhire.com.br/carreiras/contabilizei/"
+        },
+        {
+          "afirmacao": "A Contabilizei possui mais de 500 colaboradores em 2021",
+          "trecho": "mais de 500 colaboradores em 2021",
+          "url_fonte": "https://exame.com/carreira/apos-aporte-do-softbank-contabilizei-planeja-abrir-300-vagas-em-2021/"
+        }
+      ],
+      "startup_id": "startup-22",
+      "nome": "Contabilizei",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "baixa",
+        "justificativa": "O perfil indica apenas o uso de IA no atendimento ao cliente, sem evidências de modelo próprio, dados proprietários alimentando um modelo ou entrega de IA como produto principal. Assim, a IA aparece como recurso adicional, caracterizando AI‑enabled. A confiança é baixa porque há apenas um sinal de uso de IA e uma tecnologia citada, insuficientes para alta certeza.",
+        "sinais_a_favor": [
+          "atendimento com inteligência artificial"
+        ],
+        "sinais_contra": [
+          "não há menção a modelo próprio, dados proprietários usados para treinar ou calibrar modelo, nem a entrega de IA como produto principal"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "ERP",
+        "PDV",
+        "Envios da Olist",
+        "Lis"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Lis",
+        "AI First"
+      ],
+      "dados_proprietarios": [
+        "700 colaboradores",
+        "mais de 30 mil lojistas",
+        "2 milhões de consumidores únicos a cada ano",
+        "194 milhões de NFs geradas (2025)"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "volume de vendas por hora",
+        "volume de notas fiscais geradas"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "Olist possui um sistema ERP",
+          "trecho": "ERP, integracoes e tecnologia para acelerar o seu negocio.",
+          "url_fonte": "https://olist.com/"
+        },
+        {
+          "afirmacao": "Olist oferece um sistema PDV integrado",
+          "trecho": "Sistema PDV - Ponto de venda integrado - Venda na frente de caixa e na frente do computador com a mesma agilidade: pedidos e estoque integrados, com controle de caixa preciso.",
+          "url_fonte": "https://olist.com/"
+        },
+        {
+          "afirmacao": "Olist tem um serviço de logística chamado Envios da Olist",
+          "trecho": "Economize ate 50% no frete com Envios da Olist.",
+          "url_fonte": "https://olist.com/"
+        },
+        {
+          "afirmacao": "Olist tem uma camada de IA chamada Lis",
+          "trecho": "Lis da Olist - Onde IA e a sua operacao se conectam. O sistema completo do varejo, movido a IA.",
+          "url_fonte": "https://olist.com/"
+        },
+        {
+          "afirmacao": "Olist utiliza o conceito AI First",
+          "trecho": "Ecossistema de Solucoes de Gestao AI First para seu Negocio.",
+          "url_fonte": "https://olist.com/"
+        },
+        {
+          "afirmacao": "Olist tem 700 colaboradores",
+          "trecho": "O negocio reune 700 colaboradores e mais de 30 mil lojistas, alem de 2 milhoes de consumidores unicos a cada ano.",
+          "url_fonte": "https://pt.wikipedia.org/wiki/Olist"
+        },
+        {
+          "afirmacao": "Olist tem mais de 30 mil lojistas",
+          "trecho": "O negocio reune 700 colaboradores e mais de 30 mil lojistas, alem de 2 milhoes de consumidores unicos a cada ano.",
+          "url_fonte": "https://pt.wikipedia.org/wiki/Olist"
+        },
+        {
+          "afirmacao": "Olist tem 2 milhões de consumidores únicos a cada ano",
+          "trecho": "O negocio reune 700 colaboradores e mais de 30 mil lojistas, alem de 2 milhoes de consumidores unicos a cada ano.",
+          "url_fonte": "https://pt.wikipedia.org/wiki/Olist"
+        },
+        {
+          "afirmacao": "Olist gera 194 milhões de notas fiscais em 2025",
+          "trecho": "+194 milhoes de NFs geradas (2025).",
+          "url_fonte": "https://olist.com/"
+        },
+        {
+          "afirmacao": "Olist processa 170 mil vendas por hora",
+          "trecho": "+170 mil vendas por hora.",
+          "url_fonte": "https://olist.com/"
+        }
+      ],
+      "startup_id": "startup-23",
+      "nome": "Olist",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "O perfil técnico indica que o Olist possui uma camada de IA chamada Lis e adota o conceito AI First, mas não há evidência de que a IA seja o mecanismo central do produto, nem que a saída da IA seja o principal entregável vendido ao cliente. O produto principal (ERP, PDV, logística) poderia existir sem a IA, que aparece como recurso adicional e melhoria de fluxo. Assim, a classificação mais adequada é AI‑enabled.",
+        "sinais_a_favor": [
+          "Lis da Olist - Onde IA e a sua operacao se conectam. O sistema completo do varejo, movido a IA.",
+          "Olist utiliza o conceito AI First",
+          "Volume de 194 milhões de notas fiscais geradas e 170 mil vendas por hora, indicando uso de dados proprietários para alimentar a IA"
+        ],
+        "sinais_contra": [
+          "Não há menção de modelo próprio, de dados proprietários usados para treinar o modelo ou de que a saída da IA seja o principal entregável vendido ao cliente."
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Lumi",
+        "Nuvem Pago",
+        "API publica"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Lumi",
+        "IA agentica",
+        "72% dos lojistas da base ja usam IA em tarefas como descricao de produtos, imagens e atendimento"
+      ],
+      "dados_proprietarios": [
+        "dados da propria loja",
+        "catalogo",
+        "historico de pedidos",
+        "metricas de conversao"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "dificuldade tecnica para dominar ferramentas de escala"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "Lumi",
+          "trecho": "A Nuvemshop apresentou a Lumi, ferramenta de inteligencia artificial integrada a plataforma que usa dados da propria loja para gerar diagnosticos, sugerir caminhos e automatizar tarefas dentro do e-commerce.",
+          "url_fonte": "https://www.ecommercebrasil.com.br/noticias/nuvemshop-lanca-ia-para-automatizar-rotinas-de-lojistas"
+        },
+        {
+          "afirmacao": "IA agentica",
+          "trecho": "A IA agentica ja engaja mais de 55 mil lojistas em cerca de 1 milhao de interacoes mensais e teria devolvido mais de 3,3 milhoes de horas de trabalho aos lojistas, com 92% de satisfacao.",
+          "url_fonte": "https://www.ecommercebrasil.com.br/noticias/nuvemshop-lanca-ia-para-automatizar-rotinas-de-lojistas"
+        },
+        {
+          "afirmacao": "72% dos lojistas da base ja usam IA em tarefas como descricao de produtos, imagens e atendimento",
+          "trecho": "72% dos lojistas da base ja usam IA em tarefas como descricao de produtos, imagens e atendimento, segundo o estudo NuvemCommerce 2026.",
+          "url_fonte": "https://exame.com/negocios/com-r-65-bilhoes-em-vendas-nuvemshop-aposta-em-ia-e-mira-novo-publico/"
+        },
+        {
+          "afirmacao": "dados da propria loja",
+          "trecho": "A Lumi e descrita como uma solucao nativa, contextualizada e executiva, conectada diretamente a fonte de dados de cada loja em tempo real.",
+          "url_fonte": "https://www.ecommercebrasil.com.br/noticias/nuvemshop-lanca-ia-para-automatizar-rotinas-de-lojistas"
+        },
+        {
+          "afirmacao": "catalogo, historico de pedidos e metricas de conversao",
+          "trecho": "A solucao funciona como uma camada de IA agentica dentro do ambiente de gestao da loja: acessa informacoes como catalogo, historico de pedidos e metricas de conversao para apoiar o lojista em diagnosticos e acoes operacionais.",
+          "url_fonte": "https://www.ecommercebrasil.com.br/noticias/nuvemshop-lanca-ia-para-automatizar-rotinas-de-lojistas"
+        },
+        {
+          "afirmacao": "dificuldade tecnica para dominar ferramentas de escala",
+          "trecho": "30% citam a dificuldade tecnica para dominar ferramentas de escala.",
+          "url_fonte": "https://www.ecommercebrasil.com.br/noticias/nuvemshop-lanca-ia-para-automatizar-rotinas-de-lojistas"
+        }
+      ],
+      "startup_id": "startup-24",
+      "nome": "Nuvemshop",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "A Nuvemshop oferece a ferramenta Lumi, que é descrita como uma solução nativa de IA integrada à plataforma. O texto indica que a Lumi usa dados da própria loja (catalogo, histórico de pedidos e métricas de conversão) para gerar diagnósticos, sugerir caminhos e automatizar tarefas dentro do e-commerce, atendendo ao critério (b) de dados proprietários alimentando o modelo. Além disso, a Lumi é apresentada como um entregável que gera diagnósticos e ações operacionais para o lojista, o que corresponde ao critério (c) de saída da IA como entregável vendido ao cliente. Esses elementos sustentam a classificação de AI‑native.",
+        "sinais_a_favor": [
+          "Lumi é descrita como solução nativa de IA integrada à plataforma",
+          "Lumi usa dados da própria loja (catalogo, histórico de pedidos, métricas de conversão) para alimentar o modelo",
+          "A saída da Lumi (diagnósticos e sugestões) é um entregável para o lojista"
+        ],
+        "sinais_contra": [
+          "Não há menção explícita de um modelo de IA proprietário desenvolvido internamente; a evidência se baseia na integração de dados e na funcionalidade de diagnóstico"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [],
+      "startup_id": "startup-25",
+      "nome": "Meliuz",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 0.0,
+      "classificacao": {
+        "classificacao": "non-AI",
+        "confianca": "baixa",
+        "justificativa": "Não há evidências de uso de IA no perfil técnico fornecido; todas as listas de tecnologias, sinais de uso, dados proprietários e evidências estão vazias. A classificação como non-AI segue a regra de que, sem qualquer sinal de IA, a empresa não utiliza IA. A baixa confiança decorre da escassez de documentos disponíveis, não de uma avaliação da empresa.",
+        "sinais_a_favor": [],
+        "sinais_contra": [
+          "Falta de qualquer menção a modelos de IA, dados proprietários ou entregáveis baseados em IA no perfil técnico"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "WhatsApp",
+        "SMS",
+        "e-mail",
+        "Instagram",
+        "webchat",
+        "Zenvia Customer Cloud",
+        "Twilio"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Agentes de IA",
+        "IA completa"
+      ],
+      "dados_proprietarios": [
+        "R$ 960 milhoes de faturamento",
+        "R$ 345 milhoes de lucro",
+        "25% crescimento da área de SMS",
+        "8% crescimento das novas áreas",
+        "R$ 180 milhoes de receita do Zenvia Customer Cloud em 2024"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Zenvia Customer Cloud, IA completa para vender mais e atender melhor",
+          "trecho": "Zenvia Customer Cloud, IA completa para vender mais e atender melhor",
+          "url_fonte": "https://www.zenvia.com/"
+        },
+        {
+          "afirmacao": "Agentes de IA que automatizam tarefas repetitivas",
+          "trecho": "Com a Zenvia Customer Cloud, sua operacao conta com agentes de IA que automatizam tarefas repetitivas, geram insights e mantem o atendimento eficiente",
+          "url_fonte": "https://www.zenvia.com/"
+        },
+        {
+          "afirmacao": "Faturamento de R$ 960 milhoes",
+          "trecho": "A Zenvia fechou o ano passado com um faturamento de R$ 960 milhoes",
+          "url_fonte": "https://www.baguete.com.br/noticias/zenvia-fatura-quase-r-1-bilhao"
+        },
+        {
+          "afirmacao": "Lucro de R$ 345 milhoes",
+          "trecho": "o lucro caiu 10%, para R$ 345 milhoes",
+          "url_fonte": "https://www.baguete.com.br/noticias/zenvia-fatura-quase-r-1-bilhao"
+        },
+        {
+          "afirmacao": "Crescimento de 25% na área de SMS",
+          "trecho": "A area de SMS (o que a empresa chama de CPaaS e e o negocio tradicional da Zenvia) cresceu 25%",
+          "url_fonte": "https://www.baguete.com.br/noticias/zenvia-fatura-quase-r-1-bilhao"
+        },
+        {
+          "afirmacao": "8% crescimento das novas áreas",
+          "trecho": "as novas areas, oriundas de aquisicoes nos ultimos anos, cresceram 8%",
+          "url_fonte": "https://www.baguete.com.br/noticias/zenvia-fatura-quase-r-1-bilhao"
+        },
+        {
+          "afirmacao": "R$ 180 milhoes de receita do Zenvia Customer Cloud em 2024",
+          "trecho": "gerou apenas R$ 180 milhoes em receitas em 2024",
+          "url_fonte": "https://www.baguete.com.br/noticias/zenvia-fatura-quase-r-1-bilhao"
+        }
+      ],
+      "startup_id": "startup-26",
+      "nome": "Zenvia",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Zenvia oferece serviços de CPaaS (WhatsApp, SMS, e-mail, Instagram, webchat) que poderiam existir sem a IA. A IA aparece como camada adicional, com agentes de IA que automatizam tarefas repetitivas e como parte do Zenvia Customer Cloud, mas não é o núcleo do produto. Assim, a classificação AI-enabled é sustentada pelos sinais de uso de IA e pela existência de produtos que não dependem exclusivamente da IA.",
+        "sinais_a_favor": [
+          "Agentes de IA que automatizam tarefas repetitivas",
+          "IA completa para vender mais e atender melhor no Zenvia Customer Cloud"
+        ],
+        "sinais_contra": [
+          "Não há evidência de modelo próprio, dado proprietário alimentando o modelo ou entrega de IA como produto principal"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [],
+      "startup_id": "startup-27",
+      "nome": "Buser",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 0.0,
+      "classificacao": {
+        "classificacao": "non-AI",
+        "confianca": "baixa",
+        "justificativa": "O perfil técnico não apresenta nenhum sinal de uso de IA, nem tecnologias citadas, nem dados proprietários, nem evidências de modelo próprio. A ausência de qualquer informação que indique a presença de IA no produto leva à classificação non-AI. A baixa confiança decorre da escassez de documentos disponíveis, não de uma avaliação negativa da empresa.",
+        "sinais_a_favor": [],
+        "sinais_contra": [
+          "Falta de qualquer menção a modelos de IA, dados proprietários ou tecnologias de IA no perfil fornecido."
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [],
+      "startup_id": "startup-28",
+      "nome": "QuintoAndar",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 0.0,
+      "classificacao": {
+        "classificacao": "non-AI",
+        "confianca": "baixa",
+        "justificativa": "Não há evidências de uso de IA no perfil técnico fornecido; todas as listas de tecnologias, sinais de uso, dados proprietários e evidências estão vazias. A classificação como non-AI segue a regra de que ausência de evidências implica não uso de IA. A baixa confiança decorre da escassez de documentos disponíveis, não de qualquer informação sobre a empresa.",
+        "sinais_a_favor": [],
+        "sinais_contra": [
+          "Falta de qualquer menção a modelos, dados proprietários ou entregáveis baseados em IA"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "inteligencia artificial",
+        "agentes de IA",
+        "Tutor com IA"
+      ],
+      "dados_proprietarios": [
+        "mais de 250 mil criadores cadastrados",
+        "US$ 10 bilhoes em valores transacionados desde a sua fundação em 2011"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Hotmart lançou agentes de IA para automatizar tarefas de venda",
+          "trecho": "o lancamento de agentes de IA, automatizando tarefas de venda como ofertas de recompra, cobranca e recuperacao de vendas abandonadas",
+          "url_fonte": "https://startups.com.br/hotmart-fire/de-ia-a-produtos-fisicos-como-a-hotmart-se-prepara-para-mais-10-anos/"
+        },
+        {
+          "afirmacao": "Hotmart oferece Tutor com IA que responde dúvidas dos alunos 24 horas",
+          "trecho": "O Tutor com IA responde as duvidas dos seus alunos dentro do curso, 24 horas por dia",
+          "url_fonte": "https://hotmart.com/pt-br"
+        }
+      ],
+      "startup_id": "startup-29",
+      "nome": "Hotmart",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Hotmart utiliza inteligência artificial como fio condutor para fazer da plataforma uma solução de ponta-a-ponta para os criadores de conteúdo",
+          "trecho": "a inteligencia artificial tem se tornando o fio condutor para fazer da plataforma da empresa uma solucao de ponta-a-ponta para os criadores de conteudo publicarem e venderem seus conteudos digitais",
+          "url_fonte": "https://startups.com.br/hotmart-fire/de-ia-a-produtos-fisicos-como-a-hotmart-se-prepara-para-mais-10-anos/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.67,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "Hotmart oferece agentes de IA para automatizar tarefas de venda e um Tutor com IA que responde dúvidas dos alunos 24h, mas o produto principal – a plataforma de venda de cursos digitais – existir­ia sem essas funcionalidades. Não há evidência de modelo próprio, de uso de dados proprietários para treinar um modelo ou de que a saída da IA seja o principal entregável vendido. Assim, a IA funciona como recurso adicional, caracterizando Hotmart como AI‑enabled.",
+        "sinais_a_favor": [
+          "Hotmart lançou agentes de IA para automatizar tarefas de venda",
+          "Hotmart oferece Tutor com IA que responde dúvidas dos alunos 24 horas"
+        ],
+        "sinais_contra": [
+          "Não há indicação de modelo próprio, de dados proprietários alimentando um modelo ou de que a IA seja o núcleo do produto; a IA aparece apenas como camada adicional ao serviço principal"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Inteligencia Artificial"
+      ],
+      "sinais_de_ia": [
+        "Inteligencia Artificial para roteirizacao"
+      ],
+      "dados_proprietarios": [
+        "1 Milhao de pacotes processados diariamente",
+        "200 mil entregadores parceiros",
+        "0,5% do PIB nacional"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "processamento de meio milhao de pacotes diariamente",
+        "processamento de 3 milhoes de entregas"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "Inteligencia Artificial para roteirizacao",
+          "trecho": "o uso pioneiro de Inteligencia Artificial para roteirizacao",
+          "url_fonte": "https://carreira.inhire.com.br/carreiras/loggi/"
+        },
+        {
+          "afirmacao": "1 Milhao de pacotes processados diariamente",
+          "trecho": "1 Milhao de pacotes processados diariamente no maior sorter da America do Sul",
+          "url_fonte": "https://www.loggi.com/"
+        },
+        {
+          "afirmacao": "200 mil entregadores parceiros",
+          "trecho": "200 mil entregadores parceiros",
+          "url_fonte": "https://www.loggi.com/"
+        },
+        {
+          "afirmacao": "0,5% do PIB nacional",
+          "trecho": "movimentando 0,5% do PIB nacional",
+          "url_fonte": "https://carreira.inhire.com.br/carreiras/loggi/"
+        },
+        {
+          "afirmacao": "processamento de meio milhao de pacotes diariamente",
+          "trecho": "processando meio milhao de pacotes diariamente",
+          "url_fonte": "https://carreira.inhire.com.br/carreiras/loggi/"
+        }
+      ],
+      "startup_id": "startup-30",
+      "nome": "Loggi",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "processamento de 3 milhoes de entregas",
+          "trecho": "faço 3 milhoes de entregas e esta crescendo 25% ao mes",
+          "url_fonte": "https://exame.com/pme/loggi-ganha-investimento-de-r-372-mi-do-softbank-de-olho-no-e-commerce/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.83,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Inteligência Artificial é empregada para roteirização, que é um componente central do serviço de logística da Loggi. Além disso, a empresa possui dados proprietários significativos – 1 milhão de pacotes processados diariamente e 200 mil entregadores parceiros – que alimentam o modelo de IA, atendendo ao critério (b) de dados proprietários. A saída da IA (roteiros otimizados) é o principal entregável vendido ao cliente, satisfazendo o critério (c). Assim, a evidência demonstra que o produto não existiria sem a IA, justificando a classificação AI-native.",
+        "sinais_a_favor": [
+          "Inteligencia Artificial para roteirizacao",
+          "1 Milhao de pacotes processados diariamente",
+          "200 mil entregadores parceiros"
+        ],
+        "sinais_contra": [
+          "Nenhum sinal contrário encontrado; a classificação é suportada por múltiplas evidências de uso central da IA"
+        ]
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [],
+      "dados_proprietarios": [
+        "7 milhões de membros"
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "7 milhões de membros",
+          "trecho": "Com mais de 7 milhoes de membros, 2 mil marcas parceiras e ha 10 anos no mercado",
+          "url_fonte": "https://www.cuponeria.com.br/"
+        }
+      ],
+      "startup_id": "startup-31",
+      "nome": "Cuponeria",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "non-AI",
+        "confianca": "baixa",
+        "justificativa": "O perfil técnico não apresenta nenhum sinal de uso de IA, nem tecnologias citadas, nem modelo próprio, nem dados proprietários alimentando um modelo. A única informação disponível é o número de membros, que não indica aplicação de IA. A classificação como non-AI segue a regra de que ausência de evidências de IA implica nessa categoria. A baixa confiança decorre da escassez de documentos e da falta de qualquer indício de IA no perfil.",
+        "sinais_a_favor": [],
+        "sinais_contra": [
+          "Nenhum sinal de uso de IA ou tecnologia de IA foi identificado no perfil; a ausência de evidências de IA justifica a classificação como non-AI."
+        ]
+      }
+    }
+  ],
+  "trechos_nvidia": {},
+  "briefing": ""
+}

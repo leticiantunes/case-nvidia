@@ -1,0 +1,1060 @@
+{
+  "gerado_em": "2026-09-07T19:37:17",
+  "modelo": "openai/gpt-oss-20b",
+  "com_rag": true,
+  "duracao_segundos": 511,
+  "perfis": [
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "IA proprietaria"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Traive usa IA proprietaria para analisar mais de 2500 pontos de dados agricolas e climáticos",
+          "trecho": "Traive conecta produtores agricolas ao mercado de capitais atraves de duas frentes: Traive Agro (comercializacao de credito) e Traive Finance (analise de risco e acesso a investimentos). Usa IA proprietaria para gerar score de credito e automatizar a esteira de analise, atendendo mais de 160 mil produtores cadastrados e movimentando cerca de R$60 bilhoes em ativos de credito agricola.",
+          "url_fonte": "https://traive.com.br"
+        },
+        {
+          "afirmacao": "A tecnologia avalia mais de 2500 pontos de dados para criar perfis de risco no agronegocio",
+          "trecho": "A tecnologia avalia mais de 2500 pontos de dados para criar perfis de risco no agronegocio, com metodologia revisada pela ACM (Association for Computing Machinery).",
+          "url_fonte": "https://traive.com.br/en/blog/imprensa/traive-capta-us-20-milhoes-em-rodada-com-banco-do-brasil/"
+        }
+      ],
+      "startup_id": "startup-01",
+      "nome": "Traive",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "baixa",
+        "justificativa": "A evidência de uso de IA proprietária para gerar score de crédito e automatizar a esteira de análise indica que a IA é central ao produto, atendendo ao critério (a) de modelo próprio. Contudo, o perfil contém apenas uma evidência de uso de IA e não menciona dados proprietários nem descreve o modelo em detalhes, o que limita a confiança na classificação. A escassez de documentos disponíveis justifica a confiança baixa.",
+        "sinais_a_favor": [
+          "IA proprietaria usada para gerar score de crédito e automatizar a esteira de análise"
+        ],
+        "sinais_contra": [
+          "Falta de descrição de modelo de IA, ausência de dados proprietários alimentando o modelo, e ausência de detalhes sobre a entrega de IA como produto final"
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [
+          {
+            "tecnologia": "NVIDIA Triton Inference Server",
+            "justificativa_tecnica": "O perfil indica que a Traive utiliza IA proprietária para analisar mais de 2500 pontos de dados agrícolas e climáticos, gerando scores de crédito em tempo real para mais de 160 mil produtores. Esse volume de dados e a necessidade de inferência em tempo real sugerem gargalos de desempenho e escalabilidade na execução de modelos de IA, que o Triton resolve com execução concorrente, batch dinâmico e suporte a múltiplos frameworks.",
+            "justificativa_negocio": "Ao adotar o Triton, a Traive pode reduzir a latência das análises de risco, aumentar a taxa de throughput e garantir que o serviço de crédito permaneça disponível mesmo com picos de demanda, melhorando a confiança dos produtores e a eficiência operacional. Para a NVIDIA, a adoção de Triton reforça a posição como plataforma de inferência de alto desempenho em setores críticos como agronegócio.",
+            "prioridade": "alta",
+            "complexidade": "media",
+            "proxima_acao": "Implementar um piloto de inferência com Triton usando um modelo de score de crédito existente, avaliando throughput e latência em ambiente de produção.",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "NVIDIA Triton Inference Server | categoria: inferencia | fonte: https://github.com/triton-inference-server/server",
+                "url_fonte": "https://github.com/triton-inference-server/server"
+              },
+              {
+                "origem": "perfil",
+                "trecho": "Traive usa IA proprietaria para gerar score de credito e automatizar a esteira de analise, atendendo mais de 160 mil produtores cadastrados e movimentando cerca de R$60 bilhoes em ativos de credito agricola.",
+                "url_fonte": "https://traive.com.br"
+              }
+            ]
+          }
+        ],
+        "sem_recomendacao": null
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "AgRisk",
+        "Fiagros"
+      ],
+      "sinais_de_uso_de_ia": [
+        "inteligência artificial"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Crédito 100% digital para produtores rurais",
+          "trecho": "Soluções 100% digitais voltadas para o produtor rural.",
+          "url_fonte": "https://nagro.com.br/"
+        },
+        {
+          "afirmacao": "Financiamento Series B",
+          "trecho": "A Nagro captou uma série B de R$ 50 milhões junto ao Rabobank e ao Itaú",
+          "url_fonte": "https://braziljournal.com/nagro-a-fintech-do-pequeno-produtor-rural-atrai-o-rabobank-e-o-itau/"
+        },
+        {
+          "afirmacao": "Uso de IA na análise de crédito",
+          "trecho": "Os recursos da rodada serão reinvestidos em análise de crédito com inteligência artificial e na expansão da plataforma",
+          "url_fonte": "https://braziljournal.com/nagro-a-fintech-do-pequeno-produtor-rural-atrai-o-rabobank-e-o-itau/"
+        },
+        {
+          "afirmacao": "Plataforma AgRisk",
+          "trecho": "AgRisk, plataforma de analytics que atende 1.400 provedores de crédito",
+          "url_fonte": "https://braziljournal.com/nagro-a-fintech-do-pequeno-produtor-rural-atrai-o-rabobank-e-o-itau/"
+        }
+      ],
+      "startup_id": "startup-02",
+      "nome": "Nagro",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Fiagros como vertical de crédito",
+          "trecho": "provisão de crédito através das duas já capturadas Fiagros",
+          "url_fonte": "https://braziljournal.com/nagro-a-fintech-do-pequeno-produtor-rural-atrai-o-rabobank-e-o-itau/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.8,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "O perfil indica que a Nagro utiliza inteligência artificial na análise de crédito e possui a plataforma AgRisk, que oferece analytics para provedores de crédito. Esses elementos mostram que a IA é um recurso adicional que melhora o fluxo de crédito, mas não é o núcleo do produto, que poderia existir sem a IA. Não há evidências de modelo próprio, dados proprietários alimentando um modelo ou entrega de IA como produto principal.",
+        "sinais_a_favor": [
+          "Uso de IA na análise de crédito",
+          "Plataforma AgRisk"
+        ],
+        "sinais_contra": [
+          "Falta de evidência de modelo próprio, dados proprietários ou entrega de IA como produto principal"
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [
+          {
+            "tecnologia": "TensorRT-LLM",
+            "justificativa_tecnica": "O perfil indica que a Nagro investirá em análise de crédito com inteligência artificial, o que implica a necessidade de inferência de modelos de IA em produção. TensorRT-LLM oferece otimização de inferência em tempo real para LLMs, reduzindo latência e custo operacional, resolvendo o gargalo de desempenho de inferência que pode surgir quando a demanda de análises cresce.",
+            "justificativa_negocio": "Melhorar a velocidade e eficiência da análise de crédito permitirá que a Nagro escale rapidamente o serviço para mais produtores rurais, aumentando a competitividade e a confiança dos parceiros de crédito. Para a NVIDIA, a adoção de TensorRT-LLM reforça a posição como fornecedor de infra‑estrutura de IA de alto desempenho no mercado financeiro.",
+            "prioridade": "media",
+            "complexidade": "media",
+            "proxima_acao": "O gerente deve avaliar a arquitetura atual de IA, identificar os modelos de crédito a serem otimizados e planejar a migração para TensorRT-LLM em um ambiente de teste, antes de produção.",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "The v1.0 release is reported to achieve record-setting 8X AI inference performance improvements.",
+                "url_fonte": "https://developer.nvidia.com/tensorrt-llm"
+              }
+            ]
+          }
+        ],
+        "sem_recomendacao": null
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "MLOps",
+        "Model as a Service",
+        "APIs",
+        "ChurnAI",
+        "Agentes de IA"
+      ],
+      "sinais_de_uso_de_ia": [
+        "AI aplicada a soluções de gestão de riscos",
+        "Modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia",
+        "Algoritmos voltados para previsão de comportamento de consumidores",
+        "Machine Learning as a Service (MaaS)"
+      ],
+      "dados_proprietarios": [
+        "Modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "Escalabilidade da plataforma MaaS diante de aumento de requisições"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "AI aplicada a soluções de gestão de riscos",
+          "trecho": "A Datarisk, especializada no uso de inteligência artificial aplicada a soluções de gestão de riscos",
+          "url_fonte": "https://monitormercantil.com.br/mercado-de-ia-impulsiona-reestruturacao-na-datarisk/"
+        },
+        {
+          "afirmacao": "Modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia",
+          "trecho": "Fundada em 2017, a empresa desenvolve modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia",
+          "url_fonte": "https://monitormercantil.com.br/mercado-de-ia-impulsiona-reestruturacao-na-datarisk/"
+        },
+        {
+          "afirmacao": "Machine Learning as a Service (MaaS)",
+          "trecho": "Ao longo de 2024 a companhia registrou mais de 10 milhões de consultas nas APIs de sua solução MaaS (Machine Learning as a Service)",
+          "url_fonte": "https://monitormercantil.com.br/oferta-de-machine-learning-como-servico-democratiza-acesso-a-modelos-preditivos-para-concessao-de-credito/"
+        }
+      ],
+      "startup_id": "startup-03",
+      "nome": "Datarisk",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "A Datarisk desenvolve modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia, que são alimentados por dados proprietários e entregam previsões como produto principal vendido aos clientes via APIs de Machine Learning as a Service (MaaS). A saída da IA constitui o entregável central, atendendo ao critério (a) modelo próprio e (c) entrega de IA ao cliente, o que a classifica como AI-native.",
+        "sinais_a_favor": [
+          "Modelos próprios para avaliação de renda, risco de crédito e estabilidade empregatícia",
+          "Dados proprietários usados para treinar os modelos",
+          "Entrega de previsões via APIs de MaaS como produto principal",
+          "Uso de MLOps e Model as a Service para operacionalizar a IA"
+        ],
+        "sinais_contra": [
+          "Escalabilidade da plataforma MaaS diante de aumento de requisições"
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [
+          {
+            "tecnologia": "NVIDIA Triton Inference Server",
+            "justificativa_tecnica": "Resolve gargalo de escalabilidade da plataforma MaaS ao permitir execução concorrente de múltiplos modelos, batch dinâmico e pipelines de inferência, aumentando throughput e reduzindo latência em cenários de alta demanda de requisições",
+            "justificativa_negocio": "Aumenta capacidade de atender mais clientes sem necessidade de escalar infra‑estrutura linearmente, reduzindo custos operacionais e melhorando experiência do usuário final, alinhando com objetivo da Datarisk de oferecer MaaS de forma robusta",
+            "prioridade": "alta",
+            "complexidade": "media",
+            "proxima_acao": "Avaliar a implantação de Triton em ambiente Kubernetes, migrar modelos existentes para o formato ONNX/TF e configurar pipelines de inferência",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "Major capabilities include support for multiple deep learning frameworks and multiple machine learning frameworks. The system features concurrent model execution, allowing multiple models to run simultaneously on the same hardware. Dynamic batching optimizes throughput by grouping requests together.",
+                "url_fonte": "https://github.com/triton-inference-server/server"
+              }
+            ]
+          },
+          {
+            "tecnologia": "cuML",
+            "justificativa_tecnica": "Acelera o treinamento e inferência de modelos de machine learning na GPU sem reescrever código, mitigando gargalo de desempenho em processamento de dados proprietários e modelos de risco de crédito",
+            "justificativa_negocio": "Permite que a Datarisk processe grandes volumes de dados de risco de forma mais rápida, reduzindo tempo de entrega de insights e custos de infra‑estrutura, mantendo vantagem competitiva em IA-native",
+            "prioridade": "media",
+            "complexidade": "baixa",
+            "proxima_acao": "Integrar cuML nas etapas de pré‑processamento e treinamento de modelos existentes, testando performance em comparação com CPU",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "Um recurso distintivo atende quem busca aceleracao por GPU sem modificar codigo. A documentacao explica que, com cuml.accel, o cuML tambem pode acelerar automaticamente codigo existente com zero mudancas de codigo.",
+                "url_fonte": "https://docs.rapids.ai/api/cuml/stable/"
+              }
+            ]
+          },
+          {
+            "tecnologia": "cuDF",
+            "justificativa_tecnica": "Melhora a performance de operações de dados em escala (GB a PB) e reduz latência em consultas interativas, resolvendo gargalo de processamento de dados proprietários antes da inferência",
+            "justificativa_negocio": "Reduz tempo de preparação de dados para modelos de risco, diminuindo custos de infraestrutura e acelerando ciclos de entrega de APIs",
+            "prioridade": "media",
+            "complexidade": "baixa",
+            "proxima_acao": "Migrar pipelines de ETL para usar cuDF em vez de pandas, avaliando ganho de throughput em ambientes de produção",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "maximizacao de desempenho para cargas de escala de gigabytes a petabytes, otimizando operacoes centrais de SQL e DataFrame com primitivas CUDA de baixo nivel; reducao de latencia, habilitando cargas sensiveis a latencia como analytics interativo e consultas de IA agentica; reducao de custo, ja que menor tempo de execucao permite processar volumes equivalentes de dados em bem menos nos, cortando custos de infraestrutura e a pegada de data center; estruturas de dados eficientes baseadas em Apache Arrow, com interfaces zero-copy com outras bibliotecas aceleradas, minimizando movimentacao de dados; e escalabilidade de memoria, com ferramentas de memoria e primitivas out-of-core da NVIDIA para joins e groupbys que excedem a memoria de uma GPU individual.",
+                "url_fonte": "https://developer.nvidia.com/topics/ai/data-science/cuda-x-data-science-libraries/cudf"
+              }
+            ]
+          }
+        ],
+        "sem_recomendacao": null
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "sensores inteligentes",
+        "Big Data",
+        "imagens de satélite"
+      ],
+      "sinais_de_uso_de_ia": [],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "sensores inteligentes",
+          "trecho": "sensores inteligentes no meio das plantações",
+          "url_fonte": "https://agrosmart.com.br/blog/empreendedorismo-tecnologico-brasileiro-agronegocio/"
+        }
+      ],
+      "startup_id": "startup-04",
+      "nome": "Agrosmart",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "Big Data",
+          "trecho": "Big Data",
+          "url_fonte": "https://agrosmart.com.br/blog/empreendedorismo-tecnologico-brasileiro-agronegocio/",
+          "motivo_rejeicao": "trecho curto demais para ser verificavel"
+        },
+        {
+          "afirmacao": "imagens de satélite",
+          "trecho": "imagens de satélite",
+          "url_fonte": "https://agrosmart.com.br/blog/empreendedorismo-tecnologico-brasileiro-agronegocio/",
+          "motivo_rejeicao": "trecho curto demais para ser verificavel"
+        }
+      ],
+      "taxa_validacao": 0.33,
+      "classificacao": {
+        "classificacao": "non-AI",
+        "confianca": "baixa",
+        "justificativa": "O perfil técnico não apresenta nenhum sinal de uso de IA, nem indica modelo próprio, dado proprietário alimentando modelo ou entrega de IA como produto. As tecnologias citadas (sensores inteligentes, Big Data, imagens de satélite) são apenas componentes de coleta e processamento de dados, sem evidência de aplicação de IA. A escassez de documentos disponíveis reforça a baixa confiança na classificação.",
+        "sinais_a_favor": [],
+        "sinais_contra": [
+          "Ausência de qualquer sinal de uso de IA no perfil; não há menção a modelos, dados proprietários ou entregáveis baseados em IA."
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [],
+        "sem_recomendacao": "Taxa de validação abaixo de 0.5, não há evidências suficientes para recomendar tecnologias NVIDIA."
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "AI",
+        "telemetria"
+      ],
+      "sinais_de_uso_de_ia": [
+        "A Justos é uma empresa de seguro auto que usa inteligência artificial, tecnologia e design para oferecer um serviço prático que recompensa motoristas conscientes.",
+        "Não queremos ser uma seguradora com IA, e sim uma empresa de IA que vende seguros."
+      ],
+      "dados_proprietarios": [
+        "O programa de recompensas da Justos usa tecnologia de telemetria ativada nos sensores presentes no telefone celular dos clientes para avaliar como o motorista está dirigindo."
+      ],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Seguro auto digital com recompensas",
+          "trecho": "O seguro auto Justos é digital, tem coberturas personalizadas, assistência 24h e o melhor de tudo: recompensa bons motoristas.",
+          "url_fonte": "https://www.justos.com.br/"
+        },
+        {
+          "afirmacao": "Investimento e expansão",
+          "trecho": "A Justos levantou uma rodada de R$ 92 milhões liderada pela Ribbit Capital, com participação de Kaszek, Endeavor Catalyst e Scale-Up Ventures, depois de uma série A de cerca de R$ 200 milhões que contou com o SoftBank.",
+          "url_fonte": "https://startups.com.br/negocios/rodada-de-investimento/com-ia-no-core-justos-levanta-r-92m-para-expandir/"
+        },
+        {
+          "afirmacao": "Uso de telemetria e IA",
+          "trecho": "O programa de recompensas da Justos usa tecnologia de telemetria ativada nos sensores presentes no telefone celular dos clientes para avaliar como o motorista está dirigindo.",
+          "url_fonte": "https://www.insurtech.com.br/guia/justos-recompensas-para-motoristas-conscientes-com-ia-e-tecnologia-avancada/"
+        }
+      ],
+      "startup_id": "startup-05",
+      "nome": "Justos",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Justos oferece seguro auto tradicional, mas utiliza inteligência artificial para avaliar o comportamento do motorista e oferecer recompensas. A IA funciona como um recurso adicional que melhora a experiência do cliente, mas o produto principal (seguro auto) poderia existir sem essa camada de IA. Não há evidência de modelo próprio, dados proprietários alimentando um modelo ou entrega de IA como produto principal, portanto a classificação é AI‑enabled.",
+        "sinais_a_favor": [
+          "\"O programa de recompensas da Justos usa tecnologia de telemetria ativada nos sensores presentes no telefone celular dos clientes para avaliar como o motorista está dirigindo.\"",
+          "\"A Justos é uma empresa de seguro auto que usa inteligência artificial, tecnologia e design para oferecer um serviço prático que recompensa motoristas conscientes.\""
+        ],
+        "sinais_contra": [
+          "Falta de informação sobre modelo próprio de IA, dados proprietários alimentando o modelo ou entrega de IA como produto principal."
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [],
+        "sem_recomendacao": "Não há informações suficientes no perfil técnico verificado ou nos trechos recuperados da base de conhecimento da NVIDIA que indiquem um gargalo concreto a ser resolvido por uma tecnologia NVIDIA específica. Para formular recomendações técnicas, seria necessário conhecer detalhes sobre a arquitetura atual de processamento de telemetria, requisitos de latência, volume de dados, ou desafios de segurança e compliance que a Justos enfrenta."
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "AI",
+        "machine learning",
+        "big data analytics",
+        "georeferencing"
+      ],
+      "sinais_de_uso_de_ia": [
+        "AI",
+        "machine learning"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "Cortex combina AI e data para simplificar a tomada de decisão e acelerar crescimento.",
+          "trecho": "Cortex is a specialist in Augmented Intelligence for Go-to-Market strategies. We combine AI and data to simplify decision-making and accelerate growth.",
+          "url_fonte": "https://www.cortex-intelligence.com/en/"
+        },
+        {
+          "afirmacao": "A plataforma utiliza modelos de machine learning conectados aos dados da empresa.",
+          "trecho": "We apply machine learning models connected to your company's data.",
+          "url_fonte": "https://www.cortex-intelligence.com/en/"
+        },
+        {
+          "afirmacao": "A plataforma combina big data analytics, georeferencing e modelos avançados de IA.",
+          "trecho": "Through our GTM intelligence SaaS platform, which combines big data analytics, georeferencing, and advanced AI models.",
+          "url_fonte": "https://www.cortex-intelligence.com/en/"
+        }
+      ],
+      "startup_id": "startup-06",
+      "nome": "Cortex Intelligence",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "alta",
+        "justificativa": "O perfil indica que a Cortex Intelligence oferece uma plataforma SaaS que combina big data analytics, georeferencing e modelos avançados de IA, mas não demonstra que o produto não existiria sem a IA nem que a IA é o entregável principal. A IA aparece como camada de aprimoramento que conecta modelos de machine learning aos dados da empresa, caracterizando um produto que poderia existir sem a IA, mas que a IA adiciona valor. Assim, a classificação mais adequada é AI-enabled.",
+        "sinais_a_favor": [
+          "\"We apply machine learning models connected to your company's data.\"",
+          "\"Through our GTM intelligence SaaS platform, which combines big data analytics, georeferencing, and advanced AI models.\""
+        ],
+        "sinais_contra": [
+          "Não há evidência de modelo próprio, dado proprietário alimentando o modelo ou entrega de IA como produto principal."
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [
+          {
+            "tecnologia": "NVIDIA NIM (Inference Microservices)",
+            "justificativa_tecnica": "A Cortex Intelligence precisa integrar modelos de machine learning com dados corporativos em escala, enfrentando desafios de latência, throughput e monitoramento operacional. O NIM oferece microserviços otimizados para inferência que simplificam a implantação de modelos em produção, resolvendo esses gargalos de desempenho e operacionalidade.",
+            "justificativa_negocio": "Ao acelerar a entrega de modelos de IA em produção, a Cortex pode reduzir o tempo de lançamento de novos recursos, melhorar a experiência do cliente e aumentar a competitividade no mercado SaaS de inteligência GTM. Para a NVIDIA, a adoção de NIM amplia o ecossistema de clientes corporativos e demonstra o valor de suas soluções de inferência em escala.",
+            "prioridade": "media",
+            "complexidade": "media",
+            "proxima_acao": "Solicitar ao gerente de Startups & VC que agende uma demonstração do NIM com a equipe de engenharia da Cortex para avaliar requisitos de modelo e integração.",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "Moving generative AI from proof of concept to production introduces substantial complexity. Organizations must integrate AI models with established enterprise systems, optimize performance metrics including latency and throughput, implement logging and monitoring infrastructure, enforce security protocols, and manage many other operational concerns.",
+                "url_fonte": "https://developer.nvidia.com/blog/nvidia-nim-offers-optimized-inference-microservices-for-deploying-ai-models-at-scale/"
+              }
+            ]
+          },
+          {
+            "tecnologia": "NVIDIA AI Enterprise – Enterprise RAG Blueprint",
+            "justificativa_tecnica": "A plataforma da Cortex combina big data analytics, georeferencing e modelos avançados de IA, mas não menciona mecanismos de extração e recuperação de dados multimodais em tempo real. O Enterprise RAG Blueprint conecta aplicações de IA a dados corporativos multimodais usando NIM microservices, resolvendo a necessidade de extração e recuperação escalável de dados.",
+            "justificativa_negocio": "Implementar o RAG permite que a Cortex ofereça insights mais precisos e contextualizados, aumentando o valor percebido pelos clientes e fortalecendo a proposta de valor SaaS. Para a NVIDIA, isso expande a adoção de suas soluções de IA em ambientes corporativos complexos.",
+            "prioridade": "media",
+            "complexidade": "media",
+            "proxima_acao": "Coordenar com a equipe de produto da NVIDIA para integrar o Blueprint RAG na arquitetura de dados da Cortex e definir métricas de sucesso.",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "Enterprise RAG connects AI applications to multimodal enterprise data using NIM microservices for scalable data extraction and accurate retrieval.",
+                "url_fonte": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise/"
+              }
+            ]
+          },
+          {
+            "tecnologia": "NVIDIA Metropolis Blueprint (Video Analytics)",
+            "justificativa_tecnica": "Embora a Cortex mencione georeferencing, não há indicação de processamento de vídeo em tempo real. O Metropolis Blueprint oferece busca e sumarização de vídeo, automatizando alertas e extraindo insights, resolvendo potenciais gargalos de análise de vídeo e automação de alertas em grandes volumes de dados visuais.",
+            "justificativa_negocio": "Adicionar capacidades de vídeo analytics pode diferenciar a Cortex no mercado, permitindo oferecer análises de comportamento em tempo real e automação de processos de GTM baseados em vídeo. Para a NVIDIA, demonstra a versatilidade de suas soluções de IA em diferentes domínios.",
+            "prioridade": "media",
+            "complexidade": "media",
+            "proxima_acao": "Avaliar a viabilidade de integrar o Metropolis Blueprint na stack atual da Cortex e planejar um piloto de demonstração.",
+            "evidencias": [
+              {
+                "origem": "base_nvidia",
+                "trecho": "An AI agent for video analytics uses the NVIDIA Metropolis blueprint for video search and summarization to query live or archived video, automate alerts, extract insights, and generate reports.",
+                "url_fonte": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise/"
+              }
+            ]
+          }
+        ],
+        "sem_recomendacao": null
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "inteligencia artificial",
+        "IA",
+        "Machine Learning"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [
+        "infraestrutura de processamento das transações de saúde"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "A empresa desenvolveu uma plataforma de auditoria de contas medicas baseada em inteligencia artificial",
+          "trecho": "A empresa desenvolveu uma plataforma de auditoria de contas medicas baseada em inteligencia artificial que analisa cobrancas feitas por hospitais, clinicas e laboratorios as operadoras de planos de saude.",
+          "url_fonte": "https://exame.com/negocios/como-essa-startup-encontrou-r-18-bilhao-em-fraudes-e-erros-nos-planos-de-saude/"
+        },
+        {
+          "afirmacao": "A tecnologia da Arvo identificou 1,8 bilhao de reais em pagamentos indevidos",
+          "trecho": "Em 2025, a tecnologia da Arvo identificou 1,8 bilhao de reais em pagamentos indevidos no sistema de saude suplementar.",
+          "url_fonte": "https://exame.com/negocios/como-essa-startup-encontrou-r-18-bilhao-em-fraudes-e-erros-nos-planos-de-saude/"
+        },
+        {
+          "afirmacao": "A rodada permite expandir a atuação e consolidar a infraestrutura de processamento das transações de saúde",
+          "trecho": "A captacao permitira que a startup expanda a atuacao e consolide a infraestrutura de processamento das transacoes de saude, que vao desde validacao de cobrancas ate a autorizacao de procedimentos.",
+          "url_fonte": "https://startupi.com.br/arvo-capta-106-milhoes-em-serie-a/"
+        }
+      ],
+      "startup_id": "startup-07",
+      "nome": "Arvo",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "A Arvo desenvolveu uma plataforma de auditoria de contas médicas baseada em inteligência artificial que analisa cobranças feitas por hospitais, clínicas e laboratórios às operadoras de planos de saúde, e identificou 1,8 bilhão de reais em pagamentos indevidos. A IA é o mecanismo central do produto, pois a plataforma depende da análise automática para entregar o serviço principal. Não há evidências de que o produto existiria sem a IA, portanto a classificação é AI-native.",
+        "sinais_a_favor": [
+          "A plataforma de auditoria de contas médicas baseada em inteligência artificial",
+          "A tecnologia identificou 1,8 bilhão de reais em pagamentos indevidos",
+          "A IA é o mecanismo central do produto"
+        ],
+        "sinais_contra": [
+          "Falta informação sobre modelo próprio ou dados proprietários que alimentam o modelo, o que reduziria a certeza de que a IA é o núcleo do produto"
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [],
+        "sem_recomendacao": "falha: RetryError"
+      }
+    },
+    {
+      "tecnologias_citadas": [],
+      "sinais_de_uso_de_ia": [
+        "uso de inteligencia artificial, com foco em analises preditivas e personalizacao da jornada do paciente"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "uso de inteligencia artificial, com foco em analises preditivas e personalizacao da jornada do paciente",
+          "trecho": "estruturação de dados clinicos e uso de inteligencia artificial, com foco em analises preditivas e personalizacao da jornada do paciente",
+          "url_fonte": "https://startupi.com.br/isa-saude-capta-r-160-milhoes-hospital-em-casa/"
+        }
+      ],
+      "startup_id": "startup-08",
+      "nome": "Isa Saude",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "baixa",
+        "justificativa": "O perfil apresenta apenas um sinal de uso de IA – análises preditivas e personalização da jornada do paciente – sem evidências de modelo próprio, dados proprietários ou entrega de IA como produto principal. A escassez de documentos impede uma avaliação mais robusta, portanto a classificação é conservadora como AI‑enabled com confiança baixa.",
+        "sinais_a_favor": [
+          "uso de inteligencia artificial, com foco em analises preditivas e personalizacao da jornada do paciente"
+        ],
+        "sinais_contra": [
+          "não há indicação de modelo próprio, dados proprietários alimentando o modelo ou entrega de IA como produto principal; falta de tecnologias citadas e de evidências adicionais"
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [],
+        "sem_recomendacao": "falha: RetryError"
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Google",
+        "HIPAA",
+        "GDPR",
+        "Anvisa",
+        "Launchpad Accelerator"
+      ],
+      "sinais_de_ia": [
+        "Inteligencia Artificial",
+        "IA"
+      ],
+      "dados_proprietarios": [
+        "historico de mais de 30 milhoes de exames e diagnosticos"
+      ],
+      "possiveis_gargalos_tecnicos": [
+        "integração direta com equipamentos medicos"
+      ],
+      "evidencias": [
+        {
+          "afirmacao": "A plataforma utiliza Inteligencia Artificial para triagem de exames urgentes.",
+          "trecho": "Nossa plataforma usa Inteligencia Artificial para triagem de exames urgentes.",
+          "url_fonte": "https://portaltelemedicina.com.br/solucoes-de-telemedicina/laudos"
+        },
+        {
+          "afirmacao": "A IA ajuda no diagnóstico de milhares de pacientes todos os dias.",
+          "trecho": "A plataforma de telediagnostico permite que especialistas facam analises mais rapidas e precisas com a ajuda da Inteligencia Artificial, que e usada no diagnostico de milhares de pacientes todos os dias.",
+          "url_fonte": "https://startup.google.com/intl/pt-BR_ALL/alumni/stories/portal-telemedicina/"
+        },
+        {
+          "afirmacao": "O sistema verifica se a avaliação do médico bate com as previsões da IA e, em caso de discrepância, envia exames automaticamente para três outros doutores.",
+          "trecho": "O sistema checa se a avaliacao do medico bate com as previsoes realizadas pela IA e, em caso de discrepancia, os exames sao enviados automaticamente para tres outros doutores como forma de reduzir as chances de erro.",
+          "url_fonte": "https://startup.google.com/intl/pt-BR_ALL/alumni/stories/portal-telemedicina/"
+        },
+        {
+          "afirmacao": "Os exames são criptografados e enviados direto do equipamento para o Portal, seguindo normas de segurança HIPAA e GDPR.",
+          "trecho": "Atraves da nossa integracao, os exames sao criptografados e enviados direto do equipamento para o nosso Portal, seguindo as normas de seguranca HIPAA e GDPR.",
+          "url_fonte": "https://portaltelemedicina.com.br/solucoes-de-telemedicina/laudos"
+        },
+        {
+          "afirmacao": "A plataforma integra com 90% dos equipamentos existentes, sem necessidade de investimentos adicionais.",
+          "trecho": "integração com 90% dos equipamentos existentes, sem necessidade de investimentos adicionais;",
+          "url_fonte": "https://portaltelemedicina.com.br/solucoes-de-telemedicina/laudos"
+        },
+        {
+          "afirmacao": "O histórico de mais de 30 milhões de exames e diagnósticos é usado para treinar a IA.",
+          "trecho": "Nossa plataforma usa um historico de mais de 30 milhoes de exames e diagnosticos para aprender e consultar.",
+          "url_fonte": "https://startup.google.com/intl/pt-BR_ALL/alumni/stories/portal-telemedicina/"
+        }
+      ],
+      "startup_id": "startup-09",
+      "nome": "Portal Telemedicina",
+      "evidencias_rejeitadas": [],
+      "taxa_validacao": 1.0,
+      "classificacao": {
+        "classificacao": "AI-native",
+        "confianca": "alta",
+        "justificativa": "O perfil demonstra que a IA é central ao produto: a plataforma usa Inteligência Artificial para triagem de exames urgentes e diagnóstico de milhares de pacientes, e a saída da IA (resultado de triagem/diagnóstico) é o principal entregável vendido ao cliente. Além disso, há um histórico proprietário de mais de 30 milhões de exames e diagnósticos que alimenta o modelo, atendendo ao critério de dado proprietário. Esses elementos indicam que sem o modelo de IA o produto não existiria, qualificando a empresa como AI‑native.",
+        "sinais_a_favor": [
+          "A plataforma usa Inteligência Artificial para triagem de exames urgentes.",
+          "A IA ajuda no diagnóstico de milhares de pacientes todos os dias.",
+          "O histórico de mais de 30 milhões de exames e diagnósticos é usado para treinar a IA.",
+          "O sistema verifica se a avaliação do médico bate com as previsões da IA e, em caso de discrepância, envia exames automaticamente para outros doutores.",
+          "Os exames são criptografados e enviados direto do equipamento para o Portal, seguindo normas de segurança HIPAA e GDPR.",
+          "A plataforma integra com 90% dos equipamentos existentes, sem necessidade de investimentos adicionais."
+        ],
+        "sinais_contra": [
+          "Nenhum sinal no perfil indica que o produto principal poderia existir sem a IA; a ausência de tal informação reforça a classificação AI‑native."
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [],
+        "sem_recomendacao": "falha: RetryError"
+      }
+    },
+    {
+      "tecnologias_citadas": [
+        "Inteligência Artificial",
+        "Machine Learning",
+        "Análise preditiva"
+      ],
+      "sinais_de_uso_de_ia": [
+        "Inteligência Artificial",
+        "Machine Learning",
+        "Análise preditiva"
+      ],
+      "dados_proprietarios": [],
+      "possiveis_gargalos_tecnicos": [],
+      "evidencias": [
+        {
+          "afirmacao": "A Laura cria uma plataforma que auxilia médicos nos cuidados com pacientes em internação.",
+          "trecho": "A empresa criou uma plataforma que auxilia medicos nos cuidados com pacientes em internacao.",
+          "url_fonte": "https://gazzconecta.com.br/gazz-conecta/robo-laura-tecnologia-e-saude/"
+        },
+        {
+          "afirmacao": "A IA possui aplicações na área de saúde, como análise preditiva.",
+          "trecho": "A Inteligencia Artificial possui inumeras aplicacoes na area de saude. Aplicada a saude, a avaliacao preditiva pode, por exemplo: construir o perfil de saude do paciente; mapear regioes com maior incidencia de determinadas patologias; prever taxas de ocupacao dos leitos; aplicar a medicina preventiva para evitar deterioracao clinica.",
+          "url_fonte": "https://laura-br.com/blog/hospital-digital-4-tendencias-para-acompanhar-no-mundo-pos-covid-19/"
+        }
+      ],
+      "startup_id": "startup-10",
+      "nome": "Laura",
+      "evidencias_rejeitadas": [
+        {
+          "afirmacao": "O Robo Laura analisa mais de 90 variáveis clínicas e alerta a equipe médica.",
+          "trecho": "O robo analisa mais de 90 variaveis clinicas e alerta as equipes assistenciais sobre sepse e deterioracao clinica com horas a dias de antecedencia.",
+          "url_fonte": "https://gazzconecta.com.br/gazz-conecta/robo-laura-tecnologia-e-saude/",
+          "motivo_rejeicao": "trecho nao encontrado no documento citado (1 de 1 fragmentos)"
+        }
+      ],
+      "taxa_validacao": 0.67,
+      "classificacao": {
+        "classificacao": "AI-enabled",
+        "confianca": "media",
+        "justificativa": "O perfil indica que a Laura oferece uma plataforma que auxilia médicos nos cuidados com pacientes em internação, com aplicação de IA para análise preditiva. A plataforma poderia existir sem a IA, sendo a IA um recurso adicional que melhora a experiência e a eficiência. Não há evidência de modelo próprio, dados proprietários alimentando o modelo ou entrega de IA como produto principal, portanto a classificação é AI‑enabled.",
+        "sinais_a_favor": [
+          "A plataforma auxilia médicos em internação",
+          "IA aplicada à análise preditiva na saúde"
+        ],
+        "sinais_contra": [
+          "Falta de modelo próprio ou dados proprietários que sustentem a IA como núcleo do produto"
+        ]
+      },
+      "recomendacoes": {
+        "recomendacoes": [],
+        "sem_recomendacao": "falha: RetryError"
+      }
+    }
+  ],
+  "trechos_nvidia": {
+    "startup-01": {
+      "consulta_en": "How to secure proprietary AI inference pipelines against data leakage and model theft?",
+      "trechos": [
+        {
+          "texto": "Major capabilities include support for multiple deep learning frameworks and multiple machine learning frameworks. The system features concurrent model execution, allowing multiple models to run simultaneously on the same hardware. Dynamic batching optimizes throughput by grouping requests together. For stateful applications, sequence batching and implicit state management handle models requiring state preservation across requests, which is needed for streaming and conversational workloads where a request depends on prior turns.\n\nThe platform supports model composition through model pipelines using ensembling or business logic scripting, enabling complex inference workflows that combine several models with pre- and post-processing steps.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://github.com/triton-inference-server/server",
+          "score_rerank": 0.64744157
+        },
+        {
+          "texto": "NVIDIA NIM provides containers to self-host GPU-accelerated inferencing microservices for pretrained and customized AI models across clouds, data centers, and RTX AI PCs and workstations. The microservices expose industry-standard APIs designed for straightforward integration into AI applications, development frameworks, and workflows, while optimizing response latency and throughput for each specific combination of foundation model and GPU hardware. The platform streamlines the transition from experimentation to deploying enterprise-grade AI applications, serving enthusiasts, developers, and AI builders with pre-optimized models and standard APIs for building AI agents, co-pilots, chatbots, and assistants. Inference engines come from leading frameworks from NVIDIA and the community, including TensorRT, TensorRT-LLM, vLLM, SGLang, and more.",
+          "tecnologia": "NVIDIA API Catalog",
+          "categoria": "modelos",
+          "url_fonte": "https://developer.nvidia.com/nim",
+          "score_rerank": 0.62392694
+        },
+        {
+          "texto": "AI for Healthcare and Life Sciences: open source tools, pretrained models, and GPU-accelerated pipelines for drug discovery, healthcare robotics, medical imaging, genomics, and digital health.\n\nNVIDIA BioNeMo is the development platform for AI-driven biology and drug discovery. The platform includes open models, libraries, datasets, and NVIDIA NIM microservices for the entire AI lifecycle, enabling researchers and developers to build, customize, and deploy AI applications that drive the next experiment. Use cases include biofoundation model building, molecular design, virtual screening, protein structure prediction, and protein binder design. Benefits cited are 2x faster biofoundation model training, 6x faster model inference, and three model acceleration recipes.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.6165665
+        },
+        {
+          "texto": "NVIDIA Dynamo-Triton, formerly NVIDIA Triton Inference Server, enables deployment of AI models across major frameworks, including TensorRT, PyTorch, ONNX, OpenVINO, Python, and RAPIDS FIL. It solves the problem of serving models that were trained in different frameworks behind a single, consistent production inference layer.\n\nIt delivers high performance with dynamic batching, concurrent execution, and optimized configurations. Dynamo-Triton supports real-time, batched, ensemble, and audio/video streaming workloads and runs on NVIDIA GPUs, non-NVIDIA accelerators, x86, and ARM CPUs. Dynamic batching groups incoming requests together to raise throughput, while concurrent execution lets multiple models or multiple instances of a model share the same accelerator, improving utilization instead of leaving hardware idle between requests.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://developer.nvidia.com/triton-inference-server",
+          "score_rerank": 0.61286587
+        },
+        {
+          "texto": "Triton Inference Server is an open source inference serving software that streamlines AI inferencing. It enables teams to deploy AI models from multiple deep learning and machine learning frameworks, including TensorRT, PyTorch, ONNX, OpenVINO, Python, RAPIDS FIL, and more. The platform supports inference across cloud, data center, edge and embedded devices on NVIDIA GPUs, x86 and ARM CPU, or AWS Inferentia.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://github.com/triton-inference-server/server",
+          "score_rerank": 0.60729057
+        }
+      ]
+    },
+    "startup-02": {
+      "consulta_en": "Challenges in scaling AgRisk AI inference for real-time crop yield predictions.",
+      "trechos": [
+        {
+          "texto": "The v1.0 release is reported to achieve record-setting 8X AI inference performance improvements. Installation options include pip installation or building from source on Linux, with free containers available through NVIDIA NGC for cloud deployment. Pre-configured models include Llama 2, Gemma, Mistral, and Phi-2, all optimized for TensorRT LLM execution.\n\nThe ecosystem includes major technology partners such as AWS, Microsoft, Google Cloud, and specialized inference platforms like DeepInfra and Baseten, demonstrating broad industry adoption for production LLM deployment scenarios. TensorRT LLM also works with NVIDIA NIM for model deployment and integrates with NVIDIA Dynamo and the Triton Inference Server for serving.",
+          "tecnologia": "TensorRT-LLM",
+          "categoria": "inferencia",
+          "url_fonte": "https://developer.nvidia.com/tensorrt-llm",
+          "score_rerank": 0.64744157
+        },
+        {
+          "texto": "Speech and translation AI microservices convert spoken words into text (speech recognition), written language into spoken words (speech synthesis), and spoken or written words from one language to another (translation). Pretrained AI models are trained on vast datasets and can be fine-tuned on custom datasets to accelerate the development of domain-specific models. Fully containerized, these microservices are optimized for real-time performance and offline high throughput on premises or in the cloud and can quickly scale to hundreds and thousands of parallel streams.\n\nAutomatic Speech Recognition achieves high transcription accuracy for Arabic, English, French, German, Hindi, Italian, Japanese, Korean, Mandarin, Portuguese, Russian, and Spanish with state-of-the-art models pretrained on thousands of hours of audio on NVIDIA supercomputers.",
+          "tecnologia": "NVIDIA Riva",
+          "categoria": "voz",
+          "url_fonte": "https://developer.nvidia.com/riva",
+          "score_rerank": 0.5941745
+        },
+        {
+          "texto": ". The stated value proposition is enterprise generative AI that does more for less: easy, production-ready microservices built for high-performance AI and designed to work seamlessly and scale affordably, accelerating time to market for AI agents and other enterprise generative AI applications.",
+          "tecnologia": "NVIDIA NIM",
+          "categoria": "inferencia",
+          "url_fonte": "https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/",
+          "score_rerank": 0.56755316
+        },
+        {
+          "texto": "NVIDIA TensorRT LLM is an open-source library designed to deliver high-performance, real-time inference optimization for large language models on NVIDIA GPUs in desktop or data center environments. The library addresses the challenge of maximizing inference performance while minimizing operational costs, enabling developers to serve more concurrent users with faster response times.\n\nThe architecture provides a modular Python runtime, PyTorch-native model authoring, and a stable production API specifically customized for NVIDIA platforms. The system features easy-to-use Python APIs, a simple command-line interface, and an extensible framework built on PyTorch foundations, so the same code path used to prototype a model can be carried into production serving.",
+          "tecnologia": "TensorRT-LLM",
+          "categoria": "inferencia",
+          "url_fonte": "https://developer.nvidia.com/tensorrt-llm",
+          "score_rerank": 0.56755316
+        },
+        {
+          "texto": "In the deploy phase, agents are optimized for production with high-throughput, low-latency inference using NVIDIA NIM microservices. Retrieval-augmented generation is applied through NeMo Guardrails to ground responses in trusted knowledge while enforcing safety and compliance guardrails. Safety is validated before launch using NeMo Auditor to identify vulnerabilities in the deployed application.\n\nIn the optimize phase, teams track real-world agent interactions and systematically evaluate performance, using NeMo Relay for observability and NeMo Customizer for fine-tuning. Data-driven flywheels are created with NeMo RL for reinforcement learning, NeMo Gym for simulated training environments, and NeMo Evaluator for continuous benchmarking, so that production telemetry feeds back into further model customization.",
+          "tecnologia": "NVIDIA NeMo",
+          "categoria": "modelos",
+          "url_fonte": "https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
+          "score_rerank": 0.5560139
+        }
+      ]
+    },
+    "startup-03": {
+      "consulta_en": "How to scale MaaS platform for high-volume churn prediction API requests?",
+      "trechos": [
+        {
+          "texto": "Major capabilities include support for multiple deep learning frameworks and multiple machine learning frameworks. The system features concurrent model execution, allowing multiple models to run simultaneously on the same hardware. Dynamic batching optimizes throughput by grouping requests together. For stateful applications, sequence batching and implicit state management handle models requiring state preservation across requests, which is needed for streaming and conversational workloads where a request depends on prior turns.\n\nThe platform supports model composition through model pipelines using ensembling or business logic scripting, enabling complex inference workflows that combine several models with pre- and post-processing steps.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://github.com/triton-inference-server/server",
+          "score_rerank": 0.56755316
+        },
+        {
+          "texto": "Um recurso distintivo atende quem busca aceleracao por GPU sem modificar codigo. A documentacao explica que, com cuml.accel, o cuML tambem pode acelerar automaticamente codigo existente com zero mudancas de codigo. Isso representa um recurso importante de acessibilidade, permitindo que codigo Python de machine learning ja existente se beneficie de aceleracao por GPU por meio de uma camada de aprimoramento transparente.\n\nA plataforma trata requisitos de escalabilidade por meio de capacidades de computacao distribuida. A documentacao menciona suporte abrangente a multi-GPU e multi-node via Dask, permitindo que o cuML escale de estacoes de trabalho unicas ate grandes clusters, sem reestruturacao fundamental de codigo.",
+          "tecnologia": "cuML",
+          "categoria": "modelos",
+          "url_fonte": "https://docs.rapids.ai/api/cuml/stable/",
+          "score_rerank": 0.52887404
+        },
+        {
+          "texto": "Extensibility is central to Triton's design. The platform offers a Backend API for custom backends and pre/post processing. Python-based backends enable rapid development without C/C++ compilation. Repository agents add functionality for authentication, decryption, or model conversion during load and unload operations.\n\nDeployment flexibility spans from containerized cloud environments to resource-constrained edge devices via Jetson and JetPack support, with specific guidance for AWS Inferentia integration.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://github.com/triton-inference-server/server",
+          "score_rerank": 0.5171807
+        },
+        {
+          "texto": "Entre as capacidades principais estao: maximizacao de desempenho para cargas de escala de gigabytes a petabytes, otimizando operacoes centrais de SQL e DataFrame com primitivas CUDA de baixo nivel; reducao de latencia, habilitando cargas sensiveis a latencia como analytics interativo e consultas de IA agentica; reducao de custo, ja que menor tempo de execucao permite processar volumes equivalentes de dados em bem menos nos, cortando custos de infraestrutura e a pegada de data center; estruturas de dados eficientes baseadas em Apache Arrow, com interfaces zero-copy com outras bibliotecas aceleradas, minimizando movimentacao de dados; e escalabilidade de memoria, com ferramentas de memoria e primitivas out-of-core da NVIDIA para joins e groupbys que excedem a memoria de uma GPU individual.",
+          "tecnologia": "cuDF",
+          "categoria": "dados",
+          "url_fonte": "https://developer.nvidia.com/topics/ai/data-science/cuda-x-data-science-libraries/cudf",
+          "score_rerank": 0.50546855
+        },
+        {
+          "texto": "Performance and scale: NIM improves total cost of ownership with low-latency, high-throughput AI inference that scales with the cloud, and preserves accuracy through support for fine-tuned models out of the box. In NVIDIA's published comparison on Llama 3.1 8B Instruct running on a single H100 SXM with 200 concurrent requests, NIM at FP8 precision delivered throughput of 1,201 tokens per second at 32 ms inter-token latency, versus 613 tokens per second at 37 ms inter-token latency without NIM, roughly a 2x throughput gain with lower latency.\n\nPortability: prebuilt, cloud-native microservices are ready to run on any NVIDIA-accelerated infrastructure across cloud, data center, and workstation, and scale seamlessly on Kubernetes and cloud service provider environments.",
+          "tecnologia": "NVIDIA NIM",
+          "categoria": "inferencia",
+          "url_fonte": "https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/",
+          "score_rerank": 0.49765623
+        }
+      ]
+    },
+    "startup-04": {
+      "consulta_en": "Integrating heterogeneous sensor data streams for real-time crop health analytics.",
+      "trechos": [
+        {
+          "texto": "The NVIDIA Holoscan SDK is a runtime for physical AI and sensor processing. Holoscan is a real-time runtime for building GPU-accelerated systems that ingest high-bandwidth, multimodal, multi-rate sensor data, perform AI reasoning, and drive deterministic real-world actions. Use cases include real-time robotics and autonomous machines, AI raw-data-to-insights for medical devices, and deterministic edge AI deployment. Benefits include scaling to tens or hundreds of gigabits per second without extensive system optimizations, accelerated IO directly into GPU memory, and 10 minutes to inference with domain accelerator examples.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.38269496
+        },
+        {
+          "texto": "Use cases delivered as Blueprints: Enterprise RAG connects AI applications to multimodal enterprise data using NIM microservices for scalable data extraction and accurate retrieval. An AI agent for enterprise research builds custom research assistants powered by state-of-the-art models that process and synthesize multimodal data with reasoning, planning, and refinement to generate reports. An AI agent for video analytics uses the NVIDIA Metropolis blueprint for video search and summarization to query live or archived video, automate alerts, extract insights, and generate reports. Multi-robot fleets for industrial automation simulate, test, and optimize physical AI and robot fleets at scale in industrial digital twins before real-world deployment.",
+          "tecnologia": "NVIDIA AI Enterprise",
+          "categoria": "plataforma",
+          "url_fonte": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise/",
+          "score_rerank": 0.38269496
+        },
+        {
+          "texto": "Speech and translation AI microservices convert spoken words into text (speech recognition), written language into spoken words (speech synthesis), and spoken or written words from one language to another (translation). Pretrained AI models are trained on vast datasets and can be fine-tuned on custom datasets to accelerate the development of domain-specific models. Fully containerized, these microservices are optimized for real-time performance and offline high throughput on premises or in the cloud and can quickly scale to hundreds and thousands of parallel streams.\n\nAutomatic Speech Recognition achieves high transcription accuracy for Arabic, English, French, German, Hindi, Italian, Japanese, Korean, Mandarin, Portuguese, Russian, and Spanish with state-of-the-art models pretrained on thousands of hours of audio on NVIDIA supercomputers.",
+          "tecnologia": "NVIDIA Riva",
+          "categoria": "voz",
+          "url_fonte": "https://developer.nvidia.com/riva",
+          "score_rerank": 0.37901053
+        },
+        {
+          "texto": "Ease of use: NIM accelerates innovation and deployment timelines with microservices for the latest AI models. Models can be deployed in five minutes and easily integrated into applications thanks to standard APIs that reduce integration friction. Deployment is a single Docker command containing the model name and publisher; inference then runs over standard OpenAI-compatible REST endpoints that accept JSON payloads with model identifiers, prompts, and generation parameters such as token limits, so integration follows familiar patterns through OpenAI client libraries by pointing at a local endpoint URL and API key.\n\nEnterprise grade: NIM microservices are continuously managed by NVIDIA through rigorous validation processes and dedicated feature branches, backed by NVIDIA enterprise support, which also offers direct access to NVIDIA AI experts.",
+          "tecnologia": "NVIDIA NIM",
+          "categoria": "inferencia",
+          "url_fonte": "https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/",
+          "score_rerank": 0.37168378
+        },
+        {
+          "texto": "Focus on one or two jobs to be done. The more jobs you take on, the harder it becomes to productize your AI. Every new workflow requires new training data, new edge cases, new human oversight. Premature breadth is one of the fastest paths to Mirage PMF. You can always expand later.\n\nAI-native services are uniquely well positioned for outcomes-based pricing. By definition, an AINS company is providing all of the value: the customer hires you to deliver an outcome, and you're accountable for getting it done. There is no attribution problem. The service IS the outcome. This makes AINS the most natural home for outcome-based pricing in the entire AI economy. The companies that stay on labor-based pricing too long end up cannibalizing their own growth as automation increases.",
+          "tecnologia": "conceito AI-native",
+          "categoria": "conceito",
+          "url_fonte": "https://www.emcap.com/thoughts/the-ai-native-services-playbook",
+          "score_rerank": 0.36804217
+        }
+      ]
+    },
+    "startup-05": {
+      "consulta_en": "Integrating real-time telematics data with AI risk models for accurate underwriting.",
+      "trechos": [
+        {
+          "texto": "Key capabilities include protecting against jailbreaks and prompt injections, maintaining topical focus for domain-specific assistants, enforcing conversational paths that follow standard operating procedures, and integrating multiple safety approaches including fact-checking and hallucination detection. The library provides built-in guardrails for common scenarios while allowing custom implementations through Python actions, so organization-specific policy can be encoded directly.\n\nColang, a Python-like modeling language, enables flexible yet controllable dialogue design, supporting both version 1.0 (the default) and 2.0. The system works with multiple LLM providers including OpenAI, open-source models, and NVIDIA endpoints, so the same guardrail configuration can be reused as the underlying model changes.",
+          "tecnologia": "NeMo Guardrails",
+          "categoria": "seguranca",
+          "url_fonte": "https://github.com/NVIDIA/NeMo-Guardrails",
+          "score_rerank": 0.6939709
+        },
+        {
+          "texto": "Speech and translation AI microservices convert spoken words into text (speech recognition), written language into spoken words (speech synthesis), and spoken or written words from one language to another (translation). Pretrained AI models are trained on vast datasets and can be fine-tuned on custom datasets to accelerate the development of domain-specific models. Fully containerized, these microservices are optimized for real-time performance and offline high throughput on premises or in the cloud and can quickly scale to hundreds and thousands of parallel streams.\n\nAutomatic Speech Recognition achieves high transcription accuracy for Arabic, English, French, German, Hindi, Italian, Japanese, Korean, Mandarin, Portuguese, Russian, and Spanish with state-of-the-art models pretrained on thousands of hours of audio on NVIDIA supercomputers.",
+          "tecnologia": "NVIDIA Riva",
+          "categoria": "voz",
+          "url_fonte": "https://developer.nvidia.com/riva",
+          "score_rerank": 0.6492228
+        },
+        {
+          "texto": "NVIDIA Morpheus is a GPU-accelerated, end-to-end AI framework that enables developers to create optimized applications for filtering, processing, and classifying large volumes of streaming cybersecurity data. Morpheus incorporates AI to reduce the time and cost associated with identifying, capturing, and acting on threats, bringing a new level of security to the data center, cloud, and edge. Morpheus also extends human analysts' capabilities with generative AI by automating real-time analysis and responses, producing synthetic data to train AI models that identify risks accurately, and run what-if scenarios.",
+          "tecnologia": "NVIDIA Morpheus",
+          "categoria": "seguranca",
+          "url_fonte": "https://developer.nvidia.com/morpheus-cybersecurity",
+          "score_rerank": 0.6438669
+        },
+        {
+          "texto": ". The stated value proposition is enterprise generative AI that does more for less: easy, production-ready microservices built for high-performance AI and designed to work seamlessly and scale affordably, accelerating time to market for AI agents and other enterprise generative AI applications.",
+          "tecnologia": "NVIDIA NIM",
+          "categoria": "inferencia",
+          "url_fonte": "https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/",
+          "score_rerank": 0.6438669
+        },
+        {
+          "texto": "The NVIDIA Holoscan SDK is a runtime for physical AI and sensor processing. Holoscan is a real-time runtime for building GPU-accelerated systems that ingest high-bandwidth, multimodal, multi-rate sensor data, perform AI reasoning, and drive deterministic real-world actions. Use cases include real-time robotics and autonomous machines, AI raw-data-to-insights for medical devices, and deterministic edge AI deployment. Benefits include scaling to tens or hundreds of gigabits per second without extensive system optimizations, accelerated IO directly into GPU memory, and 10 minutes to inference with domain accelerator examples.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.64207345
+        }
+      ]
+    },
+    "startup-06": {
+      "consulta_en": "Challenges in integrating georeferencing with big data analytics for AI-driven insights.",
+      "trechos": [
+        {
+          "texto": ". The stated value proposition is enterprise generative AI that does more for less: easy, production-ready microservices built for high-performance AI and designed to work seamlessly and scale affordably, accelerating time to market for AI agents and other enterprise generative AI applications.",
+          "tecnologia": "NVIDIA NIM",
+          "categoria": "inferencia",
+          "url_fonte": "https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/",
+          "score_rerank": 0.6771325
+        },
+        {
+          "texto": "Moving generative AI from proof of concept to production introduces substantial complexity. Organizations must integrate AI models with established enterprise systems, optimize performance metrics including latency and throughput, implement logging and monitoring infrastructure, enforce security protocols, and manage many other operational concerns. This path is intricate and resource-intensive, demanding specialized expertise, sophisticated platforms, and carefully designed processes, particularly when scaling across an organization.",
+          "tecnologia": "NVIDIA NIM",
+          "categoria": "inferencia",
+          "url_fonte": "https://developer.nvidia.com/blog/nvidia-nim-offers-optimized-inference-microservices-for-deploying-ai-models-at-scale/",
+          "score_rerank": 0.5521533
+        },
+        {
+          "texto": "For most of computing history, software was prerecorded. Humans described an algorithm. Computers executed it. Data had to be carefully structured, stored into tables and retrieved through precise queries. SQL became indispensable because it made that world workable. AI breaks that model. For the first time, we have a computer that can understand unstructured information. It can see images, read text, hear sound and understand meaning. It can reason about context and intent. Most importantly, it generates intelligence in real time. Every response is newly created. Every answer depends on the context you provide. This is not software retrieving stored instructions. This is software reasoning and generating intelligence on demand. Because intelligence is produced in real time, the entire computing stack beneath it had to be reinvented.",
+          "tecnologia": "conceito stack de IA",
+          "categoria": "conceito",
+          "url_fonte": "https://blogs.nvidia.com/blog/ai-5-layer-cake/",
+          "score_rerank": 0.5405358
+        },
+        {
+          "texto": "Use cases delivered as Blueprints: Enterprise RAG connects AI applications to multimodal enterprise data using NIM microservices for scalable data extraction and accurate retrieval. An AI agent for enterprise research builds custom research assistants powered by state-of-the-art models that process and synthesize multimodal data with reasoning, planning, and refinement to generate reports. An AI agent for video analytics uses the NVIDIA Metropolis blueprint for video search and summarization to query live or archived video, automate alerts, extract insights, and generate reports. Multi-robot fleets for industrial automation simulate, test, and optimize physical AI and robot fleets at scale in industrial digital twins before real-world deployment.",
+          "tecnologia": "NVIDIA AI Enterprise",
+          "categoria": "plataforma",
+          "url_fonte": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise/",
+          "score_rerank": 0.5210812
+        },
+        {
+          "texto": "When you see AI as essential infrastructure, the implications become clear. AI starts with a transformer LLM. But it's much more. It is an industrial transformation that reshapes how energy is produced and consumed, how factories are built, how work is organized and how economies grow. AI factories are being built because intelligence is now generated in real time. Chips are being redesigned because efficiency determines how fast intelligence can scale. Energy becomes central because it sets the ceiling on how much intelligence can be produced at all. Applications accelerate because the models beneath them have crossed a threshold where they are finally useful at scale. Every layer reinforces the others.",
+          "tecnologia": "conceito stack de IA",
+          "categoria": "conceito",
+          "url_fonte": "https://blogs.nvidia.com/blog/ai-5-layer-cake/",
+          "score_rerank": 0.50546855
+        }
+      ]
+    },
+    "startup-07": {
+      "consulta_en": "Scalable processing of high-volume health transaction data for real-time AI analytics",
+      "trechos": [
+        {
+          "texto": "AI for Healthcare and Life Sciences: open source tools, pretrained models, and GPU-accelerated pipelines for drug discovery, healthcare robotics, medical imaging, genomics, and digital health.\n\nNVIDIA BioNeMo is the development platform for AI-driven biology and drug discovery. The platform includes open models, libraries, datasets, and NVIDIA NIM microservices for the entire AI lifecycle, enabling researchers and developers to build, customize, and deploy AI applications that drive the next experiment. Use cases include biofoundation model building, molecular design, virtual screening, protein structure prediction, and protein binder design. Benefits cited are 2x faster biofoundation model training, 6x faster model inference, and three model acceleration recipes.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.5210812
+        },
+        {
+          "texto": "Entre as capacidades principais estao: maximizacao de desempenho para cargas de escala de gigabytes a petabytes, otimizando operacoes centrais de SQL e DataFrame com primitivas CUDA de baixo nivel; reducao de latencia, habilitando cargas sensiveis a latencia como analytics interativo e consultas de IA agentica; reducao de custo, ja que menor tempo de execucao permite processar volumes equivalentes de dados em bem menos nos, cortando custos de infraestrutura e a pegada de data center; estruturas de dados eficientes baseadas em Apache Arrow, com interfaces zero-copy com outras bibliotecas aceleradas, minimizando movimentacao de dados; e escalabilidade de memoria, com ferramentas de memoria e primitivas out-of-core da NVIDIA para joins e groupbys que excedem a memoria de uma GPU individual.",
+          "tecnologia": "cuDF",
+          "categoria": "dados",
+          "url_fonte": "https://developer.nvidia.com/topics/ai/data-science/cuda-x-data-science-libraries/cudf",
+          "score_rerank": 0.5093739
+        },
+        {
+          "texto": "The NVIDIA Holoscan SDK is a runtime for physical AI and sensor processing. Holoscan is a real-time runtime for building GPU-accelerated systems that ingest high-bandwidth, multimodal, multi-rate sensor data, perform AI reasoning, and drive deterministic real-world actions. Use cases include real-time robotics and autonomous machines, AI raw-data-to-insights for medical devices, and deterministic edge AI deployment. Benefits include scaling to tens or hundreds of gigabits per second without extensive system optimizations, accelerated IO directly into GPU memory, and 10 minutes to inference with domain accelerator examples.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.47813892
+        },
+        {
+          "texto": "NVIDIA Nemotron is the foundation for digital health AI. Nemotron offers optimized open models with open weights, training data, and recipes for advanced reasoning, coding, visual understanding, agentic tasks, safety, speech, and information retrieval, delivering leading efficiency and accuracy for building specialized AI agents. Use cases include ambient healthcare agents and deep clinical research agents. Benefits include open models for visual understanding, information retrieval, speech, and safety, five use case examples, and 16 cookbooks on how to deploy and use the models.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.45868814
+        },
+        {
+          "texto": "When you look at AI industrially, it resolves into a five-layer stack. At the foundation is energy. Intelligence generated in real time requires power generated in real time. Every token produced is the result of electrons moving, heat being managed and energy being converted into computation. There is no abstraction layer beneath this. Energy is the first principle of AI infrastructure and the binding constraint on how much intelligence the system can produce. Above energy are the chips. These are processors designed to transform energy into computation efficiently at massive scale. AI workloads require enormous parallelism, high-bandwidth memory and fast interconnects. Progress at the chip layer determines how fast AI can scale and how affordable intelligence becomes. Above chips is infrastructure",
+          "tecnologia": "conceito stack de IA",
+          "categoria": "conceito",
+          "url_fonte": "https://blogs.nvidia.com/blog/ai-5-layer-cake/",
+          "score_rerank": 0.45481113
+        }
+      ]
+    },
+    "startup-08": {
+      "consulta_en": "Challenges in securing patient data while enabling AI-driven predictive analytics in healthcare",
+      "trechos": [
+        {
+          "texto": "NVIDIA Isaac is a robotics and simulation platform. This healthcare robotics developer platform is centered on simulation and synthetic data, enabling design, validation, and runtime deployment based on NVIDIA's training-simulation-runtime architecture. Use cases include hospital automation, teleoperation, autonomous ultrasound, and surgical autonomy. Benefits include synthetic data generation pipelines for anatomy, procedural variation, hospital environments, and patient interaction, plus sensor simulation pipelines for endoscopy, ultrasound, CT imaging, and multimodal sensor fusion.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.6771325
+        },
+        {
+          "texto": "AI for Healthcare and Life Sciences: open source tools, pretrained models, and GPU-accelerated pipelines for drug discovery, healthcare robotics, medical imaging, genomics, and digital health.\n\nNVIDIA BioNeMo is the development platform for AI-driven biology and drug discovery. The platform includes open models, libraries, datasets, and NVIDIA NIM microservices for the entire AI lifecycle, enabling researchers and developers to build, customize, and deploy AI applications that drive the next experiment. Use cases include biofoundation model building, molecular design, virtual screening, protein structure prediction, and protein binder design. Benefits cited are 2x faster biofoundation model training, 6x faster model inference, and three model acceleration recipes.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.45093957
+        },
+        {
+          "texto": "The v1.0 release is reported to achieve record-setting 8X AI inference performance improvements. Installation options include pip installation or building from source on Linux, with free containers available through NVIDIA NGC for cloud deployment. Pre-configured models include Llama 2, Gemma, Mistral, and Phi-2, all optimized for TensorRT LLM execution.\n\nThe ecosystem includes major technology partners such as AWS, Microsoft, Google Cloud, and specialized inference platforms like DeepInfra and Baseten, demonstrating broad industry adoption for production LLM deployment scenarios. TensorRT LLM also works with NVIDIA NIM for model deployment and integrates with NVIDIA Dynamo and the Triton Inference Server for serving.",
+          "tecnologia": "TensorRT-LLM",
+          "categoria": "inferencia",
+          "url_fonte": "https://developer.nvidia.com/tensorrt-llm",
+          "score_rerank": 0.41641688
+        },
+        {
+          "texto": "MONAI is the open medical imaging AI framework. This open source, PyTorch-based medical imaging AI framework brings together domain-optimized data loaders, rich transformers, and 50+ high-quality pretrained models to streamline everything from 2D and 3D segmentation and registration to reporting and multimodal workflows. Use cases include medical imaging model training and medical imaging segmentation and annotation. Benefits include over 8 million downloads and over 4,000 projects, multimodal capability integrating imaging, text, and agentic AI for radiology, surgery, and pathology workflows, and 20 medical imaging challenges won.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.4126248
+        },
+        {
+          "texto": "NVIDIA Nemotron is the foundation for digital health AI. Nemotron offers optimized open models with open weights, training data, and recipes for advanced reasoning, coding, visual understanding, agentic tasks, safety, speech, and information retrieval, delivering leading efficiency and accuracy for building specialized AI agents. Use cases include ambient healthcare agents and deep clinical research agents. Benefits include open models for visual understanding, information retrieval, speech, and safety, five use case examples, and 16 cookbooks on how to deploy and use the models.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.37534004
+        }
+      ]
+    },
+    "startup-09": {
+      "consulta_en": "Direct integration challenges with medical devices for secure telemedicine data exchange.",
+      "trechos": [
+        {
+          "texto": "The NVIDIA Holoscan SDK is a runtime for physical AI and sensor processing. Holoscan is a real-time runtime for building GPU-accelerated systems that ingest high-bandwidth, multimodal, multi-rate sensor data, perform AI reasoning, and drive deterministic real-world actions. Use cases include real-time robotics and autonomous machines, AI raw-data-to-insights for medical devices, and deterministic edge AI deployment. Benefits include scaling to tens or hundreds of gigabits per second without extensive system optimizations, accelerated IO directly into GPU memory, and 10 minutes to inference with domain accelerator examples.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.45481113
+        },
+        {
+          "texto": "Extensibility is central to Triton's design. The platform offers a Backend API for custom backends and pre/post processing. Python-based backends enable rapid development without C/C++ compilation. Repository agents add functionality for authentication, decryption, or model conversion during load and unload operations.\n\nDeployment flexibility spans from containerized cloud environments to resource-constrained edge devices via Jetson and JetPack support, with specific guidance for AWS Inferentia integration.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://github.com/triton-inference-server/server",
+          "score_rerank": 0.31539848
+        },
+        {
+          "texto": "MONAI is the open medical imaging AI framework. This open source, PyTorch-based medical imaging AI framework brings together domain-optimized data loaders, rich transformers, and 50+ high-quality pretrained models to streamline everything from 2D and 3D segmentation and registration to reporting and multimodal workflows. Use cases include medical imaging model training and medical imaging segmentation and annotation. Benefits include over 8 million downloads and over 4,000 projects, multimodal capability integrating imaging, text, and agentic AI for radiology, surgery, and pathology workflows, and 20 medical imaging challenges won.",
+          "tecnologia": "NVIDIA Clara",
+          "categoria": "saude",
+          "url_fonte": "https://www.nvidia.com/en-us/clara/",
+          "score_rerank": 0.30536577
+        },
+        {
+          "texto": "cuML entrega machine learning acelerado por GPU, otimizando algoritmos de aprendizado de maquina para execucao em GPU. A pagina destaca ganhos de ate 50x mais rapido que scikit-learn. A biblioteca inclui aceleradores que funcionam com scikit-learn, UMAP e HDBSCAN, tambem sem exigir mudancas de codigo.\n\ncuGraph e uma biblioteca de analise de grafos acelerada por GPU que otimiza algoritmos de grafos para execucao em GPU, com desempenho ate 48x mais rapido que NetworkX, processando milhoes de nos sem software especializado. O acelerador de zero-code-change para NetworkX permite integracao direta em fluxos de analise de grafos ja existentes.",
+          "tecnologia": "NVIDIA RAPIDS",
+          "categoria": "dados",
+          "url_fonte": "https://developer.nvidia.com/topics/ai/data-science/cuda-x-for-data-science",
+          "score_rerank": 0.30206156
+        },
+        {
+          "texto": "Key capabilities include content safety implementation, jailbreak protection, topic control, and personally identifiable information detection. Organizations can leverage LLM self-checking, integrate NVIDIA safety models, or connect third-party moderation services, which means the same rail structure can be backed by different detection engines depending on cost, latency, and accuracy requirements.\n\nThe system supports multiple deployment patterns: direct Python integration via the SDK, HTTP deployment through a FastAPI server, or framework-specific integrations with tools like LangChain. This gives teams a choice between embedding guardrails in the application process and running them as a separate service in front of a model endpoint.",
+          "tecnologia": "NeMo Guardrails",
+          "categoria": "seguranca",
+          "url_fonte": "https://docs.nvidia.com/nemo/guardrails/latest/introduction.html",
+          "score_rerank": 0.2795137
+        }
+      ]
+    },
+    "startup-10": {
+      "consulta_en": "Challenges in scaling predictive analytics models for real-time customer insights.",
+      "trechos": [
+        {
+          "texto": "NVIDIA TensorRT LLM is an open-source library designed to deliver high-performance, real-time inference optimization for large language models on NVIDIA GPUs in desktop or data center environments. The library addresses the challenge of maximizing inference performance while minimizing operational costs, enabling developers to serve more concurrent users with faster response times.\n\nThe architecture provides a modular Python runtime, PyTorch-native model authoring, and a stable production API specifically customized for NVIDIA platforms. The system features easy-to-use Python APIs, a simple command-line interface, and an extensible framework built on PyTorch foundations, so the same code path used to prototype a model can be carried into production serving.",
+          "tecnologia": "TensorRT-LLM",
+          "categoria": "inferencia",
+          "url_fonte": "https://developer.nvidia.com/tensorrt-llm",
+          "score_rerank": 0.70708114
+        },
+        {
+          "texto": "Major capabilities include support for multiple deep learning frameworks and multiple machine learning frameworks. The system features concurrent model execution, allowing multiple models to run simultaneously on the same hardware. Dynamic batching optimizes throughput by grouping requests together. For stateful applications, sequence batching and implicit state management handle models requiring state preservation across requests, which is needed for streaming and conversational workloads where a request depends on prior turns.\n\nThe platform supports model composition through model pipelines using ensembling or business logic scripting, enabling complex inference workflows that combine several models with pre- and post-processing steps.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://github.com/triton-inference-server/server",
+          "score_rerank": 0.68729424
+        },
+        {
+          "texto": "NVIDIA Dynamo-Triton, formerly NVIDIA Triton Inference Server, enables deployment of AI models across major frameworks, including TensorRT, PyTorch, ONNX, OpenVINO, Python, and RAPIDS FIL. It solves the problem of serving models that were trained in different frameworks behind a single, consistent production inference layer.\n\nIt delivers high performance with dynamic batching, concurrent execution, and optimized configurations. Dynamo-Triton supports real-time, batched, ensemble, and audio/video streaming workloads and runs on NVIDIA GPUs, non-NVIDIA accelerators, x86, and ARM CPUs. Dynamic batching groups incoming requests together to raise throughput, while concurrent execution lets multiple models or multiple instances of a model share the same accelerator, improving utilization instead of leaving hardware idle between requests.",
+          "tecnologia": "NVIDIA Triton Inference Server",
+          "categoria": "inferencia",
+          "url_fonte": "https://developer.nvidia.com/triton-inference-server",
+          "score_rerank": 0.6771325
+        },
+        {
+          "texto": "NVIDIA Morpheus is a GPU-accelerated, end-to-end AI framework that enables developers to create optimized applications for filtering, processing, and classifying large volumes of streaming cybersecurity data. Morpheus incorporates AI to reduce the time and cost associated with identifying, capturing, and acting on threats, bringing a new level of security to the data center, cloud, and edge. Morpheus also extends human analysts' capabilities with generative AI by automating real-time analysis and responses, producing synthetic data to train AI models that identify risks accurately, and run what-if scenarios.",
+          "tecnologia": "NVIDIA Morpheus",
+          "categoria": "seguranca",
+          "url_fonte": "https://developer.nvidia.com/morpheus-cybersecurity",
+          "score_rerank": 0.66680056
+        },
+        {
+          "texto": "Model selection and customization: NIM supports deployment across a broad spectrum of large language models compatible with vLLM, SGLang, or TensorRT-LLM, including community fine-tuned models and models fine-tuned on an organization's own data.\n\nOperationalization: detailed observability metrics are available for dashboarding, and Helm charts plus scaling guides are provided for running NIM on Kubernetes.",
+          "tecnologia": "NVIDIA API Catalog",
+          "categoria": "modelos",
+          "url_fonte": "https://developer.nvidia.com/nim",
+          "score_rerank": 0.6615731
+        }
+      ]
+    }
+  },
+  "briefing": "# Briefing nao gerado\n\nFalha na chamada ao modelo: OpenAIRateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1w8ytare9jbxft6br3c0eh2` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198122, Requested 2715. Please try again in 6m1.584s. Need more tokens? Upgrade to Dev Tier"
+}
