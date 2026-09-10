@@ -1,8 +1,8 @@
-# NVIDIA Startup AI Radar
+# Nivra
 
 Plataforma multi-agente que analisa startups brasileiras a partir de documentos públicos, diagnostica a maturidade técnica em IA de cada empresa e recomenda tecnologias da NVIDIA adequadas ao perfil encontrado.
 
-Projeto desenvolvido para o processo seletivo do Inteli Academy, a partir do TAPI do projeto realizado em parceria com a NVIDIA.
+Projeto desenvolvido para o processo seletivo do Inteli Academy, a partir do TAPI "NVIDIA Startup AI Radar", realizado em parceria com a NVIDIA.
 
 ---
 
@@ -172,15 +172,11 @@ docs/       documentacao de apoio
 
 ## Diferencial do projeto
 
-> PREENCHER: escolha o que você quer defender como diferencial. Dois candidatos já
-> existem e estão documentados acima:
->
-> 1. o critério de curadoria por acessibilidade para IA, que é uma decisão de
->    arquitetura de dados pouco comum e que sustenta a rastreabilidade do sistema;
-> 2. a medição de acurácia do classificador contra a hipótese de perfil registrada
->    em `docs/perfil_hipotese.md`, que transforma "o agente funciona" em um número.
->
-> Escreva aqui em uma ou duas frases qual deles você escolheu e por quê.
+Escolhi a medição de acurácia do classificador como diferencial. Antes de o agente
+existir, registrei uma hipótese de perfil para as 31 empresas em `docs/perfil_hipotese.md`
+e comparei a saída dele com essa hipótese: 17 de 31 acertos (55%), com a leitura honesta
+de onde e por que ele errou documentada em `docs/decisoes.md` (decisão 15). Um projeto que
+mede e admite onde falha vale mais do que um que só afirma que funciona.
 
 ---
 

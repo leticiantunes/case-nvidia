@@ -29,7 +29,7 @@ def precisa_recomendacao(perfil):
     if recs.get("recomendacoes"):
         return False
     # "sem_recomendacao" por decisao do agente e resultado valido e nao se refaz.
-    # Só se refaz o que falhou por erro tecnico.
+    # So se refaz o que falhou por erro tecnico.
     motivo = (recs.get("sem_recomendacao") or "").lower()
     return motivo.startswith("falha") or "rate limit" in motivo or "retryerror" in motivo
 
@@ -54,15 +54,18 @@ def main():
             continue
 
         # roda o no com um perfil de cada vez, para poder gravar a cada empresa
-        parcial = P.recommendation_agent({
-            "perfis": [perfil], "trechos_nvidia": trechos,
-        })
+        parcial = P.recommendation_agent(
+            {
+                "perfis": [perfil],
+                "trechos_nvidia": trechos,
+            }
+        )
         atualizado = parcial["perfis"][0]
         for i, p in enumerate(perfis):
             if p["startup_id"] == sid:
                 perfis[i] = atualizado
                 break
-        salvar(dados)   # <- grava agora, nao no fim
+        salvar(dados)  # <- grava agora, nao no fim
 
     briefing = dados.get("briefing", "")
     if not briefing or "nao gerado" in briefing.lower() or len(briefing) < 800:

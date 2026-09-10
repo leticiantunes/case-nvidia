@@ -31,8 +31,10 @@ def ler_gabarito():
         r"^\|\s*(startup-\d+)\s*\|\s*([^|]+?)\s*\|\s*(AI-native|AI-enabled|non-AI)[^|]*\|",
         re.M,
     )
-    return {m.group(1): {"nome": m.group(2).strip(), "hipotese": m.group(3)}
-            for m in padrao.finditer(texto)}
+    return {
+        m.group(1): {"nome": m.group(2).strip(), "hipotese": m.group(3)}
+        for m in padrao.finditer(texto)
+    }
 
 
 def main():
@@ -56,17 +58,24 @@ def main():
 
         esperado = gabarito[sid]["hipotese"]
         matriz[(esperado, predito)] += 1
-        bateu = (predito == esperado)
+        bateu = predito == esperado
         por_confianca[(confianca, "acerto" if bateu else "erro")] += 1
 
         if bateu:
             acertos += 1
         else:
-            divergencias.append({
-                "nome": perfil.get("nome"), "esperado": esperado, "predito": predito,
-                "confianca": confianca, "taxa_validacao": perfil.get("taxa_validacao"),
-                "justificativa": (perfil.get("classificacao") or {}).get("justificativa", "")[:220],
-            })
+            divergencias.append(
+                {
+                    "nome": perfil.get("nome"),
+                    "esperado": esperado,
+                    "predito": predito,
+                    "confianca": confianca,
+                    "taxa_validacao": perfil.get("taxa_validacao"),
+                    "justificativa": (perfil.get("classificacao") or {}).get("justificativa", "")[
+                        :220
+                    ],
+                }
+            )
 
     total = acertos + len(divergencias)
     print("=" * 70)
@@ -90,11 +99,15 @@ def main():
             print(f"  {nivel:6s}: {a}/{a + e} = {a / (a + e):.0%}")
 
     if divergencias:
-        print(f"\nDIVERGENCIAS ({len(divergencias)}) - leia cada uma antes de concluir que o agente errou\n")
+        print(
+            f"\nDIVERGENCIAS ({len(divergencias)}) - leia cada uma antes de concluir que o agente errou\n"
+        )
         for d in divergencias:
             print(f"  {d['nome']}")
-            print(f"    gabarito: {d['esperado']}  |  agente: {d['predito']} "
-                  f"(confianca {d['confianca']}, validacao {d['taxa_validacao']})")
+            print(
+                f"    gabarito: {d['esperado']}  |  agente: {d['predito']} "
+                f"(confianca {d['confianca']}, validacao {d['taxa_validacao']})"
+            )
             print(f"    {d['justificativa']}...\n")
 
     if sem_gabarito:

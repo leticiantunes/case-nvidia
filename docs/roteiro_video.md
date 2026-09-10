@@ -8,7 +8,7 @@ Grave a tela com o navegador e o terminal já abertos e posicionados. Deixe o
 
 ---
 
-## 0:00 a 0:45 — O problema
+## 0:00 a 0:45: o problema
 
 **Tela:** slide simples ou o README aberto.
 
@@ -19,12 +19,14 @@ O que dizer:
 - A NVIDIA precisa achar, no meio de centenas de startups brasileiras, quais têm
   maturidade técnica real e quais têm gargalo que a stack dela resolve.
 - Quem usa o sistema é o gerente de Startups & VCs, que precisa decidir onde gastar tempo.
+- Dê nome ao sistema logo no início ("o sistema que eu construí, o Nivra, faz X"),
+  porque é o nome que aparece na tela do dashboard depois.
 
 Não gaste mais que 45 segundos aqui. A banca conhece o problema, escreveu ele.
 
 ---
 
-## 0:45 a 1:30 — Arquitetura
+## 0:45 a 1:30: arquitetura
 
 **Tela:** o diagrama do grafo no README, ou o `pipeline.py` mostrando os `add_node`.
 
@@ -40,7 +42,7 @@ O que dizer:
 
 ---
 
-## 1:30 a 3:30 — Demonstração ao vivo (o pedaço mais importante)
+## 1:30 a 3:30: demonstração ao vivo (o pedaço mais importante)
 
 **Tela:** terminal e depois o dashboard.
 
@@ -61,7 +63,7 @@ que o processamento foi feito previamente. Não improvise com erro na tela.
 
 ---
 
-## 3:30 a 5:30 — Decisões técnicas
+## 3:30 a 5:30: decisões técnicas
 
 Escolha **quatro** destas. São todas reais e todas suas.
 
@@ -103,7 +105,7 @@ persistido em disco. Nenhuma dessas escolhas é enfeite.
 
 ---
 
-## 5:30 a 6:30 — Qualidade e diferencial
+## 5:30 a 6:30: qualidade e diferencial
 
 **Tela:** saída do `medir_acuracia.py`.
 
@@ -118,7 +120,7 @@ persistido em disco. Nenhuma dessas escolhas é enfeite.
 
 ---
 
-## 6:30 a 7:00 — Fecho
+## 6:30 a 7:00: fecho
 
 - O que ficou de fora e por quê (embedding multilíngue, rodar as 31 com o modelo maior).
 - Uma frase sobre o que você faria com mais uma semana.

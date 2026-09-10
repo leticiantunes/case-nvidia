@@ -7,6 +7,7 @@ load_dotenv()
 DB = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/startups_db")
 AQUI = os.path.dirname(os.path.abspath(__file__))
 
+
 def carregar(cur, arquivo, tabela, colunas):
     caminho = os.path.join(AQUI, arquivo)
     with open(caminho, encoding="utf-8") as f:
@@ -18,6 +19,7 @@ def carregar(cur, arquivo, tabela, colunas):
     )
     print(f"{tabela}: {len(linhas)} linhas inseridas")
 
+
 conn = psycopg2.connect(DB)
 cur = conn.cursor()
 
@@ -25,12 +27,29 @@ with open(os.path.join(AQUI, "schema.sql"), encoding="utf-8") as f:
     cur.execute(f.read())
 print("schema criado")
 
-carregar(cur, "startups.csv", "startups",
-         ["id","nome","site","setor","setor_detalhado","estagio","localizacao",
-          "descricao_curta","ano_fundacao","tamanho_time"])
-carregar(cur, "documentos.csv", "documentos",
-         ["id","startup_id","tipo","titulo","conteudo_texto",
-          "url_fonte","data_publicacao"])
+carregar(
+    cur,
+    "startups.csv",
+    "startups",
+    [
+        "id",
+        "nome",
+        "site",
+        "setor",
+        "setor_detalhado",
+        "estagio",
+        "localizacao",
+        "descricao_curta",
+        "ano_fundacao",
+        "tamanho_time",
+    ],
+)
+carregar(
+    cur,
+    "documentos.csv",
+    "documentos",
+    ["id", "startup_id", "tipo", "titulo", "conteudo_texto", "url_fonte", "data_publicacao"],
+)
 
 conn.commit()
 

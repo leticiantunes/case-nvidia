@@ -24,7 +24,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents import pipeline as P
 from agents.validador import evidence_validator
 
-SAIDA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "resultado_completo.json")
+SAIDA = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "data", "resultado_completo.json"
+)
 
 
 def main():
@@ -35,7 +37,10 @@ def main():
         "consulta": "todas as startups da base",
         # setor None e palavras vazias fazem o retriever devolver a base inteira
         "filtros": {"setor": None, "palavras_chave": []},
-        "startups": [], "documentos": [], "perfis": [], "trechos_nvidia": {},
+        "startups": [],
+        "documentos": [],
+        "perfis": [],
+        "trechos_nvidia": {},
     }
 
     print("=== retriever ===")

@@ -83,8 +83,13 @@ class BuscaHibrida:
                 pontos[ident] = pontos.get(ident, 0) + 1 / (RRF_K + posicao + 1)
         return sorted(pontos, key=lambda i: -pontos[i])
 
-    def buscar(self, consulta: str, consulta_en: str = None,
-               k_final: int = K_FINAL, usar_rerank: bool = True):
+    def buscar(
+        self,
+        consulta: str,
+        consulta_en: str = None,
+        k_final: int = K_FINAL,
+        usar_rerank: bool = True,
+    ):
         """Busca hibrida bilingue.
 
         A base de conhecimento e majoritariamente em ingles (26 de 33 documentos),
@@ -140,12 +145,18 @@ class BuscaHibrida:
 if __name__ == "__main__":
     busca = BuscaHibrida()
     casos = [
-        ("startup usa API externa de LLM e sofre com custo e latencia de inferencia",
-         "LLM inference cost latency optimization serving throughput"),
-        ("processamento de grandes volumes de dados tabulares",
-         "large scale tabular dataframe data processing acceleration"),
-        ("como controlar o comportamento de um agente de IA",
-         "control guardrails safety behavior of AI agents and assistants"),
+        (
+            "startup usa API externa de LLM e sofre com custo e latencia de inferencia",
+            "LLM inference cost latency optimization serving throughput",
+        ),
+        (
+            "processamento de grandes volumes de dados tabulares",
+            "large scale tabular dataframe data processing acceleration",
+        ),
+        (
+            "como controlar o comportamento de um agente de IA",
+            "control guardrails safety behavior of AI agents and assistants",
+        ),
     ]
     for consulta, consulta_en in casos:
         print("\n" + "=" * 80)

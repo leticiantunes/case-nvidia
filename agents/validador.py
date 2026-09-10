@@ -56,9 +56,14 @@ def validar_evidencia(evidencia: Dict[str, Any], docs_da_startup: List[Dict[str,
 
     faltando = [f for f in fragmentos if normaliza(f) not in texto_doc]
     if not faltando:
-        sufixo = " (citacao com reticencias, validada por fragmentos)" if len(fragmentos) > 1 else ""
+        sufixo = (
+            " (citacao com reticencias, validada por fragmentos)" if len(fragmentos) > 1 else ""
+        )
         return True, "ok" + sufixo
-    return False, f"trecho nao encontrado no documento citado ({len(faltando)} de {len(fragmentos)} fragmentos)"
+    return (
+        False,
+        f"trecho nao encontrado no documento citado ({len(faltando)} de {len(fragmentos)} fragmentos)",
+    )
 
 
 def evidence_validator(estado: Dict[str, Any]) -> Dict[str, Any]:

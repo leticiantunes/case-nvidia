@@ -1,9 +1,9 @@
 """
-Pipeline multi-agente do NVIDIA Startup AI Radar.
+Pipeline multi-agente do Nivra (case NVIDIA Startup AI Radar).
 
-Estado atual: 3 nos (Query Planner, Retriever, Extractor).
-Os proximos dias adicionam Classifier, Evidence Validator, RAG, Recommendation e Briefing
-como novos nos neste mesmo grafo.
+Grafo LangGraph com 8 nos: Query Planner, Retriever, Extractor, Evidence Validator,
+Startup Classifier, NVIDIA RAG, Recommendation Agent e Briefing Agent. O estado
+compartilhado entre eles esta definido na classe Estado, logo abaixo das constantes.
 """
 
 import os
@@ -63,19 +63,22 @@ llm = ChatOpenAI(
 
 DB = os.getenv("DATABASE_URL")
 
-# Enquanto estiver depurando, mantenha 1. Suba para 31 so quando a pipeline estabilizar.
+# 10 por decisao de custo, nao por limitacao do sistema: uma rodada completa (RAG +
+# recomendacao + briefing) nas 31 empresas fica perto do teto diario de tokens do
+# tier gratuito da Groq (ver docs/decisoes.md, decisao 12). A classificacao sozinha
+# ja rodou nas 31; para reproduzir isso suba este numero.
 LIMITE_STARTUPS = 10
 PAUSA_ENTRE_CHAMADAS = 3  # segundos, para respeitar o limite de tokens/minuto do tier gratuito
 
 
 class Estado(TypedDict):
-    consulta: str                     # o que o usuario pediu, em linguagem natural
-    filtros: Dict[str, Any]           # criterios de busca extraidos da consulta
-    startups: List[Dict[str, Any]]    # empresas recuperadas do banco
+    consulta: str  # o que o usuario pediu, em linguagem natural
+    filtros: Dict[str, Any]  # criterios de busca extraidos da consulta
+    startups: List[Dict[str, Any]]  # empresas recuperadas do banco
     documentos: List[Dict[str, Any]]  # documentos das empresas recuperadas
-    perfis: List[Dict[str, Any]]      # perfil estruturado, classificado e validado
-    trechos_nvidia: Dict[str, Any]    # trechos da base NVIDIA recuperados por startup
-    briefing: str                     # relatorio executivo final em markdown
+    perfis: List[Dict[str, Any]]  # perfil estruturado, classificado e validado
+    trechos_nvidia: Dict[str, Any]  # trechos da base NVIDIA recuperados por startup
+    briefing: str  # relatorio executivo final em markdown
 
 
 def conectar():
@@ -151,10 +154,22 @@ def query_planner(estado: Estado) -> Dict[str, Any]:
     """Transforma a consulta em linguagem natural em criterios de busca estruturados."""
 
     setores = [
-        "acessibilidade", "agtech", "contabilidade", "CX e atendimento",
-        "dados e IA", "ecommerce", "edtech", "fintech", "healthtech",
-        "hrtech", "insurtech", "legaltech", "logtech", "mobilidade",
-        "proptech", "retailtech",
+        "acessibilidade",
+        "agtech",
+        "contabilidade",
+        "CX e atendimento",
+        "dados e IA",
+        "ecommerce",
+        "edtech",
+        "fintech",
+        "healthtech",
+        "hrtech",
+        "insurtech",
+        "legaltech",
+        "logtech",
+        "mobilidade",
+        "proptech",
+        "retailtech",
     ]
 
     prompt = f"""Voce e um planejador de consultas de um sistema que analisa startups brasileiras.
@@ -182,6 +197,7 @@ Responda apenas com o JSON, sem texto antes ou depois, sem cerca de markdown."""
     filtros = pedir_json(prompt)
     print(f"[query_planner] filtros: {filtros}")
     return {"filtros": filtros}
+
 
 # ------------------------------------------------------------------ NO 2
 def retriever(estado: Estado) -> Dict[str, Any]:
@@ -215,8 +231,10 @@ def retriever(estado: Estado) -> Dict[str, Any]:
     else:
         where = "TRUE"
 
-    sql = (f"SELECT *, ({relevancia}) AS relevancia FROM startups "
-           f"WHERE {where} ORDER BY relevancia DESC LIMIT %s")
+    sql = (
+        f"SELECT *, ({relevancia}) AS relevancia FROM startups "
+        f"WHERE {where} ORDER BY relevancia DESC LIMIT %s"
+    )
     valores = val_select + val_where + [LIMITE_STARTUPS]
 
     cur.execute(sql, valores)
@@ -232,15 +250,17 @@ def retriever(estado: Estado) -> Dict[str, Any]:
     conn.close()
     print(f"[retriever] {len(startups)} startups: {[s['nome'] for s in startups]}")
     return {"startups": startups, "documentos": documentos}
+
+
 # ------------------------------------------------------------------ NO 3
 def extractor(estado: Estado) -> Dict[str, Any]:
+    """Le os documentos de cada empresa e monta um perfil tecnico estruturado."""
     perfis = []
 
     for s in estado["startups"]:
         docs = [d for d in estado["documentos"] if d["startup_id"] == s["id"]]
         textos = "\n\n".join(
-            f"[{d['tipo']} | fonte: {d['url_fonte']}]\n{d['conteudo_texto']}"
-            for d in docs
+            f"[{d['tipo']} | fonte: {d['url_fonte']}]\n{d['conteudo_texto']}" for d in docs
         )
 
         prompt = f"""### BLOCO 1 - PAPEL E TAREFA
@@ -284,9 +304,12 @@ Responda apenas com o JSON, sem texto antes ou depois, sem cerca de markdown."""
         except Exception as erro:
             print(f"[extractor] FALHOU em {s['nome']}: {causa_real(erro)}")
             perfil = {
-                "tecnologias_citadas": [], "sinais_de_uso_de_ia": [],
-                "dados_proprietarios": [], "possiveis_gargalos_tecnicos": [],
-                "evidencias": [], "erro_extracao": f"{type(erro).__name__}",
+                "tecnologias_citadas": [],
+                "sinais_de_uso_de_ia": [],
+                "dados_proprietarios": [],
+                "possiveis_gargalos_tecnicos": [],
+                "evidencias": [],
+                "erro_extracao": f"{type(erro).__name__}",
             }
         perfil["startup_id"] = s["id"]
         perfil["nome"] = s["nome"]
@@ -295,6 +318,7 @@ Responda apenas com o JSON, sem texto antes ou depois, sem cerca de markdown."""
         time.sleep(PAUSA_ENTRE_CHAMADAS)
 
     return {"perfis": perfis}
+
 
 # ------------------------------------------------------------------ NO 5
 def startup_classifier(estado: Estado) -> Dict[str, Any]:
@@ -307,8 +331,7 @@ def startup_classifier(estado: Estado) -> Dict[str, Any]:
         # evidencias_rejeitadas, e o modelo usava aquelas afirmacoes como se
         # fossem validas. Isso anulava o proposito de validar antes de classificar.
         perfil_para_julgar = {
-            k: v for k, v in perfil.items()
-            if k not in ("evidencias_rejeitadas", "startup_id")
+            k: v for k, v in perfil.items() if k not in ("evidencias_rejeitadas", "startup_id")
         }
         perfil_para_julgar["nota_sobre_evidencias"] = (
             f"{len(perfil.get('evidencias', []))} evidencias foram verificadas contra "
@@ -387,17 +410,22 @@ Responda apenas com o JSON, sem texto antes ou depois, sem cerca de markdown."""
         except Exception as erro:
             print(f"[classifier] FALHOU em {perfil['nome']}: {causa_real(erro)}")
             resultado = {
-                "classificacao": "indeterminado", "confianca": "baixa",
+                "classificacao": "indeterminado",
+                "confianca": "baixa",
                 "justificativa": f"falha na chamada ao modelo: {type(erro).__name__}",
-                "sinais_a_favor": [], "sinais_contra": [],
+                "sinais_a_favor": [],
+                "sinais_contra": [],
             }
         perfil["classificacao"] = resultado
         perfis.append(perfil)
-        print(f"[classifier] {perfil['nome']}: {resultado.get('classificacao')} "
-              f"(confianca {resultado.get('confianca')})")
+        print(
+            f"[classifier] {perfil['nome']}: {resultado.get('classificacao')} "
+            f"(confianca {resultado.get('confianca')})"
+        )
         time.sleep(PAUSA_ENTRE_CHAMADAS)
 
     return {"perfis": perfis}
+
 
 # ------------------------------------------------------------------ NO 6
 # Instancia unica: carregar o Chroma e montar o indice BM25 a cada chamada seria
@@ -450,7 +478,6 @@ Responda apenas com o JSON: {{{{"consulta_en": "..."}}}}"""
     return {"trechos_nvidia": trechos_por_startup}
 
 
-
 # ------------------------------------------------------------------ NO 7
 def recommendation_agent(estado: Estado) -> Dict[str, Any]:
     """Cruza o perfil verificado da empresa com os trechos da base NVIDIA."""
@@ -475,7 +502,8 @@ def recommendation_agent(estado: Estado) -> Dict[str, Any]:
         )
         classificacao = perfil.get("classificacao", {})
         perfil_verificado = {
-            k: v for k, v in perfil.items()
+            k: v
+            for k, v in perfil.items()
             if k not in ("evidencias_rejeitadas", "classificacao", "startup_id", "recomendacoes")
         }
 
@@ -555,7 +583,6 @@ Responda apenas com o JSON, sem texto antes ou depois, sem cerca de markdown."""
     return {"perfis": perfis}
 
 
-
 # ------------------------------------------------------------------ NO 8
 def briefing_agent(estado: Estado) -> Dict[str, Any]:
     """Gera o briefing executivo consolidado para o gerente de Startups & VCs.
@@ -576,18 +603,24 @@ def briefing_agent(estado: Estado) -> Dict[str, Any]:
     for p in perfis:
         cls = p.get("classificacao", {})
         recs = (p.get("recomendacoes") or {}).get("recomendacoes", [])
-        resumo.append({
-            "empresa": p.get("nome"),
-            "classificacao": cls.get("classificacao"),
-            "confianca": cls.get("confianca"),
-            "taxa_validacao": p.get("taxa_validacao"),
-            "gargalos": p.get("possiveis_gargalos_tecnicos", [])[:2],
-            "recomendacoes": [
-                {"tecnologia": r.get("tecnologia"), "prioridade": r.get("prioridade"),
-                 "complexidade": r.get("complexidade"), "porque": r.get("justificativa_negocio", "")[:180]}
-                for r in recs
-            ],
-        })
+        resumo.append(
+            {
+                "empresa": p.get("nome"),
+                "classificacao": cls.get("classificacao"),
+                "confianca": cls.get("confianca"),
+                "taxa_validacao": p.get("taxa_validacao"),
+                "gargalos": p.get("possiveis_gargalos_tecnicos", [])[:2],
+                "recomendacoes": [
+                    {
+                        "tecnologia": r.get("tecnologia"),
+                        "prioridade": r.get("prioridade"),
+                        "complexidade": r.get("complexidade"),
+                        "porque": r.get("justificativa_negocio", "")[:180],
+                    }
+                    for r in recs
+                ],
+            }
+        )
 
     contagem = {}
     for p in perfis:
@@ -595,7 +628,7 @@ def briefing_agent(estado: Estado) -> Dict[str, Any]:
         contagem[c] = contagem.get(c, 0) + 1
 
     prompt = f"""### BLOCO 1 - PAPEL E TAREFA
-Voce escreve o briefing executivo do NVIDIA Startup AI Radar.
+Voce escreve o briefing executivo do Nivra.
 
 Quem le e o gerente de Startups & VCs da NVIDIA no Brasil. Ele tem pouco tempo, ja
 conhece o mercado, e usa este texto para decidir quais startups procurar primeiro e
@@ -689,15 +722,17 @@ pipeline = grafo.compile()
 
 
 if __name__ == "__main__":
-    resultado = pipeline.invoke({
-        "consulta": "startups de saude que usam IA no diagnostico",
-        "filtros": {},
-        "startups": [],
-        "documentos": [],
-        "perfis": [],
-        "trechos_nvidia": {},
-        "briefing": "",
-    })
+    resultado = pipeline.invoke(
+        {
+            "consulta": "startups de saude que usam IA no diagnostico",
+            "filtros": {},
+            "startups": [],
+            "documentos": [],
+            "perfis": [],
+            "trechos_nvidia": {},
+            "briefing": "",
+        }
+    )
     print("\n===== BRIEFING =====")
     print(resultado.get("briefing", "")[:1500])
     print("\n===== PERFIS =====")

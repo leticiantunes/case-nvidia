@@ -17,27 +17,29 @@ import streamlit as st
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTADO = os.path.join(RAIZ, "data", "resultado_completo.json")
 
-AZUL = "#D93370"
-AZUL_CLARO = "#F06C9A"
-INDIGO = "#C66A91"
-CEU = "#E95487"
-AMBAR = "#A91D4E"
+AZUL_CLARO = "#6CA7F0"
+INDIGO = "#6A93C6"
+CEU = "#5497E9"
+ATENCAO = "#1D5CA9"
 ORDEM_CLS = ["AI-native", "AI-enabled", "non-AI", "indeterminado"]
 ORDEM_CONF = ["alta", "media", "baixa"]
 CORES_CLASSE = {
     "AI-native": CEU,
     "AI-enabled": INDIGO,
-    "non-AI": "#E2A2B8",
-    "indeterminado": "#B7909F",
+    "non-AI": "#A2BFE2",
+    "indeterminado": "#90A2B7",
 }
 
-st.set_page_config(page_title="Nivra", page_icon="✦", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(
+    page_title="Nivra", page_icon="✦", layout="wide", initial_sidebar_state="collapsed"
+)
 
 st.markdown(
     """
     <style>
       @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-      :root { --page:#FFF8FB; --surface:#FFFFFF; --line:rgba(187,45,100,.19); --text:#461427; --muted:#8B5367; --blue:#D93370; --sky:#C42361; }
+      /* :root definitivo fica mais abaixo, no bloco "Tema Nivra": este e o unico
+         motivo de nao redeclarar as variaveis aqui tambem. */
       .stApp { background:radial-gradient(circle at 82% -10%,rgba(45,126,255,.24),transparent 31rem),radial-gradient(circle at -8% 32%,rgba(56,189,248,.10),transparent 25rem),var(--page); color:var(--text); }
       html,body,[class*="css"],.stMarkdown,p,span,div,button,input,label { font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; }
       [data-testid*="Icon"],.material-symbols-rounded { font-family:'Material Symbols Rounded' !important; }
@@ -61,7 +63,7 @@ st.markdown(
       [data-testid="stExpander"] summary:hover { color:var(--sky); }
       [data-baseweb="select"] > div,[data-baseweb="input"] > div { background:#0A1A2E !important; border-color:var(--line) !important; border-radius:10px !important; }
       .stTextInput input { background:#0A1A2E !important; border-color:var(--line) !important; }
-      .stButton > button,[data-testid="stDownloadButton"] > button { background:#D93370; border:0; border-radius:10px; color:white; font-weight:700; }
+      .stButton > button,[data-testid="stDownloadButton"] > button { background:#337ED9; border:0; border-radius:10px; color:white; font-weight:700; }
       .stButton > button:hover,[data-testid="stDownloadButton"] > button:hover { filter:brightness(1.08); }
       [data-testid="stDataFrame"] { border:1px solid var(--line); border-radius:12px; overflow:hidden; }
       hr { border-color:var(--line); margin:1.5rem 0; }
@@ -88,7 +90,7 @@ st.markdown(
       .badge-non-ai,.badge-neutral { color:#C6D5E8; background:rgba(100,116,139,.2); border:1px solid rgba(148,163,184,.22); }
       .badge-high { color:#CFE9FF; background:rgba(77,163,255,.17); border:1px solid rgba(77,163,255,.30); }
       .badge-medium { color:#DFE4FF; background:rgba(129,140,248,.16); border:1px solid rgba(129,140,248,.28); }
-      .badge-low { color:#FCE9B5; background:rgba(251,191,36,.13); border:1px solid rgba(251,191,36,.25); }
+      .badge-low { color:#B5D5FC; background:rgba(36,133,251,.13); border:1px solid rgba(36,133,251,.25); }
       .source { color:var(--muted); font-size:.76rem; word-break:break-word; }
       @media (max-width:680px) { .block-container { padding:1rem .9rem 2.2rem; } .hero { padding:1.25rem; border-radius:17px; } .hero h1 { font-size:2rem; } [data-testid="stMetric"] { min-height:auto; } .results-bar { align-items:flex-start; flex-direction:column; } }
 
@@ -151,41 +153,41 @@ st.markdown(
       }
       @media (max-width:500px) { .signal-strip { grid-template-columns:1fr; } .signal { border-left:0; border-top:1px solid var(--line); } .signal:first-child { border-top:0; } .hero h1 { font-size:2.55rem; } }
 
-      /* Tema Rosé — branco quente, rosas em camadas e contraste para leitura. */
-      :root { --page:#FFF8FB; --surface:#FFFFFF; --line:rgba(187,45,100,.19); --text:#461427; --muted:#8B5367; --blue:#D93370; --sky:#C42361; }
-      .stApp { background-color:var(--page) !important; background-image:linear-gradient(rgba(217,51,112,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(217,51,112,.055) 1px,transparent 1px) !important; }
+      /* Tema Nivra: branco frio, azuis em camadas escurecendo do fundo ao texto. */
+      :root { --page:#F8FBFF; --surface:#FFFFFF; --line:rgba(45,109,187,.19); --text:#142A46; --muted:#536C8B; --blue:#337ED9; --sky:#236BC4; }
+      .stApp { background-color:var(--page) !important; background-image:linear-gradient(rgba(51,126,217,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(51,126,217,.055) 1px,transparent 1px) !important; }
       html,body,[class*="css"],.stMarkdown,p,span,div,button,input,label { color:var(--text); }
       h1,h2,h3 { color:var(--text); }
       [data-testid="stVerticalBlockBorderWrapper"] { background:rgba(255,255,255,.82); border-color:var(--line) !important; }
       [data-testid="stExpander"] { background:rgba(255,255,255,.88); border-color:var(--line) !important; }
-      [data-testid="stExpander"] summary:hover { color:#C42361; }
-      [data-baseweb="select"] > div,[data-baseweb="input"] > div,.stTextInput input { background:#FFFDFE !important; border-color:rgba(187,45,100,.25) !important; color:#461427 !important; }
-      [data-testid="stMetricValue"] { color:#8E1744; }
-      .hero { border-color:rgba(187,45,100,.33) !important; }
-      .brand-mark { background:#D93370; box-shadow:4px 4px 0 #F4B7CC; }
-      .brand-name { color:#671B39; } .brand-sub { color:#A73A63; }
-      .hero h1 { color:#461427; } .hero h1 em { color:#C42361; } .hero p { color:#8B5367; }
-      .atlas-orbit { border-color:rgba(196,35,97,.45); background:radial-gradient(circle at 50% 50%,rgba(217,51,112,.16) 0 5%,transparent 6%); }
-      .atlas-orbit:before,.atlas-orbit:after { border-color:rgba(196,35,97,.22); } .atlas-orbit:after { border-color:rgba(196,35,97,.36); }
-      .axis { background:rgba(196,35,97,.22); }
-      .orbit-dot { background:#D93370; box-shadow:0 0 0 4px rgba(217,51,112,.12),0 0 18px rgba(217,51,112,.44); }
-      .dot-b { background:#F3A9C0; } .dot-c { background:#A91D4E; }
-      .orbit-copy { color:#A73A63; }
+      [data-testid="stExpander"] summary:hover { color:#236BC4; }
+      [data-baseweb="select"] > div,[data-baseweb="input"] > div,.stTextInput input { background:#FDFEFF !important; border-color:rgba(45,109,187,.25) !important; color:#142A46 !important; }
+      [data-testid="stMetricValue"] { color:#174D8E; }
+      .hero { border-color:rgba(45,109,187,.33) !important; }
+      .brand-mark { background:#337ED9; box-shadow:4px 4px 0 #B7D2F4; }
+      .brand-name { color:#1B3D67; } .brand-sub { color:#3A6BA7; }
+      .hero h1 { color:#142A46; } .hero h1 em { color:#236BC4; } .hero p { color:#536C8B; }
+      .atlas-orbit { border-color:rgba(35,107,196,.45); background:radial-gradient(circle at 50% 50%,rgba(51,126,217,.16) 0 5%,transparent 6%); }
+      .atlas-orbit:before,.atlas-orbit:after { border-color:rgba(35,107,196,.22); } .atlas-orbit:after { border-color:rgba(35,107,196,.36); }
+      .axis { background:rgba(35,107,196,.22); }
+      .orbit-dot { background:#337ED9; box-shadow:0 0 0 4px rgba(51,126,217,.12),0 0 18px rgba(51,126,217,.44); }
+      .dot-b { background:#A9CAF3; } .dot-c { background:#1D5CA9; }
+      .orbit-copy { color:#3A6BA7; }
       .signal-strip { border-color:var(--line); } .signal { border-color:var(--line); }
-      .signal span,.section-header > span,.filter-title { color:#B52D5D; }
-      .signal strong,.insight-card .value { color:#7A1B3E; }
-      .signal p,.section-header p,.insight-card p,.results-bar span,.source { color:#8B5367; }
-      .section-header h2 { color:#461427; }
+      .signal span,.section-header > span,.filter-title { color:#2D6AB5; }
+      .signal strong,.insight-card .value { color:#1B467A; }
+      .signal p,.section-header p,.insight-card p,.results-bar span,.source { color:#536C8B; }
+      .section-header h2 { color:#142A46; }
       .insight-card { border-color:var(--line); }
-      .insight-card .kicker { color:#B52D5D; }
-      .results-bar { background:#FFF1F6; border-color:var(--line); } .results-bar strong { color:#671B39; }
-      .stButton > button,[data-testid="stDownloadButton"] > button { background:#D93370; }
-      .badge-native { color:#8E1744; background:#FCE0EA; border-color:#F3B5CA; }
-      .badge-enabled { color:#7C2546; background:#F8E4EC; border-color:#E9B5C7; }
-      .badge-non-ai,.badge-neutral { color:#7A5865; background:#F8F0F3; border-color:#E7D1D9; }
-      .badge-high { color:#FFF; background:#C42361; border-color:#C42361; }
-      .badge-medium { color:#7C2546; background:#F7C5D6; border-color:#EAA3BD; }
-      .badge-low { color:#7A5865; background:#FBEAF0; border-color:#EDCEDA; }
+      .insight-card .kicker { color:#2D6AB5; }
+      .results-bar { background:#F1F7FF; border-color:var(--line); } .results-bar strong { color:#1B3D67; }
+      .stButton > button,[data-testid="stDownloadButton"] > button { background:#337ED9; }
+      .badge-native { color:#174D8E; background:#E0EDFC; border-color:#B5D1F3; }
+      .badge-enabled { color:#254C7C; background:#E4EDF8; border-color:#B5CCE9; }
+      .badge-non-ai,.badge-neutral { color:#58677A; background:#F0F4F8; border-color:#D1DBE7; }
+      .badge-high { color:#FFF; background:#236BC4; border-color:#236BC4; }
+      .badge-medium { color:#254C7C; background:#C5DBF7; border-color:#A3C3EA; }
+      .badge-low { color:#58677A; background:#EAF2FB; border-color:#CEDCED; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -218,7 +220,12 @@ def prioridade_empresa(perfil):
 
 
 def rotulo_classe(valor):
-    return {"AI-native": "IA nativa", "AI-enabled": "IA habilitada", "non-AI": "Sem IA central", "indeterminado": "Indeterminado"}.get(valor, valor)
+    return {
+        "AI-native": "IA nativa",
+        "AI-enabled": "IA habilitada",
+        "non-AI": "Sem IA central",
+        "indeterminado": "Indeterminado",
+    }.get(valor, valor)
 
 
 def badge(texto, estilo):
@@ -226,7 +233,9 @@ def badge(texto, estilo):
 
 
 def badge_classe(valor):
-    estilo = {"AI-native": "native", "AI-enabled": "enabled", "non-AI": "non-ai"}.get(valor, "neutral")
+    estilo = {"AI-native": "native", "AI-enabled": "enabled", "non-AI": "non-ai"}.get(
+        valor, "neutral"
+    )
     return badge(rotulo_classe(valor), estilo)
 
 
@@ -243,11 +252,23 @@ def titulo_secao(indice, titulo, descricao):
 
 
 def tema_chart(chart):
-    return (chart.configure_view(strokeWidth=0).configure(background="transparent").configure_axis(
-        labelColor="#6E3B4D", titleColor="#8B5367", gridColor="rgba(187,45,100,.12)",
-        domainColor="rgba(187,45,100,.18)", tickColor="rgba(187,45,100,.18)",
-        labelFont="Manrope", titleFont="Manrope", labelFontSize=11, titleFontSize=11,
-    ).configure_legend(labelColor="#6E3B4D", titleColor="#8B5367", labelFont="Manrope").configure_text(font="Manrope"))
+    return (
+        chart.configure_view(strokeWidth=0)
+        .configure(background="transparent")
+        .configure_axis(
+            labelColor="#3B526E",
+            titleColor="#536C8B",
+            gridColor="rgba(45,109,187,.12)",
+            domainColor="rgba(45,109,187,.18)",
+            tickColor="rgba(45,109,187,.18)",
+            labelFont="Manrope",
+            titleFont="Manrope",
+            labelFontSize=11,
+            titleFontSize=11,
+        )
+        .configure_legend(labelColor="#3B526E", titleColor="#536C8B", labelFont="Manrope")
+        .configure_text(font="Manrope")
+    )
 
 
 dados = carregar()
@@ -261,9 +282,12 @@ contagem = {classe: sum(classificacao(p) == classe for p in perfis) for classe i
 total_recs = sum(len(recomendacoes(p)) for p in perfis)
 taxas = [p.get("taxa_validacao", 0) for p in perfis]
 validacao_media = sum(taxas) / len(taxas) if taxas else 0
-prioridade_alta = sum(1 for perfil in perfis for rec in recomendacoes(perfil) if rec.get("prioridade") == "alta")
+prioridade_alta = sum(
+    1 for perfil in perfis for rec in recomendacoes(perfil) if rec.get("prioridade") == "alta"
+)
 
-st.markdown("""
+st.markdown(
+    """
   <section class="hero">
     <div>
       <div class="brand-row"><div class="brand-mark">N</div><div><div class="brand-name">Nivra</div><div class="brand-sub">Signal atlas / BR-01</div></div></div>
@@ -276,53 +300,144 @@ st.markdown("""
       <div class="orbit-copy">SIGNAL MAP<br>ACTIVE / BR</div>
     </div>
   </section>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
-st.markdown(f"""
+st.markdown(
+    f"""
   <section class="signal-strip">
     <div class="signal"><span>01 // BASE</span><strong>{len(perfis):02d}</strong><p>startups mapeadas</p></div>
     <div class="signal"><span>02 // NÚCLEO</span><strong>{contagem.get('AI-native', 0):02d}</strong><p>com IA no centro do produto</p></div>
     <div class="signal"><span>03 // ABERTURA</span><strong>{total_recs:02d}</strong><p>oportunidades NVIDIA</p></div>
     <div class="signal"><span>04 // LASTRO</span><strong>{validacao_media:.0%}</strong><p>evidências verificadas</p></div>
   </section>
-""", unsafe_allow_html=True)
-st.caption(f"Atualizado em {dados.get('gerado_em', '—')} · modelo {dados.get('modelo', '—')} · análise em {dados.get('duracao_segundos', '—')}s")
+""",
+    unsafe_allow_html=True,
+)
+st.caption(
+    f"Atualizado em {dados.get('gerado_em', '—')} · modelo {dados.get('modelo', '—')} · análise em {dados.get('duracao_segundos', '—')}s"
+)
 
-aba_visao, aba_radar, aba_briefing, aba_qualidade = st.tabs(["Visão executiva", "Radar de startups", "Briefing", "Confiabilidade"])
+aba_visao, aba_radar, aba_briefing, aba_qualidade = st.tabs(
+    ["Visão executiva", "Radar de startups", "Briefing", "Confiabilidade"]
+)
 
 with aba_visao:
-    st.markdown(titulo_secao("01 / LEITURA", "Visão executiva", "O que merece atenção agora — sem atravessar uma parede de indicadores."), unsafe_allow_html=True)
-    mais_recomendadas = sorted(perfis, key=lambda p: (-len(recomendacoes(p)), prioridade_empresa(p)))
+    st.markdown(
+        titulo_secao(
+            "01 / LEITURA",
+            "Visão executiva",
+            "O que merece atenção agora, sem atravessar uma parede de indicadores.",
+        ),
+        unsafe_allow_html=True,
+    )
+    mais_recomendadas = sorted(
+        perfis, key=lambda p: (-len(recomendacoes(p)), prioridade_empresa(p))
+    )
     lider = mais_recomendadas[0].get("nome", "—") if mais_recomendadas else "—"
     cobertura = sum(1 for p in perfis if recomendacoes(p)) / len(perfis) if perfis else 0
     leitura_1, leitura_2, leitura_3 = st.columns(3)
     with leitura_1:
-        st.markdown(f"<div class='insight-card'><div class='kicker'>Prioridade imediata</div><div class='value'>{prioridade_alta}</div><p>recomendações de alta prioridade para iniciar a abordagem.</p></div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='insight-card'><div class='kicker'>Prioridade imediata</div><div class='value'>{prioridade_alta}</div><p>recomendações de alta prioridade para iniciar a abordagem.</p></div>",
+            unsafe_allow_html=True,
+        )
     with leitura_2:
-        st.markdown(f"<div class='insight-card'><div class='kicker'>Maior densidade</div><div class='value'>{escape(lider)}</div><p>lidera em volume de tecnologias sugeridas pela análise.</p></div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='insight-card'><div class='kicker'>Maior densidade</div><div class='value'>{escape(lider)}</div><p>lidera em volume de tecnologias sugeridas pela análise.</p></div>",
+            unsafe_allow_html=True,
+        )
     with leitura_3:
-        st.markdown(f"<div class='insight-card'><div class='kicker'>Cobertura comercial</div><div class='value'>{cobertura:.0%}</div><p>das startups têm pelo menos uma oportunidade mapeada.</p></div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='insight-card'><div class='kicker'>Cobertura comercial</div><div class='value'>{cobertura:.0%}</div><p>das startups têm pelo menos uma oportunidade mapeada.</p></div>",
+            unsafe_allow_html=True,
+        )
 
-    st.markdown(titulo_secao("02 / MAPA", "Mapa de oportunidades", "Comparações diretas para situar a maturidade do mercado e a confiança da base."), unsafe_allow_html=True)
+    st.markdown(
+        titulo_secao(
+            "02 / MAPA",
+            "Mapa de oportunidades",
+            "Comparações diretas para situar a maturidade do mercado e a confiança da base.",
+        ),
+        unsafe_allow_html=True,
+    )
     esquerda, direita = st.columns([1, 1.15], gap="large")
-    df_maturidade = pd.DataFrame([{"classificacao": rotulo_classe(c), "empresas": contagem[c], "cor": CORES_CLASSE[c]} for c in ORDEM_CLS if contagem.get(c, 0)])
+    df_maturidade = pd.DataFrame(
+        [
+            {"classificacao": rotulo_classe(c), "empresas": contagem[c], "cor": CORES_CLASSE[c]}
+            for c in ORDEM_CLS
+            if contagem.get(c, 0)
+        ]
+    )
     with esquerda, st.container(border=True):
         st.markdown("**Maturidade em IA**")
         st.caption("Comparação direta de contagens por perfil.")
-        base = alt.Chart(df_maturidade).encode(y=alt.Y("classificacao:N", sort="-x", title=None), x=alt.X("empresas:Q", title="startups", axis=alt.Axis(tickMinStep=1)))
-        barras = base.mark_bar(cornerRadiusEnd=6, height=28).encode(color=alt.Color("cor:N", scale=None, legend=None), tooltip=[alt.Tooltip("classificacao:N", title="Perfil"), alt.Tooltip("empresas:Q", title="Startups")])
-        textos = base.mark_text(align="left", dx=7, color="#671B39", fontWeight=700).encode(text="empresas:Q")
-        st.altair_chart(tema_chart((barras + textos).properties(height=175)), use_container_width=True)
+        base = alt.Chart(df_maturidade).encode(
+            y=alt.Y("classificacao:N", sort="-x", title=None),
+            x=alt.X("empresas:Q", title="startups", axis=alt.Axis(tickMinStep=1)),
+        )
+        barras = base.mark_bar(cornerRadiusEnd=6, height=28).encode(
+            color=alt.Color("cor:N", scale=None, legend=None),
+            tooltip=[
+                alt.Tooltip("classificacao:N", title="Perfil"),
+                alt.Tooltip("empresas:Q", title="Startups"),
+            ],
+        )
+        textos = base.mark_text(align="left", dx=7, color="#1B3D67", fontWeight=700).encode(
+            text="empresas:Q"
+        )
+        st.altair_chart(
+            tema_chart((barras + textos).properties(height=175)), use_container_width=True
+        )
 
-    df_validacao = pd.DataFrame([{"empresa": p.get("nome", "—"), "taxa": p.get("taxa_validacao", 0), "faixa": "Atenção" if p.get("taxa_validacao", 0) < .5 else "Confiável"} for p in perfis]).sort_values("taxa", ascending=False)
+    df_validacao = pd.DataFrame(
+        [
+            {
+                "empresa": p.get("nome", "—"),
+                "taxa": p.get("taxa_validacao", 0),
+                "faixa": "Atenção" if p.get("taxa_validacao", 0) < 0.5 else "Confiável",
+            }
+            for p in perfis
+        ]
+    ).sort_values("taxa", ascending=False)
     with direita, st.container(border=True):
         st.markdown("**Base para decisão**")
         st.caption("A linha marca o limiar de 50% de evidências verificadas.")
-        base = alt.Chart(df_validacao).encode(y=alt.Y("empresa:N", sort="-x", title=None), x=alt.X("taxa:Q", title="evidências verificadas", axis=alt.Axis(format="%"), scale=alt.Scale(domain=[0, 1])))
-        referencia = alt.Chart(pd.DataFrame({"limiar": [.5]})).mark_rule(color="#BD8497", strokeDash=[5, 5]).encode(x="limiar:Q")
-        pontos = base.mark_circle(size=95, stroke="#FFF8FB", strokeWidth=2).encode(color=alt.Color("faixa:N", scale=alt.Scale(domain=["Confiável", "Atenção"], range=[AZUL_CLARO, AMBAR]), legend=None), tooltip=[alt.Tooltip("empresa:N", title="Startup"), alt.Tooltip("taxa:Q", title="Validação", format=".0%")])
-        rotulos = base.mark_text(align="left", dx=10, color="#671B39", fontSize=11, fontWeight=700).encode(text=alt.Text("taxa:Q", format=".0%"))
-        st.altair_chart(tema_chart((referencia + pontos + rotulos).properties(height=max(190, len(df_validacao) * 25))), use_container_width=True)
+        base = alt.Chart(df_validacao).encode(
+            y=alt.Y("empresa:N", sort="-x", title=None),
+            x=alt.X(
+                "taxa:Q",
+                title="evidências verificadas",
+                axis=alt.Axis(format="%"),
+                scale=alt.Scale(domain=[0, 1]),
+            ),
+        )
+        referencia = (
+            alt.Chart(pd.DataFrame({"limiar": [0.5]}))
+            .mark_rule(color="#849EBD", strokeDash=[5, 5])
+            .encode(x="limiar:Q")
+        )
+        pontos = base.mark_circle(size=95, stroke="#F8FBFF", strokeWidth=2).encode(
+            color=alt.Color(
+                "faixa:N",
+                scale=alt.Scale(domain=["Confiável", "Atenção"], range=[AZUL_CLARO, ATENCAO]),
+                legend=None,
+            ),
+            tooltip=[
+                alt.Tooltip("empresa:N", title="Startup"),
+                alt.Tooltip("taxa:Q", title="Validação", format=".0%"),
+            ],
+        )
+        rotulos = base.mark_text(
+            align="left", dx=10, color="#1B3D67", fontSize=11, fontWeight=700
+        ).encode(text=alt.Text("taxa:Q", format=".0%"))
+        st.altair_chart(
+            tema_chart(
+                (referencia + pontos + rotulos).properties(height=max(190, len(df_validacao) * 25))
+            ),
+            use_container_width=True,
+        )
 
     tecnologias = {}
     for perfil in perfis:
@@ -330,31 +445,81 @@ with aba_visao:
             tecnologia = rec.get("tecnologia", "Tecnologia não informada").removeprefix("NVIDIA ")
             tecnologias[tecnologia] = tecnologias.get(tecnologia, 0) + 1
     if tecnologias:
-        st.markdown(titulo_secao("03 / VETOR", "Onde a conversa começa", "Tecnologias com maior recorrência na análise atual."), unsafe_allow_html=True)
-        df_tecnologias = pd.DataFrame([{"tecnologia": t, "recomendacoes": q} for t, q in tecnologias.items()]).sort_values("recomendacoes", ascending=False).head(8)
+        st.markdown(
+            titulo_secao(
+                "03 / VETOR",
+                "Onde a conversa começa",
+                "Tecnologias com maior recorrência na análise atual.",
+            ),
+            unsafe_allow_html=True,
+        )
+        df_tecnologias = (
+            pd.DataFrame([{"tecnologia": t, "recomendacoes": q} for t, q in tecnologias.items()])
+            .sort_values("recomendacoes", ascending=False)
+            .head(8)
+        )
         maior_volume = df_tecnologias["recomendacoes"].max()
-        df_tecnologias["destaque"] = df_tecnologias["recomendacoes"].eq(maior_volume).map({True: "Destaque", False: "Demais"})
+        df_tecnologias["destaque"] = (
+            df_tecnologias["recomendacoes"]
+            .eq(maior_volume)
+            .map({True: "Destaque", False: "Demais"})
+        )
         with st.container(border=True):
-            st.caption("Ranking das tecnologias mais recorrentes; o azul claro destaca a maior oportunidade.")
-            base = alt.Chart(df_tecnologias).encode(y=alt.Y("tecnologia:N", sort="-x", title=None, axis=alt.Axis(labelLimit=280)), x=alt.X("recomendacoes:Q", title="recomendações", axis=alt.Axis(tickMinStep=1)))
-            barras = base.mark_bar(cornerRadiusEnd=6, height=24).encode(color=alt.Color("destaque:N", scale=alt.Scale(domain=["Destaque", "Demais"], range=[AZUL_CLARO, "#D9A9BA"]), legend=None), tooltip=[alt.Tooltip("tecnologia:N", title="Tecnologia"), alt.Tooltip("recomendacoes:Q", title="Recomendações")])
-            texto = base.mark_text(align="left", dx=7, color="#671B39", fontWeight=700).encode(text="recomendacoes:Q")
-            st.altair_chart(tema_chart((barras + texto).properties(height=max(190, len(df_tecnologias) * 32))), use_container_width=True)
+            st.caption(
+                "Ranking das tecnologias mais recorrentes; o azul claro destaca a maior oportunidade."
+            )
+            base = alt.Chart(df_tecnologias).encode(
+                y=alt.Y("tecnologia:N", sort="-x", title=None, axis=alt.Axis(labelLimit=280)),
+                x=alt.X("recomendacoes:Q", title="recomendações", axis=alt.Axis(tickMinStep=1)),
+            )
+            barras = base.mark_bar(cornerRadiusEnd=6, height=24).encode(
+                color=alt.Color(
+                    "destaque:N",
+                    scale=alt.Scale(domain=["Destaque", "Demais"], range=[AZUL_CLARO, "#A9BFD9"]),
+                    legend=None,
+                ),
+                tooltip=[
+                    alt.Tooltip("tecnologia:N", title="Tecnologia"),
+                    alt.Tooltip("recomendacoes:Q", title="Recomendações"),
+                ],
+            )
+            texto = base.mark_text(align="left", dx=7, color="#1B3D67", fontWeight=700).encode(
+                text="recomendacoes:Q"
+            )
+            st.altair_chart(
+                tema_chart((barras + texto).properties(height=max(190, len(df_tecnologias) * 32))),
+                use_container_width=True,
+            )
 
 with aba_radar:
-    st.markdown(titulo_secao("01 / RADAR", "Radar de startups", "Filtre a base, priorize oportunidades e abra apenas o contexto necessário para a próxima conversa."), unsafe_allow_html=True)
+    st.markdown(
+        titulo_secao(
+            "01 / RADAR",
+            "Radar de startups",
+            "Filtre a base, priorize oportunidades e abra apenas o contexto necessário para a próxima conversa.",
+        ),
+        unsafe_allow_html=True,
+    )
     opcoes_cls = [c for c in ORDEM_CLS if contagem.get(c, 0)]
     with st.container(border=True):
         st.markdown("<div class='filter-title'>Refine a fila</div>", unsafe_allow_html=True)
-        filtro_1, filtro_2, filtro_3, filtro_4 = st.columns([1.25, 1.2, .9, 1.2])
+        filtro_1, filtro_2, filtro_3, filtro_4 = st.columns([1.25, 1.2, 0.9, 1.2])
         with filtro_1:
-            filtro_cls = st.multiselect("Perfil de IA", opcoes_cls, default=opcoes_cls, format_func=rotulo_classe)
+            filtro_cls = st.multiselect(
+                "Perfil de IA", opcoes_cls, default=opcoes_cls, format_func=rotulo_classe
+            )
         with filtro_2:
             filtro_conf = st.multiselect("Confiança", ORDEM_CONF, default=ORDEM_CONF)
         with filtro_3:
-            somente_recs = st.checkbox("Com oportunidade", value=False, help="Exibe startups com ao menos uma tecnologia sugerida.")
+            somente_recs = st.checkbox(
+                "Com oportunidade",
+                value=False,
+                help="Exibe startups com ao menos uma tecnologia sugerida.",
+            )
         with filtro_4:
-            ordenacao = st.selectbox("Ordenar por", ["Prioridade NVIDIA", "Evidências validadas", "Nome"])
+            ordenacao = st.selectbox(
+                "Ordenar por", ["Prioridade NVIDIA", "Evidências validadas", "Nome"]
+            )
         busca = st.text_input("Buscar startup", placeholder="Ex.: Arvo, saúde, crédito")
 
     visiveis = []
@@ -368,27 +533,38 @@ with aba_radar:
             continue
         visiveis.append(perfil)
     if ordenacao == "Prioridade NVIDIA":
-        visiveis.sort(key=lambda p: (prioridade_empresa(p), -p.get("taxa_validacao", 0), p.get("nome", "")))
+        visiveis.sort(
+            key=lambda p: (prioridade_empresa(p), -p.get("taxa_validacao", 0), p.get("nome", ""))
+        )
     elif ordenacao == "Evidências validadas":
         visiveis.sort(key=lambda p: (-p.get("taxa_validacao", 0), p.get("nome", "")))
     else:
         visiveis.sort(key=lambda p: p.get("nome", ""))
 
     total_filtrado = sum(len(recomendacoes(p)) for p in visiveis)
-    st.markdown(f"<div class='results-bar'><strong>{len(visiveis)} startups na fila</strong><span>{total_filtrado} oportunidades NVIDIA encontradas nos filtros atuais</span></div>", unsafe_allow_html=True)
+    st.markdown(
+        f"<div class='results-bar'><strong>{len(visiveis)} startups na fila</strong><span>{total_filtrado} oportunidades NVIDIA encontradas nos filtros atuais</span></div>",
+        unsafe_allow_html=True,
+    )
     if not visiveis:
-        st.info("Nenhuma startup corresponde aos filtros atuais. Amplie um dos critérios para voltar à base completa.")
+        st.info(
+            "Nenhuma startup corresponde aos filtros atuais. Amplie um dos critérios para voltar à base completa."
+        )
 
     for perfil in visiveis:
         classe, nivel_conf, recs = classificacao(perfil), confianca(perfil), recomendacoes(perfil)
         nome = perfil.get("nome", "Startup")
         with st.expander(f"{nome}  ·  {rotulo_classe(classe)}  ·  {len(recs)} oportunidade(s)"):
-            st.markdown(badge_classe(classe) + badge_nivel("confiança", nivel_conf), unsafe_allow_html=True)
+            st.markdown(
+                badge_classe(classe) + badge_nivel("confiança", nivel_conf), unsafe_allow_html=True
+            )
             kpi_1, kpi_2, kpi_3 = st.columns(3)
             kpi_1.metric("Oportunidades", len(recs))
             kpi_2.metric("Evidências", len(perfil.get("evidencias", [])))
             kpi_3.metric("Validação", f"{perfil.get('taxa_validacao', 0):.0%}")
-            diagnostico, oportunidades, fontes = st.tabs(["Diagnóstico", f"Oportunidades ({len(recs)})", "Evidências"])
+            diagnostico, oportunidades, fontes = st.tabs(
+                ["Diagnóstico", f"Oportunidades ({len(recs)})", "Evidências"]
+            )
             detalhada = perfil.get("classificacao") or {}
             with diagnostico:
                 st.markdown("**Leitura da análise**")
@@ -396,47 +572,111 @@ with aba_radar:
                 favor, validar = st.columns(2)
                 with favor:
                     st.markdown("**Sinais encontrados**")
-                    for sinal in detalhada.get("sinais_a_favor", []) or ["Nenhum sinal adicional registrado."]:
+                    for sinal in detalhada.get("sinais_a_favor", []) or [
+                        "Nenhum sinal adicional registrado."
+                    ]:
                         st.markdown(f"- {sinal}")
                 with validar:
                     st.markdown("**Pontos a validar**")
-                    for sinal in detalhada.get("sinais_contra", []) or ["Nenhuma ressalva registrada."]:
+                    for sinal in detalhada.get("sinais_contra", []) or [
+                        "Nenhuma ressalva registrada."
+                    ]:
                         st.markdown(f"- {sinal}")
             with oportunidades:
                 if not recs:
                     motivo = (perfil.get("recomendacoes") or {}).get("sem_recomendacao")
-                    st.info(motivo or "A análise não encontrou uma oportunidade NVIDIA clara para este perfil.")
+                    st.info(
+                        motivo
+                        or "A análise não encontrou uma oportunidade NVIDIA clara para este perfil."
+                    )
                 for rec in recs:
                     tecnologia = rec.get("tecnologia", "Tecnologia NVIDIA")
-                    st.markdown(f"**{escape(tecnologia)}**<br>" + badge_nivel("prioridade", rec.get("prioridade", "baixa")) + badge(f"complexidade {rec.get('complexidade', '—')}", "neutral"), unsafe_allow_html=True)
+                    st.markdown(
+                        f"**{escape(tecnologia)}**<br>"
+                        + badge_nivel("prioridade", rec.get("prioridade", "baixa"))
+                        + badge(f"complexidade {rec.get('complexidade', '—')}", "neutral"),
+                        unsafe_allow_html=True,
+                    )
                     st.markdown(f"**Motivo técnico.** {rec.get('justificativa_tecnica', '—')}")
                     st.markdown(f"**Impacto de negócio.** {rec.get('justificativa_negocio', '—')}")
                     st.markdown(f"**Próximo passo.** {rec.get('proxima_acao', '—')}")
                     st.divider()
             with fontes:
-                validadas, rejeitadas = perfil.get("evidencias", []), perfil.get("evidencias_rejeitadas", [])
-                st.caption(f"{len(validadas)} fontes validadas · {len(rejeitadas)} evidências rejeitadas")
+                validadas, rejeitadas = perfil.get("evidencias", []), perfil.get(
+                    "evidencias_rejeitadas", []
+                )
+                st.caption(
+                    f"{len(validadas)} fontes validadas · {len(rejeitadas)} evidências rejeitadas"
+                )
                 for evidencia in validadas:
                     st.markdown(f"> {evidencia.get('trecho', '')[:280]}")
-                    st.markdown(f"<div class='source'>Fonte: {escape(evidencia.get('url_fonte', 'Não informada'))}</div>", unsafe_allow_html=True)
+                    st.markdown(
+                        f"<div class='source'>Fonte: {escape(evidencia.get('url_fonte', 'Não informada'))}</div>",
+                        unsafe_allow_html=True,
+                    )
                 for evidencia in rejeitadas:
-                    st.markdown(f"- ~~{evidencia.get('afirmacao', '')}~~ — {evidencia.get('motivo_rejeicao', 'rejeitada na validação')}")
+                    st.markdown(
+                        f"- ~~{evidencia.get('afirmacao', '')}~~ · {evidencia.get('motivo_rejeicao', 'rejeitada na validação')}"
+                    )
 
 with aba_briefing:
-    st.markdown(titulo_secao("01 / SÍNTESE", "Briefing executivo", "Uma leitura pronta para compartilhar o panorama, as oportunidades e as ressalvas da análise."), unsafe_allow_html=True)
+    st.markdown(
+        titulo_secao(
+            "01 / SÍNTESE",
+            "Briefing executivo",
+            "Uma leitura pronta para compartilhar o panorama, as oportunidades e as ressalvas da análise.",
+        ),
+        unsafe_allow_html=True,
+    )
     briefing = dados.get("briefing", "")
     if briefing:
         with st.container(border=True):
             st.markdown(briefing)
-        st.download_button("Baixar briefing em Markdown", briefing, file_name="briefing-nivra.md", mime="text/markdown")
+        st.download_button(
+            "Baixar briefing em Markdown",
+            briefing,
+            file_name="briefing-nivra.md",
+            mime="text/markdown",
+        )
     else:
-        st.info("O briefing ainda não foi gerado nesta execução. Rode a pipeline com RAG para criá-lo.")
+        st.info(
+            "O briefing ainda não foi gerado nesta execução. Rode a pipeline com RAG para criá-lo."
+        )
 
 with aba_qualidade:
-    st.markdown(titulo_secao("01 / LASTRO", "Confiabilidade da análise", "Uma afirmação só avança para recomendação depois que o trecho correspondente é localizado na fonte original."), unsafe_allow_html=True)
-    linhas = [{"Startup": p.get("nome", "—"), "Perfil de IA": rotulo_classe(classificacao(p)), "Confiança": confianca(p).capitalize(), "Validadas": len(p.get("evidencias", [])), "Rejeitadas": len(p.get("evidencias_rejeitadas", [])), "Taxa de validação": p.get("taxa_validacao", 0), "Oportunidades": len(recomendacoes(p))} for p in perfis]
+    st.markdown(
+        titulo_secao(
+            "01 / LASTRO",
+            "Confiabilidade da análise",
+            "Uma afirmação só avança para recomendação depois que o trecho correspondente é localizado na fonte original.",
+        ),
+        unsafe_allow_html=True,
+    )
+    linhas = [
+        {
+            "Startup": p.get("nome", "—"),
+            "Perfil de IA": rotulo_classe(classificacao(p)),
+            "Confiança": confianca(p).capitalize(),
+            "Validadas": len(p.get("evidencias", [])),
+            "Rejeitadas": len(p.get("evidencias_rejeitadas", [])),
+            "Taxa de validação": p.get("taxa_validacao", 0),
+            "Oportunidades": len(recomendacoes(p)),
+        }
+        for p in perfis
+    ]
     tabela = pd.DataFrame(linhas).sort_values("Taxa de validação")
-    st.dataframe(tabela, use_container_width=True, hide_index=True, column_config={"Taxa de validação": st.column_config.ProgressColumn("Taxa de validação", format="%.0f%%", min_value=0, max_value=1)})
-    baixas = tabela[tabela["Taxa de validação"] < .5]
+    st.dataframe(
+        tabela,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Taxa de validação": st.column_config.ProgressColumn(
+                "Taxa de validação", format="%.0f%%", min_value=0, max_value=1
+            )
+        },
+    )
+    baixas = tabela[tabela["Taxa de validação"] < 0.5]
     if len(baixas):
-        st.warning(f"{len(baixas)} startup(s) têm menos de 50% das evidências verificadas. Trate suas recomendações como hipóteses para validação manual.")
+        st.warning(
+            f"{len(baixas)} startup(s) têm menos de 50% das evidências verificadas. Trate suas recomendações como hipóteses para validação manual."
+        )

@@ -1,7 +1,7 @@
 langgraph
 langchain
-langchain-community
 langchain-openai
+langchain-text-splitters
 python-dotenv
 pandas
 numpy
@@ -9,6 +9,7 @@ psycopg2-binary
 chromadb
 cohere
 streamlit
+altair
 tenacity
 requests
 rank-bm25

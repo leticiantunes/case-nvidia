@@ -64,15 +64,19 @@ def main():
         for i, pedaco in enumerate(splitter.split_text(corpo)):
             ids.append(f"{nome}::{i}")
             textos.append(pedaco)
-            metadados.append({
-                "tecnologia": meta.get("tecnologia", ""),
-                "categoria": meta.get("categoria", ""),
-                "url_fonte": meta.get("url_fonte", ""),
-                "titulo": meta.get("titulo", ""),
-                "arquivo": nome,
-            })
+            metadados.append(
+                {
+                    "tecnologia": meta.get("tecnologia", ""),
+                    "categoria": meta.get("categoria", ""),
+                    "url_fonte": meta.get("url_fonte", ""),
+                    "titulo": meta.get("titulo", ""),
+                    "arquivo": nome,
+                }
+            )
 
-    print(f"{len(ids)} chunks gerados a partir de {len(set(m['arquivo'] for m in metadados))} documentos")
+    print(
+        f"{len(ids)} chunks gerados a partir de {len(set(m['arquivo'] for m in metadados))} documentos"
+    )
 
     cliente = chromadb.PersistentClient(path=PERSIST)
     try:
@@ -89,16 +93,17 @@ def main():
 
     for i in range(0, len(ids), 50):
         colecao.add(
-            ids=ids[i:i + 50],
-            documents=textos[i:i + 50],
-            metadatas=metadados[i:i + 50],
+            ids=ids[i : i + 50],
+            documents=textos[i : i + 50],
+            metadatas=metadados[i : i + 50],
         )
         print(f"  indexados {min(i + 50, len(ids))}/{len(ids)}")
 
     with open(CHUNKS_JSON, "w", encoding="utf-8") as f:
         json.dump(
             [{"id": i, "texto": t, "meta": m} for i, t, m in zip(ids, textos, metadados)],
-            f, ensure_ascii=False,
+            f,
+            ensure_ascii=False,
         )
 
     print(f"pronto: {colecao.count()} chunks no Chroma e em {os.path.basename(CHUNKS_JSON)}")

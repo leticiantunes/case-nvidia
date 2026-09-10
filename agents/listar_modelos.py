@@ -1,9 +1,16 @@
-import os
-from dotenv import load_dotenv
-from langchain_nvidia_ai_endpoints import ChatNVIDIA
+"""
+Lista os modelos disponiveis na chave de API configurada em LLM_API_KEY.
 
-import os, requests
+Util sempre que um modelo usado no projeto sai de catalogo: ja aconteceu duas
+vezes com modelos do Groq (meta/llama-3.3-70b-instruct e openai/gpt-oss-120b,
+descontinuados com poucos dias de diferenca). Chama a API REST direto, sem
+passar pelo langchain_openai, porque o objetivo aqui e so ver a lista.
+"""
+
+import os
+import requests
 from dotenv import load_dotenv
+
 load_dotenv()
 
 r = requests.get(
