@@ -162,10 +162,10 @@ docs/       documentacao de apoio
 
 | Entregável | Status |
 |---|---|
-| Sistema multi-agente com LangGraph | Query Planner, Retriever e Extractor implementados |
-| RAG NVIDIA com reranking | em desenvolvimento |
-| Motor de recomendação | em desenvolvimento |
-| Interface web | em desenvolvimento |
+| Sistema multi-agente com LangGraph | completo: 8 nos (Query Planner ate Briefing Agent) |
+| RAG NVIDIA com reranking | completo: busca hibrida (vetorial + BM25 + RRF) e Cohere Rerank |
+| Motor de recomendação | completo: Recommendation Agent + Briefing Agent |
+| Interface web | completo: dashboard Streamlit (app/dashboard.py) |
 | Diferencial do projeto | ver abaixo |
 
 ---
